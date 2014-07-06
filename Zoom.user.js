@@ -3,9 +3,8 @@
 // @description    Allows you to zoom out further
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx* 
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        1.0.0
+// @version        1.0.1
 // @author         Panavia
-// @require        http://sizzlemctwizzle.com/updater.php?id=138436
 // ==/UserScript==
 
 (function (){
