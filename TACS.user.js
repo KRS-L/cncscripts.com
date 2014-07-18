@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.01b
+// @version        3.02b
 // @author         WildKatana | Updated by CodeEcho, PythEch, Matthias Fuchs, Enceladus, KRS_L, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -181,7 +181,7 @@
 							repair : null, // buttonUnlockRepair
 							unlockReset : null, // buttonUnlockReset
 							tools : null, // buttonTools
-							//refreshStats : null, // buttonRefreshStats
+							refreshStats : null, // buttonRefreshStats
 							formationReset : null, // buttonResetFormation
 							flipVertical : null, // buttonFlipVertical
 							flipHorizontal : null, // buttonFlipHorizontal
@@ -669,7 +669,7 @@
 								column : 0
 							});
 
-							/*this.buttons.attack.refreshStats = new qx.ui.form.Button(lang("Refresh"));
+							this.buttons.attack.refreshStats = new qx.ui.form.Button(lang("Refresh"));
 							this.buttons.attack.refreshStats.set({
 								width : 58,
 								appearance : "button-text-small",
@@ -679,7 +679,7 @@
 							container.add(this.buttons.attack.refreshStats, {
 								row : 0,
 								column : 1
-							});*/
+							});
 
 							// The Enemy Vertical Box
 							var container = new qx.ui.container.Composite();
@@ -2207,7 +2207,7 @@
 							if (!this.getAllUnitsDeactivated() && ownCity.GetOffenseConditionInPercent() > 0) {
 								this.timerStart();
 								ClientLib.API.Battleground.GetInstance().SimulateBattle();
-								//this.buttons.attack.refreshStats.setEnabled(false);
+								this.buttons.attack.refreshStats.setEnabled(false);
 								this.buttons.attack.toolbarRefreshStats.setEnabled(false);
 								this.buttons.attack.simulate.setEnabled(false);
 								this.labels.countDown.setWidth(110);
@@ -2225,7 +2225,7 @@
 							_this.labels.countDown.setWidth(_this.labels.countDown.getWidth() - 11);
 							if (_this.count <= 0) {
 								clearInterval(_this.counter);
-								//_this.buttons.attack.refreshStats.setEnabled(true);
+								_this.buttons.attack.refreshStats.setEnabled(true);
 								_this.buttons.attack.toolbarRefreshStats.setEnabled(true);
 
 								if (_this.warningIcon) {
@@ -2472,7 +2472,7 @@
 					ownCityChangeHandler : function (oldId, newId) {
 						console.log("CurrentOwnChange event");
 						if (this._armyBarContainer.isVisible()) {
-							//this.buttons.attack.refreshStats.setEnabled(false);
+							this.buttons.attack.refreshStats.setEnabled(false);
 							this.buttons.attack.toolbarRefreshStats.setEnabled(false);
 							this.buttons.attack.simulate.setEnabled(false);
 							this.onCityLoadComplete();
@@ -2485,7 +2485,7 @@
 						//console.log("ViewModeChange event");
 						this.curViewMode = newMode;
 						this.buttons.attack.simulate.setEnabled(false);
-						//this.buttons.attack.refreshStats.setEnabled(false);
+						this.buttons.attack.refreshStats.setEnabled(false);
 						this.buttons.attack.toolbarRefreshStats.setEnabled(false);
 						try {
 
@@ -2679,7 +2679,7 @@
 									//console.log("Target in range");
 									this.buttons.attack.simulate.setEnabled(true);
 									if (this.count <= 0) {
-										//this.buttons.attack.refreshStats.setEnabled(true);
+										this.buttons.attack.refreshStats.setEnabled(true);
 										this.buttons.attack.toolbarRefreshStats.setEnabled(true);
 									}
 								} else {
@@ -2704,7 +2704,7 @@
 								var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
 								if (!this.getAllUnitsDeactivated() && ownCity.GetOffenseConditionInPercent() > 0) {
 									ClientLib.API.Battleground.GetInstance().SimulateBattle();
-									//this.buttons.attack.refreshStats.setEnabled(false);
+									this.buttons.attack.refreshStats.setEnabled(false);
 									this.buttons.attack.toolbarRefreshStats.setEnabled(false);
 									this.buttons.attack.simulate.setEnabled(false);
 									this.labels.countDown.setWidth(110);
