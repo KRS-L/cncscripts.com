@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.02b
+// @version        3.03b
 // @author         WildKatana | Updated by CodeEcho, PythEch, Matthias Fuchs, Enceladus, KRS_L, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -420,6 +420,17 @@
 							this._armyBarContainer = this._Application.getArmySetupAttackBar();
 							this._armyBar = this._Application.getUIItem(ClientLib.Data.Missions.PATH.BAR_ATTACKSETUP);
 
+							// Fix Defense Bonus Rounding
+							for (var key in ClientLib.Data.City.prototype) {
+									if (typeof ClientLib.Data.City.prototype[key] === 'function') {
+										var strFunction = ClientLib.Data.City.prototype[key].toString();
+										if (strFunction.indexOf("Math.floor(a.adb)") > -1) {
+											ClientLib.Data.City.prototype[key] = this.fixBonusRounding(ClientLib.Data.City.prototype[key], "a");
+											break;
+										}
+									}
+								}
+
 							// Event Handlers
 							phe.cnc.Util.attachNetEvent(ClientLib.API.Battleground.GetInstance(), "OnSimulateBattleFinished", ClientLib.API.OnSimulateBattleFinished, this, this.onSimulateBattleFinishedEvent);
 							phe.cnc.Util.attachNetEvent(this._VisMain, "ViewModeChange", ClientLib.Vis.ViewModeChange, this, this.viewChangeHandler);
@@ -637,6 +648,18 @@
 							console.log(e);
 						}
 					},
+					fixBonusRounding: function (bonus, data) {
+							try {
+								if (data == null) data = "";
+								var strFunction = bonus.toString();
+								strFunction = strFunction.replace("floor", "round");
+								var functionBody = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
+								var fn = Function(data, functionBody);
+								return fn;
+							} catch (e) {
+								console.log("fixBonusRounding error: ", e);
+							}
+						},
 					initializeStats : function (tabView) {
 						try {
 							////////////////// Stats ////////////////////
@@ -2440,7 +2463,7 @@
 							_this._armyBar.add(_this.buttons.attack.repair);
 						}, 5000);
 					},
-					calculateDefenseBonus : function (context, data) {
+					/*calculateDefenseBonus : function (context, data) {
 						try {
 							var score = data.rpois[6].s;
 							var rank = data.rpois[6].r;
@@ -2448,7 +2471,7 @@
 						} catch (e) {
 							console.log(e);
 						}
-					},
+					},*/
 					hideAll : function () {
 						if (this.buttons.attack.repairMode.getValue())
 							this.buttons.attack.repairMode.execute();
@@ -2568,11 +2591,12 @@
 											var cityFaction = currentcity.get_CityFaction();
 											this.view.playerCity = cityFaction === ClientLib.Base.EFactionType.GDIFaction || cityFaction === ClientLib.Base.EFactionType.NODFaction;
 											if (this.view.playerCity) {
-												var cityAllianceId = currentcity.get_OwnerAllianceId();
+												this.view.playerCityDefenseBonus = currentcity.get_AllianceDefenseBonus();
+												/*var cityAllianceId = currentcity.get_OwnerAllianceId();
 												ClientLib.Net.CommunicationManager.GetInstance().SendSimpleCommand("GetPublicAllianceInfo", {
 													id : cityAllianceId
-												}, phe.cnc.Util.createEventDelegate(ClientLib.Net.CommandResult, this, this.calculateDefenseBonus), null);
-											}											
+												}, phe.cnc.Util.createEventDelegate(ClientLib.Net.CommandResult, this, this.calculateDefenseBonus), null);*/
+											}
 										}
 										this.targetCityId = currentcity.get_Id();
 									}
