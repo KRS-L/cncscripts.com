@@ -3,10 +3,8 @@
 // @description Implements a new TradeOverlay class, allowing you to select individual, multiple or all bases to transfer resources from
 // @namespace NewTradeOverlay
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.4.7
+// @version 1.4.8
 // @author Chiantii
-// @updateURL https://userscripts.org/scripts/source/168297.meta.js
-// @downloadURL https://userscripts.org/scripts/source/168297.user.js
 // ==/UserScript==
 (function () {
 	var NewTradeOverlay_main = function () {
@@ -761,7 +759,6 @@
 		function NewTradeOverlay_checkIfLoaded() {
 			try {
 				if (typeof qx !== 'undefined' && typeof qx.locale !== 'undefined' && typeof qx.locale.Manager !== 'undefined' && typeof webfrontend.gui.trade.TradeOverlay !== 'undefined') {
-					qx.Class.undefine("webfrontend.gui.trade.TradeOverlay");
 					CreateNewTradeOverlay();
 				} else {
 					window.setTimeout(NewTradeOverlay_checkIfLoaded, 1000);
