@@ -3,7 +3,7 @@
 // @description Implements a new TradeOverlay class, allowing you to select individual, multiple or all bases to transfer resources from
 // @namespace NewTradeOverlay
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.4.6
+// @version 1.4.7
 // @author Chiantii
 // @updateURL https://userscripts.org/scripts/source/168297.meta.js
 // @downloadURL https://userscripts.org/scripts/source/168297.user.js
@@ -526,6 +526,7 @@
 						} else {
 							this.largeTiberiumImage.setSource("webfrontend/ui/common/icon_res_large_crystal.png");
 						}
+						this.selectAllNoneButton.setLabel(qx.locale.Manager.tr("tnf:select all"));
 						this.MaintainTradeWindow();
 					},
 					ResourceAmountChanged : function () {
@@ -545,7 +546,7 @@
 									this.totalTransferAmount += cities[this.transferWindowTableSelectedRows[base].ID].CalculateTradeCostToCoord(selectedCity.get_PosX(), selectedCity.get_PosY(), this.transferWindowTableSelectedRows[base].Amount * this.modifier);
 								}
 							} else {
-								this.totalTransferAmount += cities[this.selectedRowData.ID].CalculateTradeCostToCoord(selectedCity.get_PosX(), selectedCity.get_PosY(), parseInt(this.transferAmountTextField.getValue().replace(/[,.\s]/g, '')));
+								this.totalTransferAmount += cities[this.selectedRowData.ID].CalculateTradeCostToCoord(selectedCity.get_PosX(), selectedCity.get_PosY(), parseInt(this.transferAmountTextField.getValue().replace(/[^0-9]/g, '')));
 							}
 							return this.totalTransferAmount;
 						}
@@ -612,7 +613,7 @@
 									if (currentBase != null && currentBase.CanTrade() == ClientLib.Data.ETradeError.None && currentCity.CanTrade() == ClientLib.Data.ETradeError.None) {
 										this.tradeButton.setEnabled(false);
 										if (this.transferWindowTableSelectedRows.length == 1) {
-											transferAmount = parseInt(this.transferAmountTextField.getValue().replace(/[,.\s]/g, ''));
+											transferAmount = parseInt(this.transferAmountTextField.getValue().replace(/[^0-9]/g, ''));
 										} else {
 											transferAmount = parseInt(this.transferWindowTableSelectedRows[base].Amount * this.modifier, 10);
 										}
@@ -632,6 +633,7 @@
 								this.tradeWindowTable.resetCellFocus();
 								this.transferWindowTableSelectedRows = [];
 								this.transferAmountTextField.setValue("");
+								this.selectAllNoneButton.setLabel(qx.locale.Manager.tr("tnf:select all"));
 								this.SetCostLabel();
 							}
 						}
@@ -695,7 +697,7 @@
 
 						if (this.transferWindowTableSelectedRows.length > 0) {
 
-							var resourcesInTextField = parseInt(this.transferAmountTextField.getValue().replace(/[,.\s]/g, ''));
+							var resourcesInTextField = parseInt(this.transferAmountTextField.getValue().replace(/[^0-9]/g, ''));
 							var tradeCost = this.CalculateTradeCost();
 							var playerCreditCount = ClientLib.Data.MainData.GetInstance().get_Player().GetCreditsCount();
 
