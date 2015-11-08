@@ -3,7 +3,7 @@
 // @description Implements a new TradeOverlay class, allowing you to select individual, multiple or all bases to transfer resources from
 // @namespace NewTradeOverlay
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.4.8
+// @version 1.4.9
 // @author Chiantii
 // ==/UserScript==
 (function () {
@@ -243,7 +243,13 @@
 							columnVisibilityButtonVisible : false,
 							maxHeight : 300
 						});
-						this.tradeWindowTable.addListener("cellClick", this.TradeWindowTableCellClick, this);
+						
+						if (PerforceChangelist >= 436669) { // 15.3 patch
+							var eventType = "cellTap";
+						} else { //old
+							var eventType = "cellClick";
+						}
+						this.tradeWindowTable.addListener(eventType, this.TradeWindowTableCellClick, this);
 						this.tradeWindowTable.getSelectionModel().setSelectionMode(qx.ui.table.selection.Model.MULTIPLE_INTERVAL_SELECTION);
 						this.tradeWindowTable.setDataRowRenderer(new webfrontend.gui.trade.TradeBaseTableRowRenderer(this.tradeWindowTable));
 						this.tradeWindowTable.showCellToolTip = true;
