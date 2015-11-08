@@ -3,17 +3,15 @@
 // @namespace   http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @description Maelstrom ADDON Basescanner
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.4
+// @version     1.8.5
 // @author      BlinDManX
 // @grant       none
 // @copyright   2012+, Claus Neumann
 // @license     CC BY-NC-ND 3.0 - http://creativecommons.org/licenses/by-nc-nd/3.0/
-// @updateURL   https://userscripts.org/scripts/source/145168.meta.js
-// @downloadURL https://userscripts.org/scripts/source/145168.user.js
 // ==/UserScript==
 (function () {
 	var MaelstromTools_Basescanner = function () {
-		window.__msbs_version = "1.8.4";
+		window.__msbs_version = "1.8.5";
 		function createMaelstromTools_Basescanner() {
 
 			qx.Class.define("Addons.BaseScannerGUI", {
@@ -175,9 +173,18 @@
 								}));
 							tcm.setDataCellRenderer(19, new qx.ui.table.cellrenderer.Boolean());
 
-							this.ZN.addListener("cellDblclick", function (e) {
+							
+							if (PerforceChangelist >= 436669) { // 15.3 patch
+								var eventType = "cellDbltap";
+							} else { //old
+								var eventType = "cellDblclick";
+							}
+				
+							this.ZN.addListener(eventType, function (e) {
 								Addons.BaseScannerGUI.getInstance().FB(e);
 							}, this);
+
+							
 							tcm.addListener("widthChanged", function (e) {
 								//console.log(e, e.getData());
 								var col = e.getData().col;
