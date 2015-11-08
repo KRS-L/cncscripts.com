@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.3.4
+// @version     0.1.3.5
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -2802,28 +2802,34 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                 this.HT_Tables = [];
                 this.HT_Pages = [];
 
+				if (PerforceChangelist >= 436669) { // 15.3 patch
+					var eventType = "cellTap";
+				} else { //old
+					var eventType = "cellClick";
+				}
+				
                 this.createTabPage(ClientLib.Base.EResourceType.Tiberium);
                 this.createTable(ClientLib.Base.EResourceType.Tiberium);
-                this.HT_Tables[ClientLib.Base.EResourceType.Tiberium].addListener("cellClick", function (e) {
+                this.HT_Tables[ClientLib.Base.EResourceType.Tiberium].addListener(eventType, function (e) {
                   this.upgradeBuilding(e, ClientLib.Base.EResourceType.Tiberium);
                 }, this);
 
 
                 this.createTabPage(ClientLib.Base.EResourceType.Crystal);
                 this.createTable(ClientLib.Base.EResourceType.Crystal);
-                this.HT_Tables[ClientLib.Base.EResourceType.Crystal].addListener("cellClick", function (e) {
+                this.HT_Tables[ClientLib.Base.EResourceType.Crystal].addListener(eventType, function (e) {
                   this.upgradeBuilding(e, ClientLib.Base.EResourceType.Crystal);
                 }, this);
 
                 this.createTabPage(ClientLib.Base.EResourceType.Power);
                 this.createTable(ClientLib.Base.EResourceType.Power);
-                this.HT_Tables[ClientLib.Base.EResourceType.Power].addListener("cellClick", function (e) {
+                this.HT_Tables[ClientLib.Base.EResourceType.Power].addListener(eventType, function (e) {
                   this.upgradeBuilding(e, ClientLib.Base.EResourceType.Power);
                 }, this);
 
                 this.createTabPage(ClientLib.Base.EResourceType.Gold);
                 this.createTable(ClientLib.Base.EResourceType.Gold);
-                this.HT_Tables[ClientLib.Base.EResourceType.Gold].addListener("cellClick", function (e) {
+                this.HT_Tables[ClientLib.Base.EResourceType.Gold].addListener(eventType, function (e) {
                   this.upgradeBuilding(e, ClientLib.Base.EResourceType.Gold);
                 }, this);
 
