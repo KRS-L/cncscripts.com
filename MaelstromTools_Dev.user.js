@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.3.5
+// @version     0.1.3.6
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -1139,7 +1139,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                 MaelstromTools.Util.addElement(this.Widget, rowIdx++, colIdx, chkAutoRepairBuildings, 2);
 
                 var applyButton = new qx.ui.form.Button(Lang.gt("Apply changes")).set({
-                  appearance: "button-detailview-small",
+                  appearance: "button-addpoints",
                   width: 120,
                   minWidth: 120,
                   maxWidth: 120
@@ -1147,7 +1147,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                 applyButton.addListener("execute", this.applyChanges, this);
 
                 var cancelButton = new qx.ui.form.Button(Lang.gt("Discard changes")).set({
-                  appearance: "button-detailview-small",
+                  appearance: "button-addpoints",
                   width: 120,
                   minWidth: 120,
                   maxWidth: 120
@@ -1157,7 +1157,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                 }, this);
 
                 var resetButton = new qx.ui.form.Button(Lang.gt("Reset to default")).set({
-                  appearance: "button-detailview-small",
+                  appearance: "button-addpoints",
                   width: 120,
                   minWidth: 120,
                   maxWidth: 120
@@ -2177,7 +2177,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
             getAccessBaseButton: function (cityName, viewMode) {
               try {
                 var cityButton = new qx.ui.form.Button(null, MT_Base.images["AccessBase"]).set({
-                  appearance: "button-detailview-small",
+                  appearance: "button-addpoints",
                   toolTipText: Lang.gt("Access") + " " + cityName,
                   width: 20,
                   height: 20,
@@ -2197,7 +2197,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
             getFocusBaseButton: function (cityName) {
               try {
                 var cityButton = new qx.ui.form.Button(null, MT_Base.images["FocusBase"]).set({
-                  appearance: "button-detailview-small",
+                  appearance: "button-addpoints",
                   toolTipText: Lang.gt("Focus on") + " " + cityName,
                   width: 20,
                   height: 20,
