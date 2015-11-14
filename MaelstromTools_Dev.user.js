@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.3.7
+// @version     0.1.3.8
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -74,38 +74,38 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               this.Data["Base resources"] = ["Basis Ressourcen", "Recursos base", "ressources de base", "Üs önizlemesi"][l];
               this.Data["Main menu"] = ["Hauptmenü", "Menu Principal", "menu principal", "Ana menü"][l];
               this.Data["Repair all units"] = ["Alle Einheiten reparieren", "Reparar todas as unidades", "Réparer toutes les unités", "Tüm üniteleri onar"][l];
-              this.Data["Repair all defense buildings"] = ["Alle Verteidigungsgebäude reparieren", "Reparar todos os edifícios de defesa", "Réparer tous les bâtiments de défense", "Tüm savunma binalarını onar"][l];
-              this.Data["Repair all buildings"] = ["Alle Gebäurde reparieren", "Reparar todos os edifícios", "Réparer tous les bâtiments", "Tüm binaları onar"][l];
+              this.Data["Repair all defense buildings"] = ["Alle Verteidigungsgebäude reparieren", "Reparar todos os edifícios de defesa", "Réparer tous les bâtiments de défense", "Tüm savunma binalarini onar"][l];
+              this.Data["Repair all buildings"] = ["Alle Gebäurde reparieren", "Reparar todos os edifícios", "Réparer tous les bâtiments", "Tüm binalari onar"][l];
               this.Data["Base status overview"] = ["Basisübersicht", "Estado geral da base", "aperçu de l'état de base", "Üs durumu önizlemesi"][l];
-              this.Data["Upgrade priority overview"] = ["Upgrade Übersicht", "Prioridade de upgrades", "aperçu des priorités de mise à niveau", "Yükseltme önceliği önizlemesi"][l];
-              this.Data["MaelstromTools Preferences"] = ["MaelstromTools Einstellungen", "Preferências de MaelstromTools", "Préférences MaelstromTools", "MaelstromTools Ayarları"][l];
+              this.Data["Upgrade priority overview"] = ["Upgrade Übersicht", "Prioridade de upgrades", "aperçu des priorités de mise à niveau", "Yükseltme önceligi önizlemesi"][l];
+              this.Data["MaelstromTools Preferences"] = ["MaelstromTools Einstellungen", "Preferências de MaelstromTools", "Préférences MaelstromTools", "MaelstromTools Ayarlari"][l];
               this.Data["Options"] = ["Einstellungen", "Opções", "Options", "Seçenekler"][l];
               this.Data["Target out of range, no resource calculation possible"] = ["Ziel nicht in Reichweite, kann die plünderbaren Ressourcen nicht berechnen", "Alvo fora do alcance, não é possivel calcular os recursos", "Cible hors de portée, pas de calcul de ressources possible",
-			  "Hedef menzil dışında, kaynak hesaplaması olanaksız"][l];
-              this.Data["Lootable resources"] = ["Plünderbare Ressourcen", "Recursos roubáveis", "Ressources à piller", "Yağmalanabilir kaynaklar"][l];
-              this.Data["per CP"] = ["pro KP", "por PC", "par PC", "KP başına"][l];
-              this.Data["2nd run"] = ["2. Angriff", "2º ataque", "2° attaque", "2. saldırı"][l];
-              this.Data["3rd run"] = ["3. Angriff", "3º ataque", "3° attaque", "3. saldırı"][l];
-              this.Data["Calculating resources..."] = ["Berechne plünderbare Ressourcen...", "A calcular recursos...", "calcul de ressources ...", "Kaynaklar hesaplanıyor..."][l];
+			  "Hedef menzil disinda, kaynak hesaplamasi olanaksiz"][l];
+              this.Data["Lootable resources"] = ["Plünderbare Ressourcen", "Recursos roubáveis", "Ressources à piller", "Yagmalanabilir kaynaklar"][l];
+              this.Data["per CP"] = ["pro KP", "por PC", "par PC", "KP basina"][l];
+              this.Data["2nd run"] = ["2. Angriff", "2º ataque", "2° attaque", "2. saldiri"][l];
+              this.Data["3rd run"] = ["3. Angriff", "3º ataque", "3° attaque", "3. saldiri"][l];
+              this.Data["Calculating resources..."] = ["Berechne plünderbare Ressourcen...", "A calcular recursos...", "calcul de ressources ...", "Kaynaklar hesaplaniyor..."][l];
               this.Data["Next MCV"] = ["MBF", "MCV", "VCM"][l];
-              this.Data["Show time to next MCV"] = ["Zeige Zeit bis zum nächsten MBF", "Mostrar tempo restante até ao próximo MCV", "Afficher l'heure pour le prochain VCM ", "Sırdaki MCV için gereken süreyi göster"][l];
-              this.Data["Show lootable resources (restart required)"] = ["Zeige plünderbare Ressourcen (Neustart nötig)", "Mostrar recursos roubáveis (é necessário reiniciar)", "Afficher les ressources fouiller (redémarrage nécessaire)", "Yağmalanabilir kaynakları göster (yeniden başlatma gerekli)"][l];
-              this.Data["Use dedicated Main Menu (restart required)"] = ["Verwende extra Hauptmenü (Neustart nötig)", "Usar botão para o Menu Principal (é necessário reiniciar)", "Utiliser dédiée du menu principal (redémarrage nécessaire)", "Ana menü tuşunu kullan (yeniden başlatma gerekli)"][l];
+              this.Data["Show time to next MCV"] = ["Zeige Zeit bis zum nächsten MBF", "Mostrar tempo restante até ao próximo MCV", "Afficher l'heure pour le prochain VCM ", "Sirdaki MCV için gereken süreyi göster"][l];
+              this.Data["Show lootable resources (restart required)"] = ["Zeige plünderbare Ressourcen (Neustart nötig)", "Mostrar recursos roubáveis (é necessário reiniciar)", "Afficher les ressources fouiller (redémarrage nécessaire)", "Yagmalanabilir kaynaklari göster (yeniden baslatma gerekli)"][l];
+              this.Data["Use dedicated Main Menu (restart required)"] = ["Verwende extra Hauptmenü (Neustart nötig)", "Usar botão para o Menu Principal (é necessário reiniciar)", "Utiliser dédiée du menu principal (redémarrage nécessaire)", "Ana menü tusunu kullan (yeniden baslatma gerekli)"][l];
               this.Data["Autocollect packages"] = ["Sammle Pakete automatisch", "Auto recolher pacotes", "paquets autocollecté", "Paketleri otomatik topla"][l];
               this.Data["Autorepair units"] = ["Repariere Einheiten automatisch", "Auto reparar o exército", "unités autoréparé", "Üniteleri otomatik onar"][l];
-              this.Data["Autorepair defense (higher prio than buildings)"] = ["Repariere Verteidigung automatisch (höhere Prio als Gebäude)", "Auto reparar defesa (maior prioridade do que os edifícios)", "réparation automatique la défense (priorité plus élevé que les bâtiments) ", "Savunmayı otomatik onar (binalardan daha yüksek öncelikli olarak)"][l];
-              this.Data["Autorepair buildings"] = ["Repariere Gebäude automatisch", "Auto reparar edifícios", "bâtiments autoréparé", "Binaları otomatik onar"][l];
-              this.Data["Automatic interval in minutes"] = ["Auto-Intervall in Minuten", "Intervalo de tempo automático (em minutos)", "intervalle automatique en quelques minutes", "Otomatik toplama aralığı (dk)"][l];
+              this.Data["Autorepair defense (higher prio than buildings)"] = ["Repariere Verteidigung automatisch (höhere Prio als Gebäude)", "Auto reparar defesa (maior prioridade do que os edifícios)", "réparation automatique la défense (priorité plus élevé que les bâtiments) ", "Savunmayi otomatik onar (binalardan daha yüksek öncelikli olarak)"][l];
+              this.Data["Autorepair buildings"] = ["Repariere Gebäude automatisch", "Auto reparar edifícios", "bâtiments autoréparé", "Binalari otomatik onar"][l];
+              this.Data["Automatic interval in minutes"] = ["Auto-Intervall in Minuten", "Intervalo de tempo automático (em minutos)", "intervalle automatique en quelques minutes", "Otomatik toplama araligi (dk)"][l];
               this.Data["Apply changes"] = ["Speichern", "Confirmar", "Appliquer changements", "Uygula"][l];
-              this.Data["Discard changes"] = ["Abbrechen", "Cancelar", "Annuler changements", "İptal"][l];
-              this.Data["Reset to default"] = ["Auf Standard zurücksetzen", "Definições padrão", "Réinitialiser", "Sıfırla"][l];
+              this.Data["Discard changes"] = ["Abbrechen", "Cancelar", "Annuler changements", "Iptal"][l];
+              this.Data["Reset to default"] = ["Auf Standard zurücksetzen", "Definições padrão", "Réinitialiser", "Sifirla"][l];
               this.Data["Continuous"] = ["Kontinuierlich", "Contínua", "continue", "Sürekli"][l];
               this.Data["Bonus"] = ["Pakete", "Bónus", "Bonus", "Bonus"][l];
               this.Data["POI"] = ["POI", "POI", "POI", "POI"][l];
               this.Data["Total / h"] = ["Gesamt / h", "Total / h", "Total / h", "Toplam / sa."][l];
-              this.Data["Repaircharges"] = ["Reparaturzeiten", "Custo de reparação", "frais de réparation", "Onarım maliyeti"][l];
-              this.Data["Repairtime"] = ["Max. verfügbar", "Tempo de reparação", "Temps de réparation", "Onarım süresi"][l];
-              this.Data["Attacks"] = ["Angriffe", "Ataques", "Attaques", "Saldırılar"][l];
+              this.Data["Repaircharges"] = ["Reparaturzeiten", "Custo de reparação", "frais de réparation", "Onarim maliyeti"][l];
+              this.Data["Repairtime"] = ["Max. verfügbar", "Tempo de reparação", "Temps de réparation", "Onarim süresi"][l];
+              this.Data["Attacks"] = ["Angriffe", "Ataques", "Attaques", "Saldirilar"][l];
               this.Data[MaelstromTools.Statics.Infantry] = ["Infanterie", "Infantaria", "Infanterie", "Piyade"][l];
               this.Data[MaelstromTools.Statics.Vehicle] = ["Fahrzeuge", "Veículos", "Vehicule", "Motorlu B."][l];
               this.Data[MaelstromTools.Statics.Aircraft] = ["Flugzeuge", "Aeronaves", "Aviation", "Hava A."][l];
@@ -113,15 +113,15 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               this.Data[MaelstromTools.Statics.Crystal] = ["Kristalle", "Cristal", "Cristal", "Kristal"][l];
               this.Data[MaelstromTools.Statics.Power] = ["Strom", "Potência", "Energie", "Güç"][l];
               this.Data[MaelstromTools.Statics.Dollar] = ["Credits", "Créditos", "Crédit", "Kredi"][l];
-              this.Data[MaelstromTools.Statics.Research] = ["Forschung", "Investigação", "Recherche", "Araştırma"][l];
+              this.Data[MaelstromTools.Statics.Research] = ["Forschung", "Investigação", "Recherche", "Arastirma"][l];
               this.Data["Base"] = ["Basis", "Base", "Base", "Üs"][l];
               this.Data["Defense"] = ["Verteidigung", "Defesa", "Défense", "Savunma"][l];
               this.Data["Army"] = ["Armee", "Exército", "Armée", "Ordu"][l];
               this.Data["Level"] = ["Stufe", "Nível", "Niveau", "Seviye"][l];
               this.Data["Buildings"] = ["Gebäude", "Edifícios", "Bâtiments", "Binalar"][l];
-              this.Data["Health"] = ["Leben", "Vida", "Santé", "Sağlık"][l];
+              this.Data["Health"] = ["Leben", "Vida", "Santé", "Saglik"][l];
               this.Data["Units"] = ["Einheiten", "Unidades", "Unités", "Üniteler"][l];
-              this.Data["Hide Mission Tracker"] = ["Missionsfenster ausblenden", "Esconder janela das Missões", "Cacher la fenêtre de mission", "Görev İzleyicisini Gizle"][l];
+              this.Data["Hide Mission Tracker"] = ["Missionsfenster ausblenden", "Esconder janela das Missões", "Cacher la fenêtre de mission", "Görev Izleyicisini Gizle"][l];
               this.Data["none"] = ["keine", "nenhum", "aucun", "hiçbiri"][l];
               this.Data["Cooldown"] = ["Cooldown", "Relocalização", "Recharge", "Cooldown"][l];
               this.Data["Protection"] = ["Geschützt bis", "Protecção", "Protection", "Koruma"][l];
@@ -131,9 +131,9 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               this.Data["Max. storage"] = ["Max. Kapazität", "Armazenamento Máx.", "Max. de stockage", "Maks. Depo"][l];
               this.Data["Storage full!"] = ["Lager voll!", "Armazenamento cheio!", "Stockage plein", "Depo dolu!"][l];
               this.Data["Storage"] = ["Lagerstand", "Armazenamento", "Stockage", "Depo"][l];
-              this.Data["display only top buildings"] = ["Nur Top-Gebäude anzeigen", "Mostrar apenas melhores edifícios", "afficher uniquement les bâtiments principaux", "yalnızca en iyi binaları göster"][l];
-              this.Data["display only affordable buildings"] = ["Nur einsetzbare Gebäude anzeigen", "Mostrar apenas edíficios acessíveis", "afficher uniquement les bâtiments abordables", "yalnızca satın alınabilir binaları göster"][l];
-              this.Data["City"] = ["Stadt", "Base", "Base", "Şehir"][l];
+              this.Data["display only top buildings"] = ["Nur Top-Gebäude anzeigen", "Mostrar apenas melhores edifícios", "afficher uniquement les bâtiments principaux", "yalnizca en iyi binalari göster"][l];
+              this.Data["display only affordable buildings"] = ["Nur einsetzbare Gebäude anzeigen", "Mostrar apenas edíficios acessíveis", "afficher uniquement les bâtiments abordables", "yalnizca satin alinabilir binalari göster"][l];
+              this.Data["City"] = ["Stadt", "Base", "Base", "Sehir"][l];
               this.Data["Type (coord)"] = ["Typ (Koord.)", "Escrever (coord)", "Type (coord)", "Tip (koord.)"][l];
               this.Data["to Level"] = ["Auf Stufe", "para nível", "à Niveau ", "Seviye için"][l];
               this.Data["Gain/h"] = ["Zuwachs/h", "Melhoria/h", "Gain / h", "Kazanç / sa."][l];
@@ -150,7 +150,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               this.Data["Calibrate support"] = ["Artillerie kalibrieren", "Calibrar apoio", "Calibrer soutien", "Takviyeyi kalibre et"][l];
               this.Data["Access"] = ["Öffne", "Aceder", "Accès ", "Aç"][l];
               this.Data["Focus on"] = ["Zentriere auf", "Concentrar em", "Centré sur", "Odaklan"][l];
-              this.Data["Possible attacks from this base (available CP)"] = ["Mögliche Angriffe (verfügbare KP)", "Possible attacks from this base (available CP)","Possible attacks from this base (available CP)", "Bu üsten yapılması mümkün olan saldırılar (mevcut KP)"][l];
+              this.Data["Possible attacks from this base (available CP)"] = ["Mögliche Angriffe (verfügbare KP)", "Possible attacks from this base (available CP)","Possible attacks from this base (available CP)", "Bu üsten yapilmasi mümkün olan saldirilar (mevcut KP)"][l];
               //this.Data[""] = [""][l];
             },
             get: function (ident) {
@@ -585,10 +585,8 @@ var cd=cr.GetResearchItemFomMdbId(cj);
             runMainTimer: function () {
               try {
                 this.checkForPackages();
-                if (CCTAWrapperIsInstalled()) {
-                  this.checkRepairAllUnits();
-                  this.checkRepairAllBuildings();
-                }
+                this.checkRepairAllUnits();
+                this.checkRepairAllBuildings();
 
                 var missionTracker = typeof (qx.core.Init.getApplication().getMissionsBar) === 'function' ? qx.core.Init.getApplication().getMissionsBar() : qx.core.Init.getApplication().getMissionTracker(); //fix for PerforceChangelist>=376877
                 if (MT_Preferences.Settings.autoHideMissionTracker) {
@@ -724,48 +722,43 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               }
             },
 
-            checkRepairAll: function (visMode, buttonName, button) {
-              try {
+            checkRepairAllUnits: function () {
+			  try {
                 MT_Cache.updateCityCache();
 
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
-                  if (MaelstromTools.Wrapper.CanRepairAll(ncity, visMode)) {
-                    this.addToMainMenu(buttonName, button);
+                  if (ncity.CanRepairAllOffense()) {
+                    this.addToMainMenu("RepairAllUnits", this.buttonRepairAllUnits);
                     return true;
                   }
                 }
 
-                this.removeFromMainMenu(buttonName);
+                this.removeFromMainMenu("RepairAllUnits");
                 return false;
               } catch (e) {
-                console.log("MaelstromTools.checkRepairAll: ", e);
+                console.log("MaelstromTools.checkRepairAllUnits: ", e);
                 return false;
               }
             },
 
-            checkRepairAllUnits: function () {
-              return this.checkRepairAll(ClientLib.Vis.Mode.ArmySetup, "RepairAllUnits", this.buttonRepairAllUnits);
-            },
-
             checkRepairAllBuildings: function () {
-              return this.checkRepairAll(ClientLib.Vis.Mode.City, "RepairAllBuildings", this.buttonRepairAllBuildings);
-            },
-
-            repairAll: function (visMode, buttonName) {
-              try {
+			  try {
                 MT_Cache.updateCityCache();
 
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
-                  if (MaelstromTools.Wrapper.CanRepairAll(ncity, visMode)) {
-                    MaelstromTools.Wrapper.RepairAll(ncity, visMode);
+                  if (ncity.CanRepairAll()) {
+                    this.addToMainMenu("RepairAllBuildings", this.buttonRepairAllBuildings);
+                    return true;
                   }
-
                 }
-                this.removeFromMainMenu(buttonName);
+
+                this.removeFromMainMenu("RepairAllBuildings");
+                return false;
               } catch (e) {
-                console.log("MaelstromTools.repairAll: ", e);
+                console.log("MaelstromTools.checkRepairAllBuildings: ", e);
+                return false;
               }
             },
 
@@ -774,7 +767,16 @@ var cd=cr.GetResearchItemFomMdbId(cj);
             //ClientLib.Data.CityRepair.prototype.RepairAll
             repairAllUnits: function () {
               try {
-                this.repairAll(ClientLib.Vis.Mode.ArmySetup, "RepairAllUnits");
+                MT_Cache.updateCityCache();
+
+                for (var cname in MT_Cache.Cities) {
+                  var ncity = MT_Cache.Cities[cname].Object;
+                  if (ncity.CanRepairAllOffense()) {
+                    ncity.RepairAllOffense();
+                  }
+
+                }
+                this.removeFromMainMenu("RepairAllUnits");
               } catch (e) {
                 console.log("MaelstromTools.repairAllUnits: ", e);
               }
@@ -782,7 +784,16 @@ var cd=cr.GetResearchItemFomMdbId(cj);
 
             repairAllBuildings: function () {
               try {
-                this.repairAll(ClientLib.Vis.Mode.City, "RepairAllBuildings");
+                MT_Cache.updateCityCache();
+
+                for (var cname in MT_Cache.Cities) {
+                  var ncity = MT_Cache.Cities[cname].Object;
+                  if (ncity.CanRepairAll()) {
+                    ncity.RepairAll();
+                  }
+
+                }
+                this.removeFromMainMenu("RepairAllBuildings");
               } catch (e) {
                 console.log("MaelstromTools.repairAllBuildings: ", e);
               }
@@ -2478,39 +2489,6 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               return ClientLib.Data.MainData.GetInstance().get_Cities().GetCity(cityId);
             },
 
-            RepairAll: function (ncity, visMode) {
-              var oldMode = ClientLib.Vis.VisMain.GetInstance().get_Mode();
-              ClientLib.Vis.VisMain.GetInstance().set_Mode(visMode);
-              ncity.RepairAll();
-              ClientLib.Vis.VisMain.GetInstance().set_Mode(oldMode);
-            },
-
-            CanRepairAll: function (ncity, viewMode) {
-              try {
-                /*var oldMode = ClientLib.Vis.VisMain.GetInstance().get_Mode();
-                ClientLib.Vis.VisMain.GetInstance().set_Mode(visMode);
-                var retVal = ncity.CanRepairAll();
-                ClientLib.Vis.VisMain.GetInstance().set_Mode(oldMode);
-                return retVal;*/
-
-                var repairData = ncity.get_CityRepairData();
-                var myRepair = repairData.CanRepair(0, viewMode);
-                repairData.UpdateCachedFullRepairAllCost(viewMode);
-                return ((myRepair != null) && (!ncity.get_IsLocked() || (viewMode != ClientLib.Vis.Mode.ArmySetup)));
-
-                return false;
-              } catch (e) {
-                console.log("MaelstromTools.Wrapper.CanRepairAll: ", e);
-                return false;
-              }
-            },
-            /*GetBuildings: function (cityBuildings) {
-              if (PerforceChangelist >= 376877) { //new
-                return (cityBuildings.get_Buildings() != null ? cityBuildings.get_Buildings().d : null);
-              } else { //old
-                return (cityBuildings.get_Buildings() != null ? cityBuildings.get_Buildings().l : null);
-              }
-            },*/
             GetDefenseUnits: function (cityUnits) {
             //GetDefenseUnits: function () {
               if (PerforceChangelist >= 392583) { //endgame patch
