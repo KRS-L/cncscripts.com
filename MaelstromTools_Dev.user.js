@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.4.2
+// @version     0.1.4.3
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -703,17 +703,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
                   if (ncity.get_CityBuildingsData().get_HasCollectableBuildings()) {
-                    if (MT_Cache.CityCount <= 1) {
-                      var buildings = ncity.get_Buildings().d;
-                      for (var x in buildings) {
-                        var building = buildings[x];
-                        if (building.get_ProducesPackages() && building.get_ReadyToCollect()) {
-                          ClientLib.Net.CommunicationManager.GetInstance().SendCommand("CollectResource",{cityid:ncity.get_Id(), posX:building.get_CoordX(),posY:building.get_CoordY()}, null, null, true);
-                        }
-                      }
-                    } else {
-                      ncity.CollectAllResources();
-                    }
+                    ncity.CollectAllResources();
                   }
                 }
                 this.removeFromMainMenu("CollectAllResources");
@@ -728,7 +718,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
 
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
-				  if (!ncity.get_IsGhostMode() && ncity.get_CityRepairData().CanRepairAll(visMode)) {
+                  if (!ncity.get_IsGhostMode() && ncity.get_CityRepairData().CanRepairAll(visMode)) {
                     this.addToMainMenu(buttonName, button);
                     return true;
                   }
@@ -756,8 +746,8 @@ var cd=cr.GetResearchItemFomMdbId(cj);
 
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
-				  if (!ncity.get_IsGhostMode() && ncity.get_CityRepairData().CanRepairAll(visMode)) {
-					ncity.get_CityRepairData().RepairAll(visMode);
+                  if (!ncity.get_IsGhostMode() && ncity.get_CityRepairData().CanRepairAll(visMode)) {
+                    ncity.get_CityRepairData().RepairAll(visMode);
                   }
 
                 }
