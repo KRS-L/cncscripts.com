@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.4.3
+// @version     0.1.4.4
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -323,6 +323,10 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                   var target = qx.core.Init.getApplication().getOptionsBar(); //getServerBar(); //qx.core.Init.getApplication().getUIItem(ClientLib.Data.Missions.PATH.BAR_APPOINTMENTS);
                   this.mainMenuWindow.placeToWidget(target, true);
                 }
+
+                phe.cnc.Util.attachNetEvent(ClientLib.Data.MainData.GetInstance().get_Cities(), "CurrentOwnChange", ClientLib.Data.CurrentOwnCityChange, this, function () {
+                  MaelstromTools.Cache.getInstance().SelectedBaseForLoot=null;
+                });
 
                 webfrontend.gui.chat.ChatWidget.recvbufsize = MaelstromTools.LocalStorage.get(MaelstromTools.Preferences.CHATHISTORYLENGTH, 64);
                 this.runSecondlyTimer();
