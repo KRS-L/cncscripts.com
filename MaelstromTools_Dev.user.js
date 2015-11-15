@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.3.7
+// @version     0.1.4.2
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -585,10 +585,8 @@ var cd=cr.GetResearchItemFomMdbId(cj);
             runMainTimer: function () {
               try {
                 this.checkForPackages();
-                if (CCTAWrapperIsInstalled()) {
-                  this.checkRepairAllUnits();
-                  this.checkRepairAllBuildings();
-                }
+                this.checkRepairAllUnits();
+                this.checkRepairAllBuildings();
 
                 var missionTracker = typeof (qx.core.Init.getApplication().getMissionsBar) === 'function' ? qx.core.Init.getApplication().getMissionsBar() : qx.core.Init.getApplication().getMissionTracker(); //fix for PerforceChangelist>=376877
                 if (MT_Preferences.Settings.autoHideMissionTracker) {
@@ -730,7 +728,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
 
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
-                  if (MaelstromTools.Wrapper.CanRepairAll(ncity, visMode)) {
+				  if (!ncity.get_IsGhostMode() && ncity.get_CityRepairData().CanRepairAll(visMode)) {
                     this.addToMainMenu(buttonName, button);
                     return true;
                   }
@@ -758,8 +756,8 @@ var cd=cr.GetResearchItemFomMdbId(cj);
 
                 for (var cname in MT_Cache.Cities) {
                   var ncity = MT_Cache.Cities[cname].Object;
-                  if (MaelstromTools.Wrapper.CanRepairAll(ncity, visMode)) {
-                    MaelstromTools.Wrapper.RepairAll(ncity, visMode);
+				  if (!ncity.get_IsGhostMode() && ncity.get_CityRepairData().CanRepairAll(visMode)) {
+					ncity.get_CityRepairData().RepairAll(visMode);
                   }
 
                 }
@@ -2478,39 +2476,6 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               return ClientLib.Data.MainData.GetInstance().get_Cities().GetCity(cityId);
             },
 
-            RepairAll: function (ncity, visMode) {
-              var oldMode = ClientLib.Vis.VisMain.GetInstance().get_Mode();
-              ClientLib.Vis.VisMain.GetInstance().set_Mode(visMode);
-              ncity.RepairAll();
-              ClientLib.Vis.VisMain.GetInstance().set_Mode(oldMode);
-            },
-
-            CanRepairAll: function (ncity, viewMode) {
-              try {
-                /*var oldMode = ClientLib.Vis.VisMain.GetInstance().get_Mode();
-                ClientLib.Vis.VisMain.GetInstance().set_Mode(visMode);
-                var retVal = ncity.CanRepairAll();
-                ClientLib.Vis.VisMain.GetInstance().set_Mode(oldMode);
-                return retVal;*/
-
-                var repairData = ncity.get_CityRepairData();
-                var myRepair = repairData.CanRepair(0, viewMode);
-                repairData.UpdateCachedFullRepairAllCost(viewMode);
-                return ((myRepair != null) && (!ncity.get_IsLocked() || (viewMode != ClientLib.Vis.Mode.ArmySetup)));
-
-                return false;
-              } catch (e) {
-                console.log("MaelstromTools.Wrapper.CanRepairAll: ", e);
-                return false;
-              }
-            },
-            /*GetBuildings: function (cityBuildings) {
-              if (PerforceChangelist >= 376877) { //new
-                return (cityBuildings.get_Buildings() != null ? cityBuildings.get_Buildings().d : null);
-              } else { //old
-                return (cityBuildings.get_Buildings() != null ? cityBuildings.get_Buildings().l : null);
-              }
-            },*/
             GetDefenseUnits: function (cityUnits) {
             //GetDefenseUnits: function () {
               if (PerforceChangelist >= 392583) { //endgame patch
