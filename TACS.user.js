@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.03b
+// @version        3.04b
 // @author         WildKatana | Updated by CodeEcho, PythEch, Matthias Fuchs, Enceladus, KRS_L, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -31,94 +31,94 @@
 		var locale = null;
 		var languages = ["tr_TR", "de_DE", "pt_PT", "it_IT", "nl_NL", "hu_HU", "fr_FR", "fi_FI"]; //en is default
 		var translations = {
-			"Stats" : ["İstatistik", "Statistik", "Estatística", "Statistiche", "Statistieken", "Statisztika", "Statistiques", "Tiedot"],
-			"Enemy Base:" : ["Düşman Üssü:", "Feindliche Basis:", "Base Inimiga:", "Base Nemica:", "Vijandelijke Basis:", "Ellenséges bázis:", "Base Ennemie:", "Vihollisen tukikohta:"],
+			"Stats" : ["Istatistik", "Statistik", "Estatística", "Statistiche", "Statistieken", "Statisztika", "Statistiques", "Tiedot"],
+			"Enemy Base:" : ["Düsman Üssü:", "Feindliche Basis:", "Base Inimiga:", "Base Nemica:", "Vijandelijke Basis:", "Ellenséges bázis:", "Base Ennemie:", "Vihollisen tukikohta:"],
 			"Defences:" : ["Savunma Üniteleri:", "Verteidigung:", "Defesas:", "Difesa:", "Verdediging:", "Védelem:", "Défenses:", "Puolustus:"],
 			"Buildings:" : ["Binalar:", "Gebäude:", "Edifícios:", "Strutture:", "Gebouwen:", "Épületek:", "Bâtiments:", "Rakennelmat:"],
-			"Construction Yard:" : ["Şantiye:", "Bauhof:", "Estaleiro:", "Cantiere:", "Bouwplaats:", "Központ:", "Chantier De Construction:", "Rakennustukikohta:"],
+			"Construction Yard:" : ["Santiye:", "Bauhof:", "Estaleiro:", "Cantiere:", "Bouwplaats:", "Központ:", "Chantier De Construction:", "Rakennustukikohta:"],
 			"Defense Facility:" : ["Savunma Tesisi:", "Verteidigungseinrichtung:", "Instalações de Defesa:", "Stazione di Difesa:", "Defensiefaciliteit:", "Védelmi Bázis:", "Complexe De Défense:", "Puolustuslaitos:"],
 			"Command Center:" : ["Komuta Merkezi:", "Kommandozentrale:", "Centro de Comando:", "Centro di Comando:", "Commandocentrum:", "Parancsnoki központ:", "Centre De Commandement:", "Komentokeskus:"],
-			"Available Repair:" : ["Mevcut Onarım:", "", "", "", "", "", "", "Korjausaikaa jäljellä:"],
-			"Available Attacks:" : ["Mevcut Saldırılar:", "", "", "", "", "", "", "Hyökkäyksiä:"],
+			"Available Repair:" : ["Mevcut Onarim:", "", "", "", "", "", "", "Korjausaikaa jäljellä:"],
+			"Available Attacks:" : ["Mevcut Saldirilar:", "", "", "", "", "", "", "Hyökkäyksiä:"],
 			"Overall:" : ["Tüm Birlikler:", "Gesamt:", "Geral:", "Totale:", "Totaal:", "Áttekintés:", "Total:", "Yhteensä:"],
 			"Infantry:" : ["Piyadeler:", "Infanterie:", "Infantaria:", "Fanteria:", "Infanterie:", "Gyalogság:", "Infanterie:", "Jalkaväki:"],
 			"Vehicle:" : ["Motorlu Birlikler:", "Fahrzeuge:", "Veículos:", "Veicoli:", "Voertuigen:", "Jármu:", "Véhicules:", "Ajoneuvot:"],
-			"Aircraft:" : ["Hava Araçları:", "Flugzeuge:", "Aviões:", "Velivoli:", "Vliegtuigen:", "Légiero:", "Avions:", "Lentokoneet:"],
+			"Aircraft:" : ["Hava Araçlari:", "Flugzeuge:", "Aviões:", "Velivoli:", "Vliegtuigen:", "Légiero:", "Avions:", "Lentokoneet:"],
 			"Outcome:" : ["Sonuç:", "Ergebnis:", "Resultado:", "Esito:", "Uitkomst:", "Eredmény:", "Résultat:", "Lopputulos:"],
 			"Unknown" : ["Bilinmiyor", "Unbekannt", "Desconhecido", "Sconosciuto", "Onbekend", "Ismeretlen", "Inconnu", "Tuntematon"],
-			"Battle Time:" : ["Savaş Süresi:", "Kampfdauer:", "Tempo de Batalha:", "Tempo di Battaglia:", "Gevechtsduur:", "Csata ideje:", "Durée Du Combat:", "Taistelun kesto:"],
-			"Layouts" : ["Diziliş", "Layouts", "Formações", "Formazione", "Indelingen", "Elrendezés", "Dispositions", "Asetelmat"],
+			"Battle Time:" : ["Savas Süresi:", "Kampfdauer:", "Tempo de Batalha:", "Tempo di Battaglia:", "Gevechtsduur:", "Csata ideje:", "Durée Du Combat:", "Taistelun kesto:"],
+			"Layouts" : ["Dizilis", "Layouts", "Formações", "Formazione", "Indelingen", "Elrendezés", "Dispositions", "Asetelmat"],
 			"Load" : ["Yükle", "Laden", "Carregar", "Carica", "Laad", "Töltés", "Charger", "Lataa"],
-			"Load this saved layout." : ["Kayıtlı dizilişi yükle.", "Gespeichertes Layout laden.", "Carregar esta formação guardada.", "Carica questa formazione salvata.", "Laad deze opgeslagen indeling.", "Töltsd be ezt az elmentett elrendezést.", "Charger Cette Disposition.", "Lataa valittu asetelma."],
+			"Load this saved layout." : ["Kayitli dizilisi yükle.", "Gespeichertes Layout laden.", "Carregar esta formação guardada.", "Carica questa formazione salvata.", "Laad deze opgeslagen indeling.", "Töltsd be ezt az elmentett elrendezést.", "Charger Cette Disposition.", "Lataa valittu asetelma."],
 			"Delete" : ["Sil", "Löschen", "Apagar", "Cancella", "Verwijder", "Törlés", "Effacer", "Poista"],
-			"Name: " : ["İsim: ", "Name: ", "Nome: ", "Nome: ", "Naam: ", "Név: ", "Nom: ", "Nimi: "],
-			"Delete this saved layout." : ["Kayıtlı dizilişi sil.", "Gewähltes Layout löschen.", "Apagar esta formação guardada.", "Cancella questa formazione salvata.", "Verwijder deze opgeslagen indeling.", "Töröld ezt az elmentett elrendezést.", "Effacer Cette Disposition.", "Poista valittu asetelma."],
+			"Name: " : ["Isim: ", "Name: ", "Nome: ", "Nome: ", "Naam: ", "Név: ", "Nom: ", "Nimi: "],
+			"Delete this saved layout." : ["Kayitli dizilisi sil.", "Gewähltes Layout löschen.", "Apagar esta formação guardada.", "Cancella questa formazione salvata.", "Verwijder deze opgeslagen indeling.", "Töröld ezt az elmentett elrendezést.", "Effacer Cette Disposition.", "Poista valittu asetelma."],
 			"Save" : ["Kaydet", "Speichern", "Guardar", "Salva", "Opslaan", "Mentés", "Sauvegarder", "Tallenna"],
-			"Save this layout." : ["Bu dizilişi kaydet.", "Layout speichern.", "Guardar esta formação.", "Salva questa formazione.", "Deze indeling opslaan.", "Mentsd el ezt az elrendezést.", "Sauvegarder Cette Disposition.", "Tallenna nykyinen asetelma."],
+			"Save this layout." : ["Bu dizilisi kaydet.", "Layout speichern.", "Guardar esta formação.", "Salva questa formazione.", "Deze indeling opslaan.", "Mentsd el ezt az elrendezést.", "Sauvegarder Cette Disposition.", "Tallenna nykyinen asetelma."],
 			"Info" : ["Bilgi", "Info", "Info", "Info", "Info", "Info", "Infos", "Tietoa"],
 			"Forums" : ["Forum", "Forum", "Fóruns", "Forum", "Forums", "Fórum", "Forums", "Keskustelupalsta"],
 			"Spoils" : ["Ganimetler", "Rohstoffausbeute", "Espólios", "Bottino", "Opbrengst", "Zsákmény", "Butin", "Sotasaalis"],
 			"Options" : ["Seçenekler", "Optionen", "Opções:", "Opzioni:", "Opties:", "Opciók:", "Options:", "Asetukset"],
 			"TACS Options": ["TACS Seçenekleri", "", "", "", "", "", "", ""],
-			"Auto display stats" : ["İstatistik penceresini otomatik olarak göster", "Dieses Fenster automatisch öffnen", "Mostrar esta caixa automaticamente", "Apri automaticamente la finestra Strumenti", "Dit venster automatisch weergeven", "Ezen ablak autómatikus megjelenítése", "Affich. Auto. de cette Fenêtre", "Näytä simuloinnin tiedot automaattisesti"], // need to change translations
-			"Show shift buttons" : ["Kaydırma tuşlarını göster", "Bewegungstasten anzeigen", "Mostrar botões de deslocamento", "Mostra i pulsanti di spostamento", "Verschuifknoppen weergeven", "Eltoló gombok megjelenítése", "Affich. Auto. Boutons de Déplacement", "Näytä armeijan siirtopainikkeet"],
-			"Warning!" : ["Uyarı!", "Warnung!", "Aviso!", "Attenzione!", "Waarschuwing!", "Figyelem!", "Attention!", "Varoitus!"],
+			"Auto display stats" : ["Istatistik penceresini otomatik olarak göster", "Dieses Fenster automatisch öffnen", "Mostrar esta caixa automaticamente", "Apri automaticamente la finestra Strumenti", "Dit venster automatisch weergeven", "Ezen ablak autómatikus megjelenítése", "Affich. Auto. de cette Fenêtre", "Näytä simuloinnin tiedot automaattisesti"], // need to change translations
+			"Show shift buttons" : ["Kaydirma tuslarini göster", "Bewegungstasten anzeigen", "Mostrar botões de deslocamento", "Mostra i pulsanti di spostamento", "Verschuifknoppen weergeven", "Eltoló gombok megjelenítése", "Affich. Auto. Boutons de Déplacement", "Näytä armeijan siirtopainikkeet"],
+			"Warning!" : ["Uyari!", "Warnung!", "Aviso!", "Attenzione!", "Waarschuwing!", "Figyelem!", "Attention!", "Varoitus!"],
 			"Simulate" : ["Simule et", "Simulieren", "Simular", "Simula", "Simuleer", "Szimuláció", "Simuler", "Simuloi"],
-			"Start Combat Simulation" : ["Savaş Simulasyonunu Başlat", "Kampfsimulation starten", "Começar a simalação de combate", "Avvia simulazione", "Start Gevechtssimulatie", "Csata szimuláció elindítása", "Démarrer La Simulation Du Combat", "Aloita taistelun simulaatio"],
+			"Start Combat Simulation" : ["Savas Simulasyonunu Baslat", "Kampfsimulation starten", "Começar a simalação de combate", "Avvia simulazione", "Start Gevechtssimulatie", "Csata szimuláció elindítása", "Démarrer La Simulation Du Combat", "Aloita taistelun simulaatio"],
 			"Setup" : ["Düzen", "Aufstellung", "Configuração", "Setup", "Opzet", "Elrendezés", "Organisation", "Takaisin"],
 			"Return to Combat Setup" : ["Ordu düzenini göster", "Zurück zur Einheitenaufstellung", "Voltar à configuração de combate", "Ritorna alla configurazione", "Keer terug naar Gevechtsopzet", "Vissza az egységek elrendezéséhez", "Retourner à l'Organisation Des Troupes", "Return to Combat Setup"],
 			"Unlock" : ["Kilidi aç", "Freigabe", "Desbloquear", "Sblocca", "Ontgrendel", "Felold", "Debloquer", "Avaa"],
 			//"Tools" : ["Araçlar", "Extras", "Ferramentas", "Strumenti", "Gereedschap", "Eszközök", "Outils", "Työkalut"],
-			"Open Simulator Tools" : ["Simulatör Araçlarını Göster", "Extras öffnen", "Abrir as ferramentas do simulador", "Apri strumenti", "Open Simulator Gereedschap", "Megnyitja a szimulátor információs ablakát", "Ouvrir Les Réglages Du Simulateur", "Avaa simulaattorin työkalut"],
-			"Shift units left" : ["Birlikleri sola kaydır", "Einheiten nach links bewegen", "Deslocar as unidades para a esquerda", "Spostare le unità a sinistra", "Verschuif eenheden links", "Egységek eltolása balra", "Déplacer Les Unités Vers La Gauche", "Siirtää yksikköjä vasemmalle"],
-			"Shift units right" : ["Birlikleri sağa kaydır", "Einheiten nach rechts bewegen", "Deslocar as unidades para a direita", "Spostare le unità a destra", "Verschuif eenheden rechts", "Egységek eltolása jobbra", "Déplacer Les Unités Vers La Droite", "Siirtää yksikköjä oikealle"],
-			"Shift units up" : ["Birlikleri yukarı kaydır", "Einheiten nach oben bewegen", "Deslocar as unidades para cima", "Spostare le unità in alto", "Verschuif eenheden omhoog", "Egységek eltolása fel", "Déplacer Les Unités Vers Le Haut", "Siirtää yksikköjä ylös"],
-			"Shift units down" : ["Birlikleri aşağı kaydır", "Einheiten nach unten bewegen", "Deslocar as unidades para baixo", "Spostare le unità in basso", "Verschuif eenheden omlaag", "Egységek eltolása le", "Déplacer Les Unités Vers Le Bas", "Siirtää yksikköjä alas"],
-			//"Battle Simulator" : ["Savaş Simulatörü", "Kampfsimulator", "Simulador de Combate", "Simulatore", "Gevechtssimulator", "Csata szimulátor", "Simulateur De Combat", "Taistelusimulaattori"],
+			"Open Simulator Tools" : ["Simulatör Araçlarini Göster", "Extras öffnen", "Abrir as ferramentas do simulador", "Apri strumenti", "Open Simulator Gereedschap", "Megnyitja a szimulátor információs ablakát", "Ouvrir Les Réglages Du Simulateur", "Avaa simulaattorin työkalut"],
+			"Shift units left" : ["Birlikleri sola kaydir", "Einheiten nach links bewegen", "Deslocar as unidades para a esquerda", "Spostare le unità a sinistra", "Verschuif eenheden links", "Egységek eltolása balra", "Déplacer Les Unités Vers La Gauche", "Siirtää yksikköjä vasemmalle"],
+			"Shift units right" : ["Birlikleri saga kaydir", "Einheiten nach rechts bewegen", "Deslocar as unidades para a direita", "Spostare le unità a destra", "Verschuif eenheden rechts", "Egységek eltolása jobbra", "Déplacer Les Unités Vers La Droite", "Siirtää yksikköjä oikealle"],
+			"Shift units up" : ["Birlikleri yukari kaydir", "Einheiten nach oben bewegen", "Deslocar as unidades para cima", "Spostare le unità in alto", "Verschuif eenheden omhoog", "Egységek eltolása fel", "Déplacer Les Unités Vers Le Haut", "Siirtää yksikköjä ylös"],
+			"Shift units down" : ["Birlikleri asagi kaydir", "Einheiten nach unten bewegen", "Deslocar as unidades para baixo", "Spostare le unità in basso", "Verschuif eenheden omlaag", "Egységek eltolása le", "Déplacer Les Unités Vers Le Bas", "Siirtää yksikköjä alas"],
+			//"Battle Simulator" : ["Savas Simulatörü", "Kampfsimulator", "Simulador de Combate", "Simulatore", "Gevechtssimulator", "Csata szimulátor", "Simulateur De Combat", "Taistelusimulaattori"],
 			"Total Victory" : ["Mutlak Zafer", "Gesamtsieg", "Vitória Total", "Vittoria Totale", "Totale Overwinning", "Teljes gyozelem", "Victoire Totale", "Totaalinen Voitto"],
 			"Victory" : ["Zafer", "Sieg", "Vitória", "Vittoria", "Overwinning", "Gyozelem", "Victoire", "Voitto"],
 			"Total Defeat" : ["Mutlak Yenilgi", "Totale Niederlage", "Derrota total", "Sconfitta Totale", "Totale Nederlaag", "Teljes vereség", "Défaite Totale", "Total Tappio"],
 			"Support lvl " : ["Takviye seviyesi ", "Stufe Supportwaffe ", "Nível do Suporte ", "Supporto lvl ", "Ondersteuningsniveau ", '"Support" épület szintje ', "Lvl. Du Support ", "Tukitykistön taso "],
 			"Refresh" : ["Yenile", "Erfrischen", "Actualizar", "Rinfrescare", "Verversen", "Felfrissít", "Actualiser", "Päivitä"], //google translate non-PT langs
-			"Refresh Stats" : ["İstatistikleri Yenile", "Erfrischen Statistik", "Estatística", "Rinfrescare Statistiche", "Verversen Statistieken", "Frissítés Stats", "Actualiser Les Stats", "Päivitä tiedot"], //google translate non-PT langs 'refresh' + statistics label
+			"Refresh Stats" : ["Istatistikleri Yenile", "Erfrischen Statistik", "Estatística", "Rinfrescare Statistiche", "Verversen Statistieken", "Frissítés Stats", "Actualiser Les Stats", "Päivitä tiedot"], //google translate non-PT langs 'refresh' + statistics label
 			"Side:" : ["Taraf:", "Seite", "Lado:", "", "Zijde", "", "Côté", "Sijainti:"],
 			"Left" : ["Sol", "Links", "Esquerda", "", "Links", "", "Gauche", "Vasen"],
-			"Right" : ["Sağ", "Rechts", "Direita", "", "Rechts", "", "Droite", "Oikea"],
+			"Right" : ["Sag", "Rechts", "Direita", "", "Rechts", "", "Droite", "Oikea"],
 			"Locks:" : ["Kilitler:", "Freigabe", "Bloquear:", "", "Vergrendelingen:", "", "Vérouiller:", "Varmistimet:"],
-			"Attack" : ["Saldırı", "Angriff", "Atacar", "", "Aanvallen", "", "Attaquer", "Hyökkäys"],
-			"Repair" : ["Onarım", "Reparatur", "Reparar", "", "Repareren", "", "Réparer", "Korjaus"],
-			"Reset" : ["Sıfırla", "", "", "", "", "", "", "Palauta"],
-			"Simulation will be based on most recently refreshed stats!" : ["Simulasyon en son güncellenen istatistiklere göre yapılacaktır!", "Die Simulation basiert auf den zuletzt aktualisierten Stand", "A simulação vai ser baseada na mais recente data!", "", "Simulatie zal gebaseerd worden op meest recentelijke ververste statistieken!", "", "La Simulation sera basée en fonction des dernières stats actualisées !", "Simulaatio suoritetaan viimeisimmän päivityksen tiedoilla!"],
-			"Unlock Attack Button" : ["Saldırı Düğmesinin Kilidini Aç", "Angriffsbutton freigeben", "Desbloquear o botão de ataque", "Sblocca pulsante d'attacco", "Ontgrendel Aanvalsknop", "a Támadás gomb feloldása", "Débloquer Le Bouton d'Attaque", "Poista hyökkäusnapin lukitus"],
-			"Unlock Repair Button" : ["Onarım Düğmesinin Kilidini Aç", "Reparaturbutton freigeben", "Desbloquear botão de reparação", "", "Ontgrendel Repareerknop", "", "Débloquer Le Bouton de Réparation", "Poista korjausnapin lukitus"],
-			"Unlock Reset Button" : ["Sıfırlama Düğmesinin Kilidini Aç", "", "", "", "", "", "", "Avaa Tyhjennä nappi"],
+			"Attack" : ["Saldiri", "Angriff", "Atacar", "", "Aanvallen", "", "Attaquer", "Hyökkäys"],
+			"Repair" : ["Onarim", "Reparatur", "Reparar", "", "Repareren", "", "Réparer", "Korjaus"],
+			"Reset" : ["Sifirla", "", "", "", "", "", "", "Palauta"],
+			"Simulation will be based on most recently refreshed stats!" : ["Simulasyon en son güncellenen istatistiklere göre yapilacaktir!", "Die Simulation basiert auf den zuletzt aktualisierten Stand", "A simulação vai ser baseada na mais recente data!", "", "Simulatie zal gebaseerd worden op meest recentelijke ververste statistieken!", "", "La Simulation sera basée en fonction des dernières stats actualisées !", "Simulaatio suoritetaan viimeisimmän päivityksen tiedoilla!"],
+			"Unlock Attack Button" : ["Saldiri Dügmesinin Kilidini Aç", "Angriffsbutton freigeben", "Desbloquear o botão de ataque", "Sblocca pulsante d'attacco", "Ontgrendel Aanvalsknop", "a Támadás gomb feloldása", "Débloquer Le Bouton d'Attaque", "Poista hyökkäusnapin lukitus"],
+			"Unlock Repair Button" : ["Onarim Dügmesinin Kilidini Aç", "Reparaturbutton freigeben", "Desbloquear botão de reparação", "", "Ontgrendel Repareerknop", "", "Débloquer Le Bouton de Réparation", "Poista korjausnapin lukitus"],
+			"Unlock Reset Button" : ["Sifirlama Dügmesinin Kilidini Aç", "", "", "", "", "", "", "Avaa Tyhjennä nappi"],
 			"SKIP": ["ATLA", "", "", "", "", "", "", ""],
 			"Skip to end" : ["Simulasyonu atla", "Zum Ende Vorspringen", "", "", "", "", "", "Mene loppuun"],
-			"Reset Formation" : ["Dizilişi Sıfırla", "", "", "", "", "", "", "Palauta armeijan oletusasetelma"],
+			"Reset Formation" : ["Dizilisi Sifirla", "", "", "", "", "", "", "Palauta armeijan oletusasetelma"],
 			"Flip Horizontal" : ["Yatay Çevir", "Horizontal Spiegeln", "", "", "", "", "", "Käännä vaakasuunnassa"],
 			"Flip Vertical" : ["Dikey Çevir", "Vertikal Spiegeln", "", "", "", "", "", "Käännä pystysuunnassa"],
-			"Activate All" : ["Hepsini Aktifleştir", "Alle Aktivieren", "", "", "", "", "", "Aktivoi kaikki"],
-			"Deactivate All" : ["Hepsini Deaktifleştir", "Alle Deaktivieren", "", "", "", "", "", "Poista kaikki käytöstä"],
-			"Activate Infantry" : ["Piyadeleri Aktifleştir", "Infanterie Aktivieren", "", "", "", "", "", "Aktivoi jalkaväki"],
-			"Deactivate Infantry" : ["Piyadeleri Deaktifleştir", "Infanterie Deaktivieren", "", "", "", "", "", "Poista jalkaväki käytöstä"],
-			"Activate Vehicles" : ["Motorlu Birlikleri Aktifleştir", "Fahrzeuge Aktivieren", "", "", "", "", "", "Aktivoi ajoneuvot"],
-			"Deactivate Vehicles" : ["Motorlu Birlikleri Deaktifleştir", "Fahrzeuge Deaktivieren", "", "", "", "", "", "Poista ajoneuvot käytöstä"],
-			"Activate Air" : ["Hava Araçlarını Aktifleştir", "Flugzeuge Aktivieren", "", "", "", "", "", "Aktivoi lentokoneet"],
-			"Deactivate Air" : ["Hava Araçlarını Deaktifleştir", "Flugzeuge Deaktivieren", "", "", "", "", "", "Poista lentokoneet käytöstä"],
-			"Activate Repair Mode" : ["Onarım Modunu Aç", "Reparatur Modus Aktivieren", "", "", "", "", "", "Aktivoi korjaustila"],
-			"Deactivate Repair Mode" : ["Onarım Modunu Kapat", "Reparatur Modus Deaktivieren", "", "", "", "", "", "Poista korjaustila käytöstä"],
+			"Activate All" : ["Hepsini Aktiflestir", "Alle Aktivieren", "", "", "", "", "", "Aktivoi kaikki"],
+			"Deactivate All" : ["Hepsini Deaktiflestir", "Alle Deaktivieren", "", "", "", "", "", "Poista kaikki käytöstä"],
+			"Activate Infantry" : ["Piyadeleri Aktiflestir", "Infanterie Aktivieren", "", "", "", "", "", "Aktivoi jalkaväki"],
+			"Deactivate Infantry" : ["Piyadeleri Deaktiflestir", "Infanterie Deaktivieren", "", "", "", "", "", "Poista jalkaväki käytöstä"],
+			"Activate Vehicles" : ["Motorlu Birlikleri Aktiflestir", "Fahrzeuge Aktivieren", "", "", "", "", "", "Aktivoi ajoneuvot"],
+			"Deactivate Vehicles" : ["Motorlu Birlikleri Deaktiflestir", "Fahrzeuge Deaktivieren", "", "", "", "", "", "Poista ajoneuvot käytöstä"],
+			"Activate Air" : ["Hava Araçlarini Aktiflestir", "Flugzeuge Aktivieren", "", "", "", "", "", "Aktivoi lentokoneet"],
+			"Deactivate Air" : ["Hava Araçlarini Deaktiflestir", "Flugzeuge Deaktivieren", "", "", "", "", "", "Poista lentokoneet käytöstä"],
+			"Activate Repair Mode" : ["Onarim Modunu Aç", "Reparatur Modus Aktivieren", "", "", "", "", "", "Aktivoi korjaustila"],
+			"Deactivate Repair Mode" : ["Onarim Modunu Kapat", "Reparatur Modus Deaktivieren", "", "", "", "", "", "Poista korjaustila käytöstä"],
 			"Version: " : ["Sürüm: ", "", "", "", "", "", "", "Versio: "],
-			"Mark saved targets on region map" : ["Kaydedilmiş hedefleri haritada işaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle"], // region view
-			"Enable 'Double-click to (De)activate units'" : ["Çift-tıklama ile birlikleri (de)aktifleştirmeyi etkinleştir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt"],
-			"Show Stats During Attack" : ["İstatistikleri saldırı sırasında göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana"],
-			"Show Stats During Simulation" : ["İstatistikleri simulasyondayken göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana"],
-			"Skip Victory-Popup After Battle" : ["Savaş Bitiminde Zafer Bildirimini Atla", "", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu"],
-			"Stats Window Opacity" : ["İstatistik Penceresi Saydamlığı", "", "", "", "", "", "", "Tiedot -ikkunan läpinäkyvyys"],
-			"Disable Unit Tooltips In Army Formation Manager" : ["Ordu Dizilişi Yöneticisinde Birlik İpuçlarını Gizle", "", "", "", "", "", "", "Poista käytöstä yksiköiden työkaluvihjeet armeijan muodostamisikkunassa"],
-			"Disable Tooltips In Attack Preparation View" : ["Saldırı Hazırlık Görünümünde İpuçlarını Gizle", "", "", "", "", "", "", "Poista työkaluvihjeet käytöstä hyökkäyksen valmisteluikkunassa"],
+			"Mark saved targets on region map" : ["Kaydedilmis hedefleri haritada isaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle"], // region view
+			"Enable 'Double-click to (De)activate units'" : ["Çift-tiklama ile birlikleri (de)aktiflestirmeyi etkinlestir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt"],
+			"Show Stats During Attack" : ["Istatistikleri saldiri sirasinda göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana"],
+			"Show Stats During Simulation" : ["Istatistikleri simulasyondayken göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana"],
+			"Skip Victory-Popup After Battle" : ["Savas Bitiminde Zafer Bildirimini Atla", "", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu"],
+			"Stats Window Opacity" : ["Istatistik Penceresi Saydamligi", "", "", "", "", "", "", "Tiedot -ikkunan läpinäkyvyys"],
+			"Disable Unit Tooltips In Army Formation Manager" : ["Ordu Dizilisi Yöneticisinde Birlik Ipuçlarini Gizle", "", "", "", "", "", "", "Poista käytöstä yksiköiden työkaluvihjeet armeijan muodostamisikkunassa"],
+			"Disable Tooltips In Attack Preparation View" : ["Saldiri Hazirlik Görünümünde Ipuçlarini Gizle", "", "", "", "", "", "", "Poista työkaluvihjeet käytöstä hyökkäyksen valmisteluikkunassa"],
 			"Undo" : ["Geri Al", "", "", "", "", "", "", "Kumoa"],
-			"Redo" : ["İleri Al", "", "", "", "", "", "", "Tee uudelleen"],
-			"Open Stats Window" : ["İstatistik Penceresini Aç", "", "", "", "", "", "", "Avaa tiedot -ikkuna"]
+			"Redo" : ["Ileri Al", "", "", "", "", "", "", "Tee uudelleen"],
+			"Open Stats Window" : ["Istatistik Penceresini Aç", "", "", "", "", "", "", "Avaa tiedot -ikkuna"]
 		};
 
 		function lang(text) {
@@ -3558,6 +3558,22 @@
 								ClientLib.API.Util.GetUnitRepairCosts = fn;
 							}
 
+							// Solution for OnSimulateBattleFinishedEvent issue
+							for (var key in ClientLib.API.Battleground.prototype) {
+								if (typeof ClientLib.API.Battleground.prototype[key] === 'function') {
+									strFunction = ClientLib.API.Battleground.prototype[key].toString();
+									if (strFunction.indexOf("pavmCombatReplay,-1,0,0,0);") > -1) {
+										strFunction = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
+										var re = /.I.[A-Z]{6}.[A-Z]{6}\(.I.[A-Z]{6}.pavmCombatReplay,-1,0,0,0\)\;/;
+										strFunction = strFunction.replace(re, "");
+										console.log(strFunction);
+										var fn = Function('a,b', strFunction);
+										ClientLib.API.Battleground.prototype[key] = fn;
+										break;
+									}
+								}
+							}
+							
 							for (var key in ClientLib.Vis.BaseView.BaseView.prototype) {
 								if (typeof ClientLib.Vis.BaseView.BaseView.prototype[key] === 'function') {
 									strFunction = ClientLib.Vis.BaseView.BaseView.prototype[key].toString();
