@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.08b
+// @version        3.09b
 // @author         WildKatana | Updated by CodeEcho, PythEch, Matthias Fuchs, Enceladus, KRS_L, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -3571,9 +3571,9 @@
 							for (var key in ClientLib.API.Battleground.prototype) {
 								if (typeof ClientLib.API.Battleground.prototype[key] === 'function') {
 									strFunction = ClientLib.API.Battleground.prototype[key].toString();
-									if (strFunction.indexOf("pavmCombatReplay,-1,0,0,0);") > -1) {
+									if (strFunction.indexOf(",-1,0,0,0);") > -1) {
 										strFunction = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
-										var re = /.I.[A-Z]{6}.[A-Z]{6}\(.I.[A-Z]{6}.pavmCombatReplay,-1,0,0,0\)\;/;
+										var re = /.I.[A-Z]{6}.[A-Z]{6}\(.I.[A-Z]{6}.[a-zA-Z]+,-1,0,0,0\)\;/;
 										strFunction = strFunction.replace(re, "");
 										console.log(strFunction);
 										var fn = Function('a,b', strFunction);
