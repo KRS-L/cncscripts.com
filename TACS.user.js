@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.12b
+// @version        3.13b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -146,7 +146,7 @@
 				type : "singleton",
 				extend : qx.core.Object,
 				members : {
-					version : "3.12b",
+					version : "3.13b",
 					// Default settings
 					saveObj : {
 						// section.option
@@ -645,7 +645,7 @@
 							this.setupInterface();
 							this.createBasePlateFunction(ClientLib.Vis.Region.RegionNPCCamp);
 							this.createBasePlateFunction(ClientLib.Vis.Region.RegionNPCBase);
-							this.createBasePlateFunction(ClientLib.Vis.Region.RegionCity);
+							//this.createBasePlateFunction(ClientLib.Vis.Region.RegionCity);
 
 							// Fix armyBar container divs, the mouse has a horrible offset in the armybar when this is enabled
 							// if this worked it would essentially fix a layout bug, shame... using zIndex instead
@@ -1454,7 +1454,10 @@
 										if (BPDebug)
 											console.log("1: " + strFunction);
 
-										var re = /[A-Z]{6}\=\(new \$I.[A-Z]{6}\).[A-Z]{6}\(\$I.[A-Z]{6}.Black/;
+										var re = /[A-Z]{6}\=\(new \$I.[A-Z]{6}\).[A-Z]{6}\(this.[A-Z]{6}\(\)/;
+										//HZNOUV=(new $I.SRJRXT).QBXKKV(this.SMGAYW(),
+
+										//var re = /[A-Z]{6}\=\(new \$I.[A-Z]{6}\).[A-Z]{6}\(\$I.[A-Z]{6}.Black/;
 										//IWZRVB=(new $I.ISZOKO).FDXTHE($I.GIBPLN.Black
 										var strFunction = strFunction.match(re).toString();
 										var basePlate = strFunction.slice(0, 6);
