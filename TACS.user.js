@@ -420,6 +420,26 @@
 							this._PlayArea = this._Application.getPlayArea();
 							this._armyBarContainer = this._Application.getArmySetupAttackBar();
 							this._armyBar = this._Application.getUIItem(ClientLib.Data.Missions.PATH.BAR_ATTACKSETUP);
+							
+							if (PerforceChangelist >= 443425) { // 16.1 patch
+								for (var i in this._armyBarContainer) {
+									if (typeof this._armyBarContainer[i] == "object" && this._armyBarContainer[i] != null && this._armyBarContainer[i].objid == "btn_disable") {
+										console.log(this._armyBarContainer[i].objid);
+										var nativeSimBarDisableButton = this._armyBarContainer[i];
+										break;
+									}
+								}
+								var armyBarChildren = this._armyBar.getChildren();
+								for (var i in armyBarChildren) {
+									if (armyBarChildren[i].$$user_decorator == "pane-armysetup-right") {
+										console.log(armyBarChildren[i].$$user_decorator)
+										var armySetupRight = armyBarChildren[i];
+										armySetupRight.removeAt(1);
+										armySetupRight.addAt(nativeSimBarDisableButton, 1);
+										break;
+									}
+								}
+							}
 
 							// Fix Defense Bonus Rounding
 							for (var key in ClientLib.Data.City.prototype) {
