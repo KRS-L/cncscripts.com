@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.10b
+// @version        3.11b
 // @author         WildKatana | Updated by CodeEcho, PythEch, Matthias Fuchs, Enceladus, KRS_L, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -461,30 +461,32 @@
 							this.buttons.simulate.back = new qx.ui.form.Button(lang("Setup"));
 							this.buttons.simulate.back.set({
 								width : 80,
-								appearance : "button-text-small",
+								height : 24,
+								appearance : "button-addpoints",
 								toolTipText : lang("Return to Combat Setup")
 							});
 							this.buttons.simulate.back.addListener("click", this.returnSetup, this);
 
 							// Skip to end Button
-							this.buttons.simulate.skip = new qx.ui.form.Button(lang("SKIP"));
+							this.buttons.simulate.skip = new qx.ui.form.Button();
 							this.buttons.simulate.skip.set({
-								width : 50,
-								height : 21,
-								appearance : "button-text-small",
+								width : 35,
+								height : 24,
+								appearance : "button-addpoints",
+								icon : "FactionUI/icons/icon_replay_skip.png",
 								toolTipText : lang("Skip to end")
 							});
 							this.buttons.simulate.skip.addListener("click", this.skipSimulation, this);
 
 							var replayBar = this._Application.getReportReplayOverlay();
 							replayBar.add(this.buttons.simulate.back, {
-								top : 12,
-								left : 150
+								top : 21,
+								left : 185
 							});
 							if (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled) {
 								replayBar.add(this.buttons.simulate.skip, {
-									top : 38,
-									left : 460
+									top : 21,
+									left : 435
 								});
 							}
 
