@@ -3,8 +3,8 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.11b
-// @author         WildKatana | Updated by CodeEcho, PythEch, Matthias Fuchs, Enceladus, KRS_L, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
+// @version        3.12b
+// @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
 // ==/UserScript==
@@ -146,6 +146,7 @@
 				type : "singleton",
 				extend : qx.core.Object,
 				members : {
+					version : "3.12b",
 					// Default settings
 					saveObj : {
 						// section.option
@@ -1019,7 +1020,7 @@
 							pVBox.setThemedBackgroundColor("#eef");
 							infoPage.add(pVBox);
 							var proHelpBar = new qx.ui.basic.Label().set({
-									value : "<a target='_blank' href='http://userscripts.org/scripts/discuss/138212'>" + lang("Forums") + "</a>",
+									value : "<a target='_blank' href='http://cncscripts.com/'>cncscripts.com</a>",
 									rich : true
 								});
 							pVBox.add(proHelpBar);
@@ -1423,7 +1424,7 @@
 							pVBox.setThemedBackgroundColor("#eef");
 							options.add(pVBox);
 							var proHelpBar = new qx.ui.basic.Label().set({
-									value : "<a target='_blank' href='http://userscripts.org/scripts/discuss/138212'>" + lang("Forums") + "</a>",
+									value : "<a target='_blank' href='http://cncscripts.com/'>cncscripts.com</a>",
 									rich : true
 								});
 							pVBox.add(proHelpBar);
@@ -1949,6 +1950,7 @@
 								padding : 0,
 								show : "icon",
 								appearance : "button-text-small",
+								enabled : false,
 								toolTipText : "<strong>"+lang("Undo")+"</strong>"
 							});
 							
@@ -1961,6 +1963,7 @@
 								padding : 0,
 								show : "icon",
 								appearance : "button-text-small",
+								enabled : false,
 								toolTipText : "<strong>"+lang("Redo")+"</strong>"
 							});
 							
