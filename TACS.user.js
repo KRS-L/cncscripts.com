@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.13b
+// @version        3.14b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -146,7 +146,7 @@
 				type : "singleton",
 				extend : qx.core.Object,
 				members : {
-					version : "3.13b",
+					version : "3.14b",
 					// Default settings
 					saveObj : {
 						// section.option
@@ -3602,8 +3602,14 @@
 									if (strFunction.indexOf(",-1,0,0,0);") > -1) {
 										strFunction = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
 										var re = /.I.[A-Z]{6}.[A-Z]{6}\(.I.[A-Z]{6}.[a-zA-Z]+,-1,0,0,0\)\;/;
+										//$I.QPYKHN.IVAYJF($I.XIMKGT.pavmCombatSimulation,-1,0,0,0);
 										strFunction = strFunction.replace(re, "");
-										console.log(strFunction);
+										var re2 = /.I.[A-Z]{6}.[A-Z]{6}\(\).[A-Z]{6}\(\).[A-Z]{6}\([a-z].[a-z]\)\;/;
+										//$I.BFALSI.DZYMBX().JLBGOK().KLRGNI(b.d);
+										var temp = strFunction.match(re2).toString();
+										console.log(temp);
+										strFunction = strFunction.replace(re2, "");
+										strFunction = strFunction.replace("}}", "}}" + temp);
 										var fn = Function('a,b', strFunction);
 										ClientLib.API.Battleground.prototype[key] = fn;
 										break;
