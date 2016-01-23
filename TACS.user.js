@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.14b
+// @version        3.21b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -110,6 +110,7 @@
 			"Version: " : ["Sürüm: ", "", "", "", "", "", "", "Versio: "],
 			"Mark saved targets on region map" : ["Kaydedilmiş hedefleri haritada işaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle"], // region view
 			"Enable 'Double-click to (De)activate units'" : ["Çift-tıklama ile birlikleri (de)aktifleştirmeyi etkinleştir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt"],
+			"Show Loot Summary" : ["", "", "", "", "", "", "", ""],
 			"Show Stats During Attack" : ["İstatistikleri saldırı sırasında göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana"],
 			"Show Stats During Simulation" : ["İstatistikleri simulasyondayken göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana"],
 			"Skip Victory-Popup After Battle" : ["Savaş Bitiminde Zafer Bildirimini Atla", "", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu"],
@@ -146,7 +147,7 @@
 				type : "singleton",
 				extend : qx.core.Object,
 				members : {
-					version : "3.14b",
+					version : "3.21b",
 					// Default settings
 					saveObj : {
 						// section.option
@@ -158,6 +159,7 @@
 							battleResultsBoxTop : 125
 						},
 						checkbox : {
+							showLootSummary : true,
 							showStatsDuringAttack : true,
 							showStatsDuringSimulation : true,
 							skipVictoryPopup : false,
@@ -327,6 +329,7 @@
 						repairLock : null,
 						markSavedTargets : null,
 						dblClick2DeActivate : null,
+						showLootSummary : null,
 						showStatsDuringAttack : null,
 						showStatsDuringSimulation : null,
 						skipVictoryPopup : null,
@@ -955,7 +958,9 @@
 							this.resourceSummaryVerticalBox.setLayout(layout);
 							this.resourceSummaryVerticalBox.setThemedFont("bold");
 							this.resourceSummaryVerticalBox.setThemedBackgroundColor("#eef");
-							//this.statsPage.add(this.resourceSummaryVerticalBox);
+							if (this.saveObj.checkbox.showLootSummary) {
+								this.statsPage.add(this.resourceSummaryVerticalBox);
+							}
 							
 							// Research Icon/Label
 							this.labels.resourcesummary.research = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_research_mission.png");
@@ -1367,13 +1372,24 @@
 								column : 2
 							});
 
+							// showLootSummary Checkbox
+							this.options.showLootSummary = new qx.ui.form.CheckBox(lang("Show Loot Summary"));
+							this.options.showLootSummary.saveLocation = "showLootSummary";
+							this.options.showLootSummary.setValue(this.saveObj.checkbox.showLootSummary);
+							this.options.showLootSummary.addListener("click", this.toggleCheckboxOption, this);
+							pssVBox.add(this.options.showLootSummary, {
+								row : 7,
+								column : 0,
+								colSpan : 3
+							});
+							
 							// showStatsDuringAttack Checkbox
 							this.options.showStatsDuringAttack = new qx.ui.form.CheckBox(lang("Show Stats During Attack"));
 							this.options.showStatsDuringAttack.saveLocation = "showStatsDuringAttack";
 							this.options.showStatsDuringAttack.setValue(this.saveObj.checkbox.showStatsDuringAttack);
 							this.options.showStatsDuringAttack.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showStatsDuringAttack, {
-								row : 7,
+								row : 8,
 								column : 0,
 								colSpan : 3
 							});
@@ -1384,7 +1400,7 @@
 							this.options.showStatsDuringSimulation.setValue(this.saveObj.checkbox.showStatsDuringSimulation);
 							this.options.showStatsDuringSimulation.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showStatsDuringSimulation, {
-								row : 8,
+								row : 9,
 								column : 0,
 								colSpan : 3
 							});
@@ -1395,7 +1411,7 @@
 							this.options.skipVictoryPopup.setValue(this.saveObj.checkbox.skipVictoryPopup);
 							this.options.skipVictoryPopup.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.skipVictoryPopup, {
-								row : 9,
+								row : 10,
 								column : 0,
 								colSpan : 3
 							});
@@ -1417,7 +1433,7 @@
 							this.options.disableAttackPreparationTooltips.setValue(this.saveObj.checkbox.disableAttackPreparationTooltips);
 							this.options.disableAttackPreparationTooltips.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.disableAttackPreparationTooltips, {
-								row : 10,
+								row : 11,
 								column : 0,
 								colSpan : 3
 							});
@@ -1428,7 +1444,7 @@
 							this.options.disableArmyFormationManagerTooltips.setValue(this.saveObj.checkbox.disableArmyFormationManagerTooltips);
 							this.options.disableArmyFormationManagerTooltips.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.disableArmyFormationManagerTooltips, {
-								row : 11,
+								row : 12,
 								column : 0,
 								colSpan : 3
 							});
@@ -1436,14 +1452,14 @@
 							this.options.statsOpacityLabel = new qx.ui.basic.Label(lang("Stats Window Opacity"));
 							this.options.statsOpacityLabel.setMarginTop(10);
 							pssVBox.add(this.options.statsOpacityLabel, {
-								row : 12,
+								row : 13,
 								column : 0,
 								colSpan : 3
 							});
 
 							this.options.statsOpacity = new qx.ui.form.Slider();
 							pssVBox.add(this.options.statsOpacity, {
-								row : 13,
+								row : 14,
 								column : 1,
 								colSpan : 2
 							});
@@ -1451,7 +1467,7 @@
 
 							this.options.statsOpacityOutput = new qx.ui.basic.Label(String(this.saveObj.slider.statsOpacity));
 							pssVBox.add(this.options.statsOpacityOutput, {
-								row : 13,
+								row : 14,
 								column : 0
 							});
 
@@ -1487,6 +1503,13 @@
 						this.saveObj.checkbox[tgt.saveLocation] = val;
 						//console.log("this.saveObj.checkbox[\"" + tgt.saveLocation + "\"] = " + this.saveObj.checkbox[tgt.saveLocation]);
 						//console.log("val = " + val);
+						if (tgt == this.options.showLootSummary) {
+							if (this.saveObj.checkbox.showLootSummary) {
+								this.statsPage.add(this.resourceSummaryVerticalBox);
+							} else {
+								this.statsPage.remove(this.resourceSummaryVerticalBox);
+							}
+						}
 						this.saveData();
 					},
 					createBasePlateFunction : function (r) {
