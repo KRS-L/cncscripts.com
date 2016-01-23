@@ -467,6 +467,7 @@
 
 							// Event Handlers
 							phe.cnc.Util.attachNetEvent(ClientLib.API.Battleground.GetInstance(), "OnSimulateBattleFinished", ClientLib.API.OnSimulateBattleFinished, this, this.onSimulateBattleFinishedEvent);
+							phe.cnc.Util.attachNetEvent(ClientLib.API.Battleground.GetInstance(), "OnSimulateCombatReport", ClientLib.API.OnSimulateCombatReport, this, this.OnSimulateCombatReportEvent);
 							phe.cnc.Util.attachNetEvent(this._VisMain, "ViewModeChange", ClientLib.Vis.ViewModeChange, this, this.viewChangeHandler);
 							phe.cnc.Util.attachNetEvent(this._MainData.get_Cities(), "CurrentOwnChange", ClientLib.Data.CurrentOwnCityChange, this, this.ownCityChangeHandler);
 
@@ -2497,11 +2498,6 @@
 						this.updateLabel100time(this.labels.health.vehicle, this.stats.health.vehicle, 1, this.stats.repair.vehicle);
 						// AIR
 						this.updateLabel100time(this.labels.health.aircraft, this.stats.health.aircraft, 1, this.stats.repair.aircraft);
-						// Resource Summary
-						this.labels.resourcesummary.research = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.research);
-						this.labels.resourcesummary.credits = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.credits);
-						this.labels.resourcesummary.crystal = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.crystal);
-						this.labels.resourcesummary.tiberium = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.tiberium);
 						// BATTLE TIME
 						setTimeout(function () {
 							_this.stats.time = _this._VisMain.get_Battleground().get_BattleDuration() / 1000;
@@ -2831,6 +2827,25 @@
 							console.log(e);
 						}
 					},
+					OnSimulateCombatReportEvent : function (data) {
+						this.timerEnd("OnSimulateCombatReportEvent");
+						try {
+							this.stats.resourcesummary.research = 0;
+							this.stats.resourcesummary.credits = 0;
+							this.stats.resourcesummary.crystal = 0;
+							this.stats.resourcesummary.tiberium = 0;
+							
+							
+							// Resource Summary
+							this.labels.resourcesummary.research = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.research);
+							this.labels.resourcesummary.credits = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.credits);
+							this.labels.resourcesummary.crystal = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.crystal);
+							this.labels.resourcesummary.tiberium = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.tiberium);
+						console.log(data);
+						} catch (e) {
+							console.log('OnSimulateCombatReportEvent()', e);
+						}
+					},
 					onSimulateBattleFinishedEvent : function (data) {
 						//console.log("data:");
 						//console.log(data);
@@ -2867,10 +2882,6 @@
 							this.stats.repair.infantry = 0;
 							this.stats.repair.vehicle = 0;
 							this.stats.repair.aircraft = 0;
-							this.stats.resourcesummary.research = 0;
-							this.stats.resourcesummary.credits = 0;
-							this.stats.resourcesummary.crystal = 0;
-							this.stats.resourcesummary.tiberium = 0;
 
 							this.lastSimulation = Date.now();
 							if (this.count == 10) this.counter = setInterval(this.countDownToNextSimulation, 1000);
