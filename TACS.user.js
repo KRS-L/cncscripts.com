@@ -2497,6 +2497,11 @@
 						this.updateLabel100time(this.labels.health.vehicle, this.stats.health.vehicle, 1, this.stats.repair.vehicle);
 						// AIR
 						this.updateLabel100time(this.labels.health.aircraft, this.stats.health.aircraft, 1, this.stats.repair.aircraft);
+						// Resource Summary
+						this.labels.resourcesummary.research = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.research);
+						this.labels.resourcesummary.credits = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.credits);
+						this.labels.resourcesummary.crystal = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.crystal);
+						this.labels.resourcesummary.tiberium = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.tiberium);
 						// BATTLE TIME
 						setTimeout(function () {
 							_this.stats.time = _this._VisMain.get_Battleground().get_BattleDuration() / 1000;
