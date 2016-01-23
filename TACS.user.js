@@ -2828,20 +2828,19 @@
 						}
 					},
 					OnSimulateCombatReportEvent : function (data) {
+						// console.log(data);
 						this.timerEnd("OnSimulateCombatReportEvent");
 						try {
-							this.stats.resourcesummary.research = 0;
-							this.stats.resourcesummary.credits = 0;
-							this.stats.resourcesummary.crystal = 0;
-							this.stats.resourcesummary.tiberium = 0;
-							
-							
 							// Resource Summary
-							this.labels.resourcesummary.research = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.research);
-							this.labels.resourcesummary.credits = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.credits);
-							this.labels.resourcesummary.crystal = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.crystal);
-							this.labels.resourcesummary.tiberium = phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.tiberium);
-						console.log(data);
+							this.stats.resourcesummary.research = data.GetAttackerTotalResourceReceived(ClientLib.Base.EResourceType.ResearchPoints);
+							this.stats.resourcesummary.credits = data.GetAttackerTotalResourceReceived(ClientLib.Base.EResourceType.Gold);
+							this.stats.resourcesummary.crystal = data.GetAttackerTotalResourceReceived(ClientLib.Base.EResourceType.Crystal);
+							this.stats.resourcesummary.tiberium = data.GetAttackerTotalResourceReceived(ClientLib.Base.EResourceType.Tiberium);
+
+							this.labels.resourcesummary.research.setLabel(phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.research));
+							this.labels.resourcesummary.credits.setLabel(phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.credits));
+							this.labels.resourcesummary.crystal.setLabel(phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.crystal));
+							this.labels.resourcesummary.tiberium.setLabel(phe.cnc.gui.util.Numbers.formatNumbersCompact(this.stats.resourcesummary.tiberium));
 						} catch (e) {
 							console.log('OnSimulateCombatReportEvent()', e);
 						}
