@@ -284,6 +284,12 @@
 							overall : null, // enemyTroopStrengthLabel
 							outcome : null // simVictoryLabel
 						},
+						resourcesummary : {
+							research : null,
+							credits : null,
+							crystal : null,
+							tiberium : null
+						},
 						time : null, // simTimeLabel
 						supportLevel : null, // enemySupportLevelLabel
 						countDown : null // countDownLabel
@@ -339,7 +345,7 @@
 					_armyBar : null,
 					attacker_modules : null,
 					defender_modules : null,
-
+					resourceSummaryVerticalBox : null,
 					battleResultsBox : null,
 					optionsWindow : null,
 					statsPage : null,
@@ -930,6 +936,46 @@
 							});
 							this.labels.attacks.available = new qx.ui.basic.Label("CP:- / FR:- / CFR:-");
 							container.add(this.labels.attacks.available, {
+								row : 1,
+								column : 1
+							});
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					initializeResourceStats : function () {
+						try {
+							// Resource Summary Vertical Box
+							this.resourceSummaryVerticalBox = new qx.ui.container.Composite();
+							var layout = new qx.ui.layout.Grid();
+							layout.setColumnAlign(1, "right", "middle");
+							layout.setColumnWidth(0, 90);
+							this.resourceSummaryVerticalBox.setLayout(layout);
+							this.resourceSummaryVerticalBox.setThemedFont("bold");
+							this.resourceSummaryVerticalBox.setThemedBackgroundColor("#eef");
+							this.statsPage.add(this.resourceSummaryVerticalBox);
+							
+							// Research Icon/Label
+							this.labels.resourcesummary.research = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_research_mission.png");
+							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.research, {
+								row : 0,
+								column : 0
+							});
+							// Tiberium Icon/Label
+							this.labels.resourcesummary.tiberium = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_tiberium.png");
+							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.tiberium, {
+								row : 0,
+								column : 1
+							});
+							// Credits Icon/Label
+							this.labels.resourcesummary.credits = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_dollar.png");
+							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.credits, {
+								row : 1,
+								column : 0
+							});
+							// Crystal Icon/Label
+							this.labels.resourcesummary.crystal = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_chrystal.png");
+							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.crystal, {
 								row : 1,
 								column : 1
 							});
