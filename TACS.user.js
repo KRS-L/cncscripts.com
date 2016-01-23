@@ -2862,6 +2862,10 @@
 							this.stats.repair.infantry = 0;
 							this.stats.repair.vehicle = 0;
 							this.stats.repair.aircraft = 0;
+							this.stats.resourcesummary.research = 0;
+							this.stats.resourcesummary.credits = 0;
+							this.stats.resourcesummary.crystal = 0;
+							this.stats.resourcesummary.tiberium = 0;
 
 							this.lastSimulation = Date.now();
 							if (this.count == 10) this.counter = setInterval(this.countDownToNextSimulation, 1000);
