@@ -248,6 +248,12 @@
 							},
 							overall : null // lastEnemyPercentage
 						},
+						resourcesummary : {
+							research : null,
+							credits : null,
+							crystal : null,
+							tiberium : null
+						},
 						time : null,
 						supportLevel : null
 					},
@@ -939,12 +945,7 @@
 								row : 1,
 								column : 1
 							});
-						} catch (e) {
-							console.log(e);
-						}
-					},
-					initializeResourceStats : function () {
-						try {
+							
 							// Resource Summary Vertical Box
 							this.resourceSummaryVerticalBox = new qx.ui.container.Composite();
 							var layout = new qx.ui.layout.Grid();
@@ -953,7 +954,7 @@
 							this.resourceSummaryVerticalBox.setLayout(layout);
 							this.resourceSummaryVerticalBox.setThemedFont("bold");
 							this.resourceSummaryVerticalBox.setThemedBackgroundColor("#eef");
-							this.statsPage.add(this.resourceSummaryVerticalBox);
+							//this.statsPage.add(this.resourceSummaryVerticalBox);
 							
 							// Research Icon/Label
 							this.labels.resourcesummary.research = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_research_mission.png");
