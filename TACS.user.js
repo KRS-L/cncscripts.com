@@ -3,11 +3,12 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.21b
+// @version        3.22b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
 // ==/UserScript==
+window.TACS_version = GM_info.script.version;
 (function () {
 	'use strict';
 	var TASuite_mainFunction = function () {
@@ -147,7 +148,6 @@
 				type : "singleton",
 				extend : qx.core.Object,
 				members : {
-					version : "3.21b",
 					// Default settings
 					saveObj : {
 						// section.option
@@ -1238,7 +1238,7 @@
 							pssVBox.setThemedFont("bold");
 							pssVBox.setThemedBackgroundColor("#eef");
 							options.add(pssVBox);
-							pssVBox.add(new qx.ui.basic.Label(lang("Version: ") + "3.01b"), {
+							pssVBox.add(new qx.ui.basic.Label(lang("Version: ") + window.TACS_version), {
 								row : 0,
 								column : 0,
 								colSpan : 3
