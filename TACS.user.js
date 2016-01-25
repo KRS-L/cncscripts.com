@@ -3,9 +3,9 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.22b
+// @version        3.23b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
-// @translator     TR: PythEch | DE: Matthias Fuchs & Leafy | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
+// @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
 // ==/UserScript==
 window.TACS_version = GM_info.script.version;
@@ -39,8 +39,8 @@ window.TACS_version = GM_info.script.version;
 			"Construction Yard:" : ["Şantiye:", "Bauhof:", "Estaleiro:", "Cantiere:", "Bouwplaats:", "Központ:", "Chantier De Construction:", "Rakennustukikohta:"],
 			"Defense Facility:" : ["Savunma Tesisi:", "Verteidigungseinrichtung:", "Instalações de Defesa:", "Stazione di Difesa:", "Defensiefaciliteit:", "Védelmi Bázis:", "Complexe De Défense:", "Puolustuslaitos:"],
 			"Command Center:" : ["Komuta Merkezi:", "Kommandozentrale:", "Centro de Comando:", "Centro di Comando:", "Commandocentrum:", "Parancsnoki központ:", "Centre De Commandement:", "Komentokeskus:"],
-			"Available Repair:" : ["Mevcut Onarım:", "", "", "", "", "", "", "Korjausaikaa jäljellä:"],
-			"Available Attacks:" : ["Mevcut Saldırılar:", "", "", "", "", "", "", "Hyökkäyksiä:"],
+			"Available Repair:" : ["Mevcut Onarım:", "Verfügbare Reparaturen", "", "", "", "", "", "Korjausaikaa jäljellä:"],
+			"Available Attacks:" : ["Mevcut Saldırılar:", "Verfügbare Angriffe", "", "", "", "", "", "Hyökkäyksiä:"],
 			"Overall:" : ["Tüm Birlikler:", "Gesamt:", "Geral:", "Totale:", "Totaal:", "Áttekintés:", "Total:", "Yhteensä:"],
 			"Infantry:" : ["Piyadeler:", "Infanterie:", "Infantaria:", "Fanteria:", "Infanterie:", "Gyalogság:", "Infanterie:", "Jalkaväki:"],
 			"Vehicle:" : ["Motorlu Birlikler:", "Fahrzeuge:", "Veículos:", "Veicoli:", "Voertuigen:", "Jármu:", "Véhicules:", "Ajoneuvot:"],
@@ -60,7 +60,7 @@ window.TACS_version = GM_info.script.version;
 			"Forums" : ["Forum", "Forum", "Fóruns", "Forum", "Forums", "Fórum", "Forums", "Keskustelupalsta"],
 			"Spoils" : ["Ganimetler", "Rohstoffausbeute", "Espólios", "Bottino", "Opbrengst", "Zsákmény", "Butin", "Sotasaalis"],
 			"Options" : ["Seçenekler", "Optionen", "Opções:", "Opzioni:", "Opties:", "Opciók:", "Options:", "Asetukset"],
-			"TACS Options": ["TACS Seçenekleri", "", "", "", "", "", "", ""],
+			"TACS Options": ["TACS Seçenekleri", "TACS Optionen", "", "", "", "", "", ""],
 			"Auto display stats" : ["İstatistik penceresini otomatik olarak göster", "Dieses Fenster automatisch öffnen", "Mostrar esta caixa automaticamente", "Apri automaticamente la finestra Strumenti", "Dit venster automatisch weergeven", "Ezen ablak autómatikus megjelenítése", "Affich. Auto. de cette Fenêtre", "Näytä simuloinnin tiedot automaattisesti"], // need to change translations
 			"Show shift buttons" : ["Kaydırma tuşlarını göster", "Bewegungstasten anzeigen", "Mostrar botões de deslocamento", "Mostra i pulsanti di spostamento", "Verschuifknoppen weergeven", "Eltoló gombok megjelenítése", "Affich. Auto. Boutons de Déplacement", "Näytä armeijan siirtopainikkeet"],
 			"Warning!" : ["Uyarı!", "Warnung!", "Aviso!", "Attenzione!", "Waarschuwing!", "Figyelem!", "Attention!", "Varoitus!"],
@@ -88,14 +88,14 @@ window.TACS_version = GM_info.script.version;
 			"Locks:" : ["Kilitler:", "Freigabe", "Bloquear:", "", "Vergrendelingen:", "", "Vérouiller:", "Varmistimet:"],
 			"Attack" : ["Saldırı", "Angriff", "Atacar", "", "Aanvallen", "", "Attaquer", "Hyökkäys"],
 			"Repair" : ["Onarım", "Reparatur", "Reparar", "", "Repareren", "", "Réparer", "Korjaus"],
-			"Reset" : ["Sıfırla", "", "", "", "", "", "", "Palauta"],
+			"Reset" : ["Sıfırla", "Zurücksetzen", "", "", "", "", "", "Palauta"],
 			"Simulation will be based on most recently refreshed stats!" : ["Simulasyon en son güncellenen istatistiklere göre yapılacaktır!", "Die Simulation basiert auf den zuletzt aktualisierten Stand", "A simulação vai ser baseada na mais recente data!", "", "Simulatie zal gebaseerd worden op meest recentelijke ververste statistieken!", "", "La Simulation sera basée en fonction des dernières stats actualisées !", "Simulaatio suoritetaan viimeisimmän päivityksen tiedoilla!"],
 			"Unlock Attack Button" : ["Saldırı Düğmesinin Kilidini Aç", "Angriffsbutton freigeben", "Desbloquear o botão de ataque", "Sblocca pulsante d'attacco", "Ontgrendel Aanvalsknop", "a Támadás gomb feloldása", "Débloquer Le Bouton d'Attaque", "Poista hyökkäusnapin lukitus"],
 			"Unlock Repair Button" : ["Onarım Düğmesinin Kilidini Aç", "Reparaturbutton freigeben", "Desbloquear botão de reparação", "", "Ontgrendel Repareerknop", "", "Débloquer Le Bouton de Réparation", "Poista korjausnapin lukitus"],
 			"Unlock Reset Button" : ["Sıfırlama Düğmesinin Kilidini Aç", "", "", "", "", "", "", "Avaa Tyhjennä nappi"],
-			"SKIP": ["ATLA", "", "", "", "", "", "", ""],
+			"SKIP": ["ATLA", "Überspringen", "", "", "", "", "", ""],
 			"Skip to end" : ["Simulasyonu atla", "Zum Ende Vorspringen", "", "", "", "", "", "Mene loppuun"],
-			"Reset Formation" : ["Dizilişi Sıfırla", "", "", "", "", "", "", "Palauta armeijan oletusasetelma"],
+			"Reset Formation" : ["Dizilişi Sıfırla", "Formation zurücksetzen", "", "", "", "", "", "Palauta armeijan oletusasetelma"],
 			"Flip Horizontal" : ["Yatay Çevir", "Horizontal Spiegeln", "", "", "", "", "", "Käännä vaakasuunnassa"],
 			"Flip Vertical" : ["Dikey Çevir", "Vertikal Spiegeln", "", "", "", "", "", "Käännä pystysuunnassa"],
 			"Activate All" : ["Hepsini Aktifleştir", "Alle Aktivieren", "", "", "", "", "", "Aktivoi kaikki"],
@@ -111,16 +111,16 @@ window.TACS_version = GM_info.script.version;
 			"Version: " : ["Sürüm: ", "", "", "", "", "", "", "Versio: "],
 			"Mark saved targets on region map" : ["Kaydedilmiş hedefleri haritada işaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle"], // region view
 			"Enable 'Double-click to (De)activate units'" : ["Çift-tıklama ile birlikleri (de)aktifleştirmeyi etkinleştir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt"],
-			"Show Loot Summary" : ["", "", "", "", "", "", "", ""],
-			"Show Stats During Attack" : ["İstatistikleri saldırı sırasında göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana"],
-			"Show Stats During Simulation" : ["İstatistikleri simulasyondayken göster", "", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana"],
-			"Skip Victory-Popup After Battle" : ["Savaş Bitiminde Zafer Bildirimini Atla", "", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu"],
-			"Stats Window Opacity" : ["İstatistik Penceresi Saydamlığı", "", "", "", "", "", "", "Tiedot -ikkunan läpinäkyvyys"],
+			"Show Loot Summary" : ["", "Zeige Beute-Zusammenfassung", "", "", "", "", "", ""],
+			"Show Stats During Attack" : ["İstatistikleri saldırı sırasında göster", "Zeige Statistik während des Angriffs", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana"],
+			"Show Stats During Simulation" : ["İstatistikleri simulasyondayken göster", "Zeige Statistik während der Simulation", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana"],
+			"Skip Victory-Popup After Battle" : ["Savaş Bitiminde Zafer Bildirimini Atla", "Siegesbildschirm überspringen", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu"],
+			"Stats Window Opacity" : ["İstatistik Penceresi Saydamlığı", "Transparenz des Statistik-Fenster", "", "", "", "", "", "Tiedot -ikkunan läpinäkyvyys"],
 			"Disable Unit Tooltips In Army Formation Manager" : ["Ordu Dizilişi Yöneticisinde Birlik İpuçlarını Gizle", "", "", "", "", "", "", "Poista käytöstä yksiköiden työkaluvihjeet armeijan muodostamisikkunassa"],
 			"Disable Tooltips In Attack Preparation View" : ["Saldırı Hazırlık Görünümünde İpuçlarını Gizle", "", "", "", "", "", "", "Poista työkaluvihjeet käytöstä hyökkäyksen valmisteluikkunassa"],
 			"Undo" : ["Geri Al", "", "", "", "", "", "", "Kumoa"],
 			"Redo" : ["İleri Al", "", "", "", "", "", "", "Tee uudelleen"],
-			"Open Stats Window" : ["İstatistik Penceresini Aç", "", "", "", "", "", "", "Avaa tiedot -ikkuna"]
+			"Open Stats Window" : ["İstatistik Penceresini Aç", "Statistik öffnen", "", "", "", "", "", "Avaa tiedot -ikkuna"]
 		};
 
 		function lang(text) {
