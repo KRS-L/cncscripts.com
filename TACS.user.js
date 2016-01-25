@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.23b
+// @version        3.24b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx
 // @grant none
@@ -659,9 +659,10 @@ window.TACS_version = GM_info.script.version;
 							this.initializeInfo(tabView);
 							this.initializeOptions();
 							this.setupInterface();
+							this.createHasAttackFormationFunction();
 							this.createBasePlateFunction(ClientLib.Vis.Region.RegionNPCCamp);
 							this.createBasePlateFunction(ClientLib.Vis.Region.RegionNPCBase);
-							//this.createBasePlateFunction(ClientLib.Vis.Region.RegionCity);
+							this.createBasePlateFunction(ClientLib.Vis.Region.RegionCity);
 
 							// Fix armyBar container divs, the mouse has a horrible offset in the armybar when this is enabled
 							// if this worked it would essentially fix a layout bug, shame... using zIndex instead
@@ -1512,86 +1513,67 @@ window.TACS_version = GM_info.script.version;
 						}
 						this.saveData();
 					},
-					createBasePlateFunction : function (r) {
-						var BPDebug = false;
+					createHasAttackFormationFunction : function () {
 						try {
-							var regionObject = r.prototype;
-							//              regionObject.disu =
-							// if (r === ClientLib.Vis.Region.RegionNPCCamp || r === ClientLib.Vis.Region.RegionNPCBase) {
-							for (var key in regionObject) {
-								if (typeof regionObject[key] === 'function') {
-									strFunction = regionObject[key].toString();
-									if (strFunction.indexOf("region_city_owner") > -1) {
-										if (BPDebug)
-											console.log("1: " + strFunction);
-
-										var re = /[A-Z]{6}\=\(new \$I.[A-Z]{6}\).[A-Z]{6}\(this.[A-Z]{6}\(\)/;
-										//HZNOUV=(new $I.SRJRXT).QBXKKV(this.SMGAYW(),
-
-										//var re = /[A-Z]{6}\=\(new \$I.[A-Z]{6}\).[A-Z]{6}\(\$I.[A-Z]{6}.Black/;
-										//IWZRVB=(new $I.ISZOKO).FDXTHE($I.GIBPLN.Black
-										var strFunction = strFunction.match(re).toString();
-										var basePlate = strFunction.slice(0, 6);
-										if (BPDebug)
-											console.log("2: " + basePlate + " // The obfuscated basePlate location in the visObject");
-
-										if (r === ClientLib.Vis.Region.RegionNPCCamp) {
-											if (BPDebug)
-												console.log("3: " + strFunction + " // The part which creates a new base plate");
-											var toStrFunction = "return " + strFunction.slice(12, 21) + ".prototype." + strFunction.slice(23, 29) + ".toString()" + ";";
-											var fn = Function('', toStrFunction);
-											strFunction = fn();
-											if (BPDebug)
-												console.log("4: " + strFunction + " // (" + toStrFunction + ")");
-
-											//$I.CNDDJD.prototype.ECWGAG
-											re = /.I.[A-Z]{6}.prototype.[A-Z]{6}/;
-
-											//$I.CNDDJD.prototype
-											var re2 = /.I.[A-Z]{6}.prototype/;
-											var newFuncLocation = strFunction.match(re2).toString();
-											if (BPDebug)
-												console.log("5: " + newFuncLocation + " // this is where the new setPlateColor function will be placed");
-
-											strFunction = strFunction.match(re).toString();
-											toStrFunction = "return " + strFunction + ".toString()" + ";";
-											//var strProtos = strFunction.match(re2).toString();
-											fn = Function('', toStrFunction);
-											strFunction = fn();
-											if (BPDebug)
-												console.log("6: " + strFunction + " // (" + toStrFunction + ")");
-
-											//this.QDRXMK=a
-											var re3 = /this.[A-Z]{6}=a/;
-											var plateColor = strFunction.match(re3).toString();
-											plateColor = "this." + plateColor.slice(5, 11) + "=a;";
-											if (BPDebug)
-												console.log("7: " + plateColor + " // this holds the color value (ClientLib.Vis.EBackgroundPlateColor)");
-
-											//this.BFZGMK()
-											var re4 = /this.[A-Z]{6}\(\)/;
-											var update = strFunction.match(re4).toString();
-											update = "this." + update.slice(5, 13) + ";";
-											if (BPDebug)
-												console.log("8: " + update + " // the obfuscated baseplate update function");
-
-											var functionBody = newFuncLocation + ".setPlateColor = function(a){" + plateColor + update + "};regionObject.get_BasePlate = function(){return this." + basePlate + ";}";
-											fn = Function('regionObject', functionBody);
-											if (BPDebug)
-												console.log("9: " + fn.toString() + " // creates a setPlateColor function and a getter function for the base plate");
-											fn(regionObject);
-										} else {
-											var functionBody = "regionObject.get_BasePlate = function(){return this." + basePlate + ";}";
-											fn = Function('regionObject', functionBody);
-											if (BPDebug)
-												console.log("3b: " + fn.toString() + " // a getter function for the base plate");
-											fn(regionObject);
+							ClientLib.Data.City.prototype.HasAttackFormation = function (targetCity) {
+								var $createHelper;
+								var ownCity = this.get_Id();
+								if (TACS.getInstance().layouts.all.hasOwnProperty(targetCity)) {
+									if (TACS.getInstance().layouts.all[targetCity].hasOwnProperty(ownCity)) {
+										var count = 0;
+										for (var key in TACS.getInstance().layouts.all[targetCity][ownCity]) {
+											if (TACS.getInstance().layouts.all[targetCity][ownCity].hasOwnProperty(key)) {
+												count++;
+											}
 										}
-										break;
+									if (count > 0)
+										return true;
+									} else {
+										return false;
 									}
 								}
 							}
-							//\// }
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					createBasePlateFunction : function (r) {
+						try {
+							var regionObject = r.prototype;
+							for (var key in regionObject) {
+								if (typeof regionObject[key] === 'function') {
+									var strFunction = regionObject[key].toString();
+									if (strFunction.indexOf("Blue") > -1 && strFunction.indexOf("Black") > -1 ) {
+										if (r == ClientLib.Vis.Region.RegionNPCCamp || r == ClientLib.Vis.Region.RegionNPCBase) {
+											regionObject[key]=function () {
+												var $createHelper;
+												var basePlateColor = ClientLib.Vis.EBackgroundPlateColor.Black;
+												if ((ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity() != null) && ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity().HasAttackFormation(this.get_Id())) {
+													var playerFaction = ClientLib.Data.MainData.GetInstance().get_Player().get_Faction();
+													basePlateColor = ((this.get_PlayerFaction() == 1) ? ClientLib.Vis.EBackgroundPlateColor.Orange : ClientLib.Vis.EBackgroundPlateColor.Cyan);
+												}
+												return basePlateColor;
+											}
+											break;
+										} else {
+											regionObject[key]=function () {
+												var $createHelper;
+												var basePlateColor = ClientLib.Vis.EBackgroundPlateColor.Black;
+												if (this.get_Type() == ClientLib.Vis.Region.RegionCity.ERegionCityType.Own) {
+													basePlateColor = ((this.get_PlayerFaction() == 1) ? ClientLib.Vis.EBackgroundPlateColor.Cyan : ClientLib.Vis.EBackgroundPlateColor.Orange);
+												} else {
+													basePlateColor = ClientLib.Vis.EBackgroundPlateColor.Black;
+												}
+												if (((this.get_Type() != ClientLib.Vis.Region.RegionCity.ERegionCityType.Own) && (ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity() != null)) && ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity().HasAttackFormation(this.get_Id())) {
+													basePlateColor = ((this.get_PlayerFaction() == 1) ? ClientLib.Vis.EBackgroundPlateColor.Orange : ClientLib.Vis.EBackgroundPlateColor.Cyan);
+												}
+												return basePlateColor;
+											}
+											break;
+										}
+									}
+								}
+							}
 						} catch (e) {
 							console.log(e);
 						}
@@ -2607,7 +2589,6 @@ window.TACS_version = GM_info.script.version;
 							this.onCityLoadComplete();
 							this.resetDisableButtons();
 						}
-						this.updateSaveMarkers();
 					},
 					//onViewChange
 					viewChangeHandler : function (oldMode, newMode) {
@@ -3102,7 +3083,6 @@ window.TACS_version = GM_info.script.version;
 									delete this.layouts.current[lid];
 									this.saveLayouts();
 									this.updateLayoutsList();
-									this.updateSaveMarkers();
 								}
 							}
 						} catch (e) {
@@ -3145,7 +3125,6 @@ window.TACS_version = GM_info.script.version;
 
 							this.saveLayouts();
 							this.updateLayoutsList();
-							this.updateSaveMarkers();
 							this.layouts.label.setValue("");
 						} catch (e) {
 							console.log(e);
@@ -3541,64 +3520,6 @@ window.TACS_version = GM_info.script.version;
 							var _this = window.TACS.getInstance();
 							clearInterval(_this.armybarClearnClickCounter);
 							_this.armybarClickCount = 0;
-						} catch (e) {
-							console.log(e);
-						}
-					},
-					updateSaveMarkers : function () {
-						try {
-							if (this.options.markSavedTargets.getValue()) {
-								var currCity = this._MainData.get_Cities().get_CurrentOwnCity();
-								var base_city = currCity.get_Id();
-								var x = currCity.get_X();
-								var y = currCity.get_Y();
-								var region = this._VisMain.get_Region();
-								var attackDistance = this._MainData.get_Server().get_MaxAttackDistance() + 0.1;
-								var playerFaction = this._MainData.get_Player().get_Faction();
-								switch (playerFaction) {
-								case ClientLib.Base.EFactionType.GDIFaction:
-									var saveColor = ClientLib.Vis.EBackgroundPlateColor.Orange;
-									break;
-								case ClientLib.Base.EFactionType.NODFaction:
-									var saveColor = ClientLib.Vis.EBackgroundPlateColor.Cyan;
-									break;
-								}
-
-								for (var i = x - (attackDistance); i < (x + attackDistance); i++) {
-									for (var j = y - attackDistance; j < (y + attackDistance); j++) {
-										var visObject = region.GetObjectFromPosition(i * region.get_GridWidth(), j * region.get_GridHeight());
-										if (visObject != null) {
-											if (visObject.get_VisObjectType() == ClientLib.Vis.VisObject.EObjectType.RegionNPCCamp ||
-												visObject.get_VisObjectType() == ClientLib.Vis.VisObject.EObjectType.RegionCityType ||
-												visObject.get_VisObjectType() == ClientLib.Vis.VisObject.EObjectType.RegionNPCBase) {
-												if (visObject.get_VisObjectType() == ClientLib.Vis.VisObject.EObjectType.RegionNPCCamp) {
-													if (visObject.get_IsDestroyed())
-														continue;
-												}
-												if (visObject.get_VisObjectType() == ClientLib.Vis.VisObject.EObjectType.RegionCityType) {
-													if (visObject.IsOwnBase())
-														continue;
-												}
-
-												visObject.get_BasePlate().setPlateColor(ClientLib.Vis.EBackgroundPlateColor.Black);
-												var target_city = visObject.get_Id();
-												if (this.layouts.all.hasOwnProperty(target_city)) {
-													if (this.layouts.all[target_city].hasOwnProperty(base_city)) {
-														var count = 0;
-														for (var key in this.layouts.all[target_city][base_city]) {
-															if (this.layouts.all[target_city][base_city].hasOwnProperty(key)) {
-																count++;
-															}
-														}
-														if (count > 0)
-															visObject.get_BasePlate().setPlateColor(saveColor);
-													}
-												}
-											}
-										}
-									}
-								}
-							}
 						} catch (e) {
 							console.log(e);
 						}
