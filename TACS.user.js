@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.31b
+// @version        3.32b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -2654,11 +2654,11 @@ window.TACS_version = GM_info.script.version;
 							var _this = this;
 							//console.log("Running onCityLoadComplete...");
 							if (this._VisMain.GetActiveView().get_VisAreaComplete()) {
-								setTimeout(function () {
-									var cbtSetup = ClientLib.Vis.VisMain.GetInstance().get_CombatSetup();
+								/*setTimeout(function () {
+									var cbtSetup = ClientLib.Vis.VisMain.GetInstance().get_CombatSetup(); // No longer needed. They've fixed the issue in-game. Leaving here just in case.
 									cbtSetup.SetPosition(0, cbtSetup.get_MinYPosition() + cbtSetup.get_DefenseOffsetY() * cbtSetup.get_GridHeight());
 									//qx.core.Init.getApplication().getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA).getLayoutParent().setZIndex(1);
-								}, 500);
+								}, 500);*/
 
 								this.checkAttackRange();
 								if (this.curPAVM > 3) {
@@ -2667,6 +2667,7 @@ window.TACS_version = GM_info.script.version;
 									var currentcity = this._MainData.get_Cities().get_CurrentCity();
 									if (currentcity != null) {
 										var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
+										var cityFaction = currentcity.get_CityFaction();
 										this.stats.attacks.attackCost = ownCity.CalculateAttackCommandPointCostToCoord(currentcity.get_PosX(),currentcity.get_PosY());
 										this.getAvailableRepairAndCP();
 										this.calculateLoot();
@@ -2678,7 +2679,6 @@ window.TACS_version = GM_info.script.version;
 											//this.labels.attacks.available.setValue('CP:' + Math.floor(this.stats.attacks.availableCP / this.stats.attacks.attackCost) + ' / F:' + Math.floor(this.stats.repair.available / this.stats.repair.max) + '/ C:-');
 											this.labels.attacks.available.setValue('CP:' + this.stats.attacks.availableAttacksCP + ' / F:' + this.stats.attacks.availableAttacksAtFullStrength + '/ C:-');
 											this.resetDisableButtons();
-											var cityFaction = currentcity.get_CityFaction();
 											this.view.playerCity = cityFaction === ClientLib.Base.EFactionType.GDIFaction || cityFaction === ClientLib.Base.EFactionType.NODFaction;
 											if (this.view.playerCity) {
 												this.view.playerCityDefenseBonus = currentcity.get_AllianceDefenseBonus();
