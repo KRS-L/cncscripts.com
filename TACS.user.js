@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.28b
+// @version        3.29b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -2136,10 +2136,11 @@ window.TACS_version = GM_info.script.version;
 							}
 
 							// Simulate Button
-							this.buttons.attack.simulate = new qx.ui.form.Button(lang("Simulate"));
+							this.buttons.attack.simulate = new qx.ui.form.Button();
 							this.buttons.attack.simulate.set({
 								width : 58,
-								appearance : "button-text-small",
+								appearance : "button-baseviews",
+								icon : "FactionUI/icons/icon_play.png",
 								toolTipText : lang("Start Combat Simulation")
 							});
 							this.buttons.attack.simulate.addListener("click", this.startSimulation, this);
@@ -2224,7 +2225,7 @@ window.TACS_version = GM_info.script.version;
 								left : buttonsLeftPosition
 							});
 							this.userInterface.add(this.buttons.attack.simulate, {
-								top : 100,
+								top : 108,
 								left : buttonsLeftPosition
 							});
 						} catch (e) {
