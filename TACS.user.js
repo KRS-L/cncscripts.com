@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.26b
+// @version        3.27b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -511,8 +511,8 @@ window.TACS_version = GM_info.script.version;
 							// Unlock Button
 							this.buttons.attack.unlock = new qx.ui.form.Button(lang("Unlock"));
 							this.buttons.attack.unlock.set({
-								width : 45,
-								height : 45,
+								width : 54,
+								height : 37,
 								padding : 0,
 								appearance : "button-text-small",
 								toolTipText : lang("Unlock Attack Button")
@@ -535,8 +535,8 @@ window.TACS_version = GM_info.script.version;
 							// Unlock Repair
 							this.buttons.attack.repair = new qx.ui.form.Button(lang("Unlock"));
 							this.buttons.attack.repair.set({
-								width : 45,
-								height : 45,
+								width : 54,
+								height : 44,
 								padding : 0,
 								appearance : "button-text-small",
 								toolTipText : lang("Unlock Repair Button")
@@ -2126,7 +2126,7 @@ window.TACS_version = GM_info.script.version;
 							if (this.options.rightSide.getValue()) {
 								this._armyBar.add(this.userInterface, {
 									top : 0,
-									right : 53
+									right : 65
 								});
 							} else {
 								this._armyBar.add(this.userInterface, {
