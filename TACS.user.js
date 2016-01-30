@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.36b
+// @version        3.37b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -633,7 +633,6 @@ window.TACS_version = GM_info.script.version;
 									contentPaddingRight : 8,
 									contentPaddingLeft : 8,
 									width : 185,
-									height : 225,
 									showMaximize : false,
 									showMinimize : false,
 									allowMaximize : false,
@@ -655,7 +654,6 @@ window.TACS_version = GM_info.script.version;
 							this.resourceLayoutWindow.addListener("close", function () {
 								localStorage.ta_sim_layout_top = JSON.stringify(this.resourceLayoutWindow.getLayoutProperties().top);
 								localStorage.ta_sim_layout_left = JSON.stringify(this.resourceLayoutWindow.getLayoutProperties().left);
-								this.resourceLayoutWindow.removeAll();
 							}, this);
 
 							// The Battle Simulator box
@@ -2768,9 +2766,7 @@ window.TACS_version = GM_info.script.version;
 									1 : fileManager.GetPhysicalPath('ui/common/icn_res_chrystal.png'),
 									2 : fileManager.GetPhysicalPath('ui/common/icn_res_tiberium.png')
 								}
-								
 							var currenLayout = this.getLayout();
-							
 							switch (this._MainData.get_Player().get_Faction()) {
 							case ClientLib.Base.EFactionType.GDIFaction:
 								var playerFaction = "G";
@@ -2779,11 +2775,7 @@ window.TACS_version = GM_info.script.version;
 								var playerFaction = "N";
 								break;
 							}
-							
 							var cncOptURL = "http://cncopt.com/?map=2|" + playerFaction + "|" + playerFaction + "||" + this.encodeToCNCOpt(currenLayout) + "....................................|newEconomy";
-							console.log(cncOptURL);
-							
-							//var html = '<table width="150"><tr><td><a href="' + cncOptURL + '" target="_blank" style="color:#FFFFFF;">CNCOpt</a></td></table>';
 							var html = '<table border="2" cellspacing="0" cellpadding="0">';
 
 							for (var i = 0; i < 72; i++) {
@@ -2794,9 +2786,8 @@ window.TACS_version = GM_info.script.version;
 								if (column == 8) html += '</tr>';
 							}
 
-							html += '</table>';
-							console.log(html);
-							
+							html += '</table><a href="' + cncOptURL + '" target="_blank" style="color:#FFFFFF;">CNCOpt';
+
 							this.resourceLayout = new qx.ui.basic.Label().set({
 								backgroundColor : "#303030",
 								value : html,
