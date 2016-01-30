@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.34b
+// @version        3.35b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -1423,13 +1423,24 @@ window.TACS_version = GM_info.script.version;
 								colSpan : 3
 							});
 							
+							// showResourceLayoutWindow Checkbox
+							this.options.showResourceLayoutWindow = new qx.ui.form.CheckBox(lang("Show Resource Layout Window"));
+							this.options.showResourceLayoutWindow.saveLocation = "showResourceLayoutWindow";
+							this.options.showResourceLayoutWindow.setValue(this.saveObj.checkbox.showResourceLayoutWindow);
+							this.options.showResourceLayoutWindow.addListener("click", this.toggleCheckboxOption, this);
+							pssVBox.add(this.options.showResourceLayoutWindow, {
+								row : 8,
+								column : 0,
+								colSpan : 3
+							});
+							
 							// showStatsDuringAttack Checkbox
 							this.options.showStatsDuringAttack = new qx.ui.form.CheckBox(lang("Show Stats During Attack"));
 							this.options.showStatsDuringAttack.saveLocation = "showStatsDuringAttack";
 							this.options.showStatsDuringAttack.setValue(this.saveObj.checkbox.showStatsDuringAttack);
 							this.options.showStatsDuringAttack.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showStatsDuringAttack, {
-								row : 8,
+								row : 9,
 								column : 0,
 								colSpan : 3
 							});
@@ -1440,7 +1451,7 @@ window.TACS_version = GM_info.script.version;
 							this.options.showStatsDuringSimulation.setValue(this.saveObj.checkbox.showStatsDuringSimulation);
 							this.options.showStatsDuringSimulation.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showStatsDuringSimulation, {
-								row : 9,
+								row : 10,
 								column : 0,
 								colSpan : 3
 							});
@@ -1451,7 +1462,7 @@ window.TACS_version = GM_info.script.version;
 							this.options.skipVictoryPopup.setValue(this.saveObj.checkbox.skipVictoryPopup);
 							this.options.skipVictoryPopup.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.skipVictoryPopup, {
-								row : 10,
+								row : 11,
 								column : 0,
 								colSpan : 3
 							});
@@ -1473,7 +1484,7 @@ window.TACS_version = GM_info.script.version;
 							this.options.disableAttackPreparationTooltips.setValue(this.saveObj.checkbox.disableAttackPreparationTooltips);
 							this.options.disableAttackPreparationTooltips.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.disableAttackPreparationTooltips, {
-								row : 11,
+								row : 12,
 								column : 0,
 								colSpan : 3
 							});
@@ -1484,7 +1495,7 @@ window.TACS_version = GM_info.script.version;
 							this.options.disableArmyFormationManagerTooltips.setValue(this.saveObj.checkbox.disableArmyFormationManagerTooltips);
 							this.options.disableArmyFormationManagerTooltips.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.disableArmyFormationManagerTooltips, {
-								row : 12,
+								row : 13,
 								column : 0,
 								colSpan : 3
 							});
@@ -1492,14 +1503,14 @@ window.TACS_version = GM_info.script.version;
 							this.options.statsOpacityLabel = new qx.ui.basic.Label(lang("Stats Window Opacity"));
 							this.options.statsOpacityLabel.setMarginTop(10);
 							pssVBox.add(this.options.statsOpacityLabel, {
-								row : 13,
+								row : 14,
 								column : 0,
 								colSpan : 3
 							});
 
 							this.options.statsOpacity = new qx.ui.form.Slider();
 							pssVBox.add(this.options.statsOpacity, {
-								row : 14,
+								row : 15,
 								column : 1,
 								colSpan : 2
 							});
@@ -1507,7 +1518,7 @@ window.TACS_version = GM_info.script.version;
 
 							this.options.statsOpacityOutput = new qx.ui.basic.Label(String(this.saveObj.slider.statsOpacity));
 							pssVBox.add(this.options.statsOpacityOutput, {
-								row : 14,
+								row : 16,
 								column : 0
 							});
 
