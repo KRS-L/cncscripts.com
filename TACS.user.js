@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.35b
+// @version        3.36b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -1563,9 +1563,9 @@ window.TACS_version = GM_info.script.version;
 						}
 						if (tgt == this.options.showResourceLayoutWindow) {
 							if (this.saveObj.checkbox.showResourceLayoutWindow) {
-								this.resourceLayoutWindow.show();
+								this.resourceLayoutWindow.open();
 							} else {
-								this.resourceLayoutWindow.hide();
+								this.resourceLayoutWindow.close();
 							}
 						}
 						this.saveData();
@@ -2624,6 +2624,8 @@ window.TACS_version = GM_info.script.version;
 							this.buttons.attack.repairMode.execute();
 						if (this.battleResultsBox.isVisible())
 							this.battleResultsBox.close();
+						if (this.resourceLayoutWindow.isVisible())
+							this.resourceLayoutWindow.close();
 						/*if (this.toolBar.isVisible())
 							this.toolBar.hide();
 						if (this.toolBarMouse.isVisible())
@@ -2760,7 +2762,6 @@ window.TACS_version = GM_info.script.version;
 					},
 					createLayoutPreview : function () {
 						try {
-							var playArea = this._Application.getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA);
 							var fileManager = ClientLib.File.FileManager.GetInstance();
 							var images = {
 									0 : fileManager.GetPhysicalPath('ui/menues/main_menu/misc_empty_pixel.png'),
@@ -2848,6 +2849,9 @@ window.TACS_version = GM_info.script.version;
 						case ClientLib.Data.PlayerAreaViewMode.pavmCombatSetupDefense: {
 								if (this.options.autoDisplayStats.getValue()) {
 									this.battleResultsBox.open();
+								}
+								if (this.options.showResourceLayoutWindow.getValue()) {
+									this.resourceLayoutWindow.open();
 								}
 								break;
 							}
