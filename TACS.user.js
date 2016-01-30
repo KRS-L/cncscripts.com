@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.32b
+// @version        3.33b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -156,7 +156,9 @@ window.TACS_version = GM_info.script.version;
 						},
 						bounds : {
 							battleResultsBoxLeft : 125,
-							battleResultsBoxTop : 125
+							battleResultsBoxTop : 125,
+							resourceLayoutWindowLeft : 125,
+							resourceLayoutWindowTop : 550
 						},
 						checkbox : {
 							showLootSummary : true,
@@ -357,6 +359,7 @@ window.TACS_version = GM_info.script.version;
 					resourceSummaryVerticalBox : null,
 					battleResultsBox : null,
 					optionsWindow : null,
+					resourceLayoutWindow : null,
 					statsPage : null,
 					lastSimulation : null,
 					count : null,
@@ -374,7 +377,7 @@ window.TACS_version = GM_info.script.version;
 					TOOL_BAR_LOW : 113, // hidden
 					TOOL_BAR_HIGH : 155, // popped-up
 					TOOL_BAR_WIDTH : 740,
-
+					resourceLayout : null,
 					repairInfo : null,
 					repairButtons : [],
 					repairButtonsRedrawTimer : null,
@@ -618,6 +621,38 @@ window.TACS_version = GM_info.script.version;
 								localStorage.ta_sim_options_top = JSON.stringify(this.optionsWindow.getLayoutProperties().top);
 								localStorage.ta_sim_options_left = JSON.stringify(this.optionsWindow.getLayoutProperties().left);
 								this.saveData();
+							}, this);
+
+							// Resource Layout Window
+							this.resourceLayoutWindow = new qx.ui.window.Window().set({
+									contentPaddingTop : 1,
+									contentPaddingBottom : 8,
+									contentPaddingRight : 8,
+									contentPaddingLeft : 8,
+									width : 185,
+									height : 225,
+									showMaximize : false,
+									showMinimize : false,
+									allowMaximize : false,
+									allowMinimize : false,
+									resizable : false
+								});
+							/*this.resourceLayoutWindow.getChildControl("icon").set({
+								scale : true,
+								width : 25,
+								height : 25
+							});*/
+							this.resourceLayoutWindow.setLayout(new qx.ui.layout.HBox());
+							this.resourceLayoutWindow.moveTo(this.saveObj.bounds.resourceLayoutWindowLeft, this.saveObj.bounds.resourceLayoutWindowTop);
+							this.resourceLayoutWindow.addListener("move", function () {
+								this.saveObj.bounds.resourceLayoutWindowLeft = this.resourceLayoutWindow.getBounds().left;
+								this.saveObj.bounds.resourceLayoutWindowTop = this.resourceLayoutWindow.getBounds().top;
+								this.saveData();
+							}, this);
+							this.resourceLayoutWindow.addListener("close", function () {
+								localStorage.ta_sim_layout_top = JSON.stringify(this.resourceLayoutWindow.getLayoutProperties().top);
+								localStorage.ta_sim_layout_left = JSON.stringify(this.resourceLayoutWindow.getLayoutProperties().left);
+								this.resourceLayoutWindow.removeAll();
 							}, this);
 
 							// The Battle Simulator box
@@ -2688,6 +2723,7 @@ window.TACS_version = GM_info.script.version;
 												}, phe.cnc.Util.createEventDelegate(ClientLib.Net.CommandResult, this, this.calculateDefenseBonus), null);*/
 											}
 										}
+										if (cityFaction >= 4 && cityFaction <= 6) this.createLayoutPreview();
 										this.targetCityId = currentcity.get_Id();
 									}
 								}
@@ -2697,6 +2733,82 @@ window.TACS_version = GM_info.script.version;
 							setTimeout(function () {
 								_this.onCityLoadComplete();
 							}, 200);
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					createLayoutPreview : function () {
+						try {
+							var playArea = this._Application.getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA);
+							var fileManager = ClientLib.File.FileManager.GetInstance();
+							var images = {
+									0 : fileManager.GetPhysicalPath('ui/menues/main_menu/misc_empty_pixel.png'),
+									1 : fileManager.GetPhysicalPath('ui/common/icn_res_chrystal.png'),
+									2 : fileManager.GetPhysicalPath('ui/common/icn_res_tiberium.png')
+								}
+								
+							var currenLayout = this.getLayout();
+							
+							switch (this._MainData.get_Player().get_Faction()) {
+							case ClientLib.Base.EFactionType.GDIFaction:
+								var playerFaction = "G";
+								break;
+							case ClientLib.Base.EFactionType.NODFaction:
+								var playerFaction = "N";
+								break;
+							}
+							
+							var cncOptURL = "http://cncopt.com/?map=2|" + playerFaction + "|" + playerFaction + "||" + this.encodeToCNCOpt(currenLayout) + "....................................|newEconomy";
+							console.log(cncOptURL);
+							
+							//var html = '<table width="150"><tr><td><a href="' + cncOptURL + '" target="_blank" style="color:#FFFFFF;">CNCOpt</a></td></table>';
+							var html = '<table border="2" cellspacing="0" cellpadding="0">';
+
+							for (var i = 0; i < 72; i++) {
+								var row = Math.floor(i / 9);
+								var column = i - Math.floor(i / 9) * 9;
+								if (column == 0) html += '<tr>';
+								html += '<td><img width="14" height="14" src="' + images[currenLayout.charAt(i)] + '"></td>';
+								if (column == 8) html += '</tr>';
+							}
+
+							html += '</table>';
+							console.log(html);
+							
+							this.resourceLayout = new qx.ui.basic.Label().set({
+								backgroundColor : "#303030",
+								value : html,
+								padding : 10,
+								rich : true
+							});
+							this.resourceLayoutWindow.add(this.resourceLayout);
+
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					getLayout : function () {
+						try {
+							var resourceLayout = "";
+							for (var y = 0; y < 16; y++) {
+								for (var x = 0; x < 9; x++) {
+									resourceLayout += this._MainData.get_Cities().get_CurrentCity().GetResourceType(x, y);
+								}
+							}
+							return resourceLayout;
+						} catch (e) {
+							console.log(e);
+						}
+					},
+					encodeToCNCOpt : function (data) {
+						try {
+							var str = ".ct-jhlk";
+							for (var i = 0; i < 8; i++) {
+								var re = new RegExp(i, 'g');
+								var char = str.charAt(i);
+								data = data.replace(re, char);
+							}
+							return data;
 						} catch (e) {
 							console.log(e);
 						}
