@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.41b
+// @version        3.42b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -112,7 +112,7 @@ window.TACS_version = GM_info.script.version;
 			"Mark saved targets on region map" : ["Kaydedilmiş hedefleri haritada işaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle", "Marchează țintele salvate pe harta regiunii"], // region view
 			"Enable 'Double-click to (De)activate units'" : ["Çift-tıklama ile birlikleri (de)aktifleştirmeyi etkinleştir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt", "Activează \"Dublu click pentru a (De)activa unitățile\""],
 			"Show Loot Summary" : ["", "Zeige Beute-Zusammenfassung", "", "", "", "", "", "", "Afișează rezumatul prăzii"],
-			"Show Resource Layout Window" : ["", "", "", "", "", "", "", "", ""],
+			"Show Resource Layout Window" : ["", "", "", "", "", "", "", "", "Afișează fereastra cu schema resurselor"],
 			"Show Stats During Attack" : ["İstatistikleri saldırı sırasında göster", "Zeige Statistik während des Angriffs", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana", "Afișează statisticile în timpul atacului"],
 			"Show Stats During Simulation" : ["İstatistikleri simulasyondayken göster", "Zeige Statistik während der Simulation", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana", "Afișează statisticile în timpul simulării"],
 			"Skip Victory-Popup After Battle" : ["Savaş Bitiminde Zafer Bildirimini Atla", "Siegesbildschirm überspringen", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu", "Sari peste popup-ul victoriei după luptă"],
