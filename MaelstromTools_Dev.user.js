@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.4.4
+// @version     0.1.4.5
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -49,7 +49,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
           type: "singleton",
           extend: qx.core.Object,
           construct: function (language) {
-            this.Languages = ['de', 'pt', 'fr', 'tr']; // en is default, not needed in here!
+            this.Languages = ['de_DE', 'pt_PT', 'fr_FR', 'tr_TR']; // en is default, not needed in here!
             if (language != null) {
               this.MyLanguage = language;
             }
@@ -194,7 +194,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
             initialize: function () {
               try {
                 //console.log(qx.locale.Manager.getInstance().getLocale());
-                Lang.loadData(qx.locale.Manager.getInstance().getLocale());
+                Lang.loadData(ClientLib.Config.Main.GetInstance().GetConfig(ClientLib.Config.Main.CONFIG_LANGUAGE));
                 //console.log("Client version: " + MaelstromTools.Wrapper.GetClientVersion());
                 this.itemsOnDesktopCount = [];
                 this.itemsOnDesktop = {};
