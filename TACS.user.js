@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.43b
+// @version        3.44b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -597,7 +597,7 @@ window.TACS_version = GM_info.script.version;
 									contentPaddingBottom : 8,
 									contentPaddingRight : 8,
 									contentPaddingLeft : 8,
-									width : 400,
+									//width : 400,
 									height : 400,
 									showMaximize : false,
 									showMinimize : false,
@@ -2768,6 +2768,7 @@ window.TACS_version = GM_info.script.version;
 									2 : fileManager.GetPhysicalPath('ui/common/icn_res_tiberium.png')
 								}
 							var currenLayout = this.getLayout();
+							var tibCount = currenLayout.match(/2/g).length;
 							switch (this._MainData.get_Player().get_Faction()) {
 							case ClientLib.Base.EFactionType.GDIFaction:
 								var playerFaction = "G";
@@ -2795,6 +2796,12 @@ window.TACS_version = GM_info.script.version;
 								padding : 10,
 								rich : true
 							});
+							if (tibCount == 7) {
+								this.resourceLayout.setBackgroundColor("#202820");
+							}
+							else if (tibCount == 5) {
+								this.resourceLayout.setBackgroundColor("#202028");
+							}
 							this.resourceLayoutWindow.removeAll();
 							this.resourceLayoutWindow.add(this.resourceLayout);
 
