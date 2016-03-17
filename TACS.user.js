@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.48b
+// @version        3.49b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -445,10 +445,14 @@ window.TACS_version = GM_info.script.version;
 							
 							if (PerforceChangelist >= 443425) { // 16.1 patch
 								for (var i in this._armyBarContainer) {
-									if (typeof this._armyBarContainer[i] == "object" && this._armyBarContainer[i] != null && this._armyBarContainer[i].objid == "btn_disable") {
-										console.log(this._armyBarContainer[i].objid);
-										var nativeSimBarDisableButton = this._armyBarContainer[i];
-										break;
+									if (typeof this._armyBarContainer[i] == "object" && this._armyBarContainer[i] != null) {
+										if (this._armyBarContainer[i].objid == "btn_disable") {
+											console.log(this._armyBarContainer[i].objid);
+											var nativeSimBarDisableButton = this._armyBarContainer[i];
+										}
+										if (this._armyBarContainer[i].objid == "cnt_controls" || this._armyBarContainer[i].objid == "btn_toggle") {
+											this._armyBarContainer[i].setVisibility("excluded");
+										}
 									}
 								}
 								var armyBarChildren = this._armyBar.getChildren();
