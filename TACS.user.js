@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.47b
+// @version        3.48b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -3027,7 +3027,12 @@ window.TACS_version = GM_info.script.version;
 							this.stats.repair.aircraft = 0;
 
 							this.lastSimulation = Date.now();
-							if (this.count == 10) this.counter = setInterval(this.countDownToNextSimulation, 1000);
+							if (PerforceChangelist >= 448942) {
+								var countDownInterval = 300;
+							} else {
+								var countDownInterval = 1000;	
+							}
+							if (this.count == 10) this.counter = setInterval(this.countDownToNextSimulation, countDownInterval);
 
 							for (var i = 0; i < data.length; i++) {
 								var unitData = data[i].Value;
