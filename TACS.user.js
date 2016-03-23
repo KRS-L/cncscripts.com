@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.49b
+// @version        3.50b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -2955,7 +2955,12 @@ window.TACS_version = GM_info.script.version;
 					},
 					startSimulation : function () {
 						try {
-							if (Date.now() - this.lastSimulation > 10000) {
+							if (PerforceChangelist >= 448942) {
+								var simTimeLimit = 3000;
+							} else {
+								var simTimeLimit = 10000;
+							}
+							if (Date.now() - this.lastSimulation > simTimeLimit) {
 								var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
 								if (!this.getAllUnitsDeactivated() && ownCity.GetOffenseConditionInPercent() > 0) {
 									ClientLib.API.Battleground.GetInstance().SimulateBattle();
