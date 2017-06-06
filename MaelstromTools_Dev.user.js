@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.4.5
+// @version     0.1.4.6
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -247,7 +247,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                     this.mainMenuWindow.setAutoHide(false);
                     this.mainMenuWindow.setBackgroundColor("transparent");
                     //this.mainMenuWindow.setShadow(null);
-                    this.mainMenuWindow.setDecorator(new qx.ui.decoration.Background());
+                    //this.mainMenuWindow.setDecorator(new qx.ui.decoration.Background());
                   }
                 }
 
@@ -269,7 +269,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
                 desktopPositionModifier++;
                 var openMainMenuButton = this.createDesktopButton(Lang.gt("Main menu"), "ProductionMenu", false, this.desktopPosition(desktopPositionModifier));
                 openMainMenuButton.addListener("click", function (e) {
-                  this.mainMenuWindow.placeToMouse(e);
+                  this.mainMenuWindow.placeToPointer(e);
                   this.mainMenuWindow.show();
                 }, this);
 
