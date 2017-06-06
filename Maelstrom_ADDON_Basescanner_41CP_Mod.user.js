@@ -3,7 +3,7 @@
 // @namespace   http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @description Maelstrom ADDON Basescanner
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.5
+// @version     1.8.6
 // @author      BlinDManX
 // @grant       none
 // @copyright   2012+, Claus Neumann
@@ -404,9 +404,9 @@
 							}, this);
 							oOptions.add(this.ZG);
 
-							var border = new qx.ui.decoration.Single(2, "solid", "blue");
+							//var border = new qx.ui.decoration.Single(2, "solid", "blue");
 							this.ZV = new qx.ui.container.Composite(new qx.ui.layout.Basic()).set({
-									decorator : border,
+									decorator : null, //border,
 									backgroundColor : "red",
 									allowGrowX : false,
 									height : 20,
