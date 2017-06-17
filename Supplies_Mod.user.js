@@ -3,7 +3,7 @@
 // @description Some modifications to make the *improved shop feature* in the April patch a little bit more bearable.
 // @namespace supplies_mod
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.4
+// @version 1.41
 // @author KRS_L
 // @updateURL https://userscripts.org/scripts/source/166220.meta.js
 // @downloadURL https://userscripts.org/scripts/source/166220.user.js
@@ -45,7 +45,7 @@
 					}, 1);
 				}, this);
 
-				var suppliesInterface = webfrontend.gui.monetization.ShopOverlay.getInstance().getChildren()[12].getChildren()[0].getChildren()[0].getChildren()[0].getChildren();
+				var suppliesInterface = webfrontend.gui.monetization.ShopOverlay.getInstance().getChildren()[11].getChildren()[0].getChildren()[0].getChildren()[0].getChildren();
 				suppliesInterface[0].add(disableFundsCheckBox);
 
 				var inventory = ClientLib.Data.MainData.GetInstance().get_Inventory();
