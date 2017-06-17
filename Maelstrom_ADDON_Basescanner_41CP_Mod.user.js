@@ -3,7 +3,7 @@
 // @namespace   http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
 // @description Maelstrom ADDON Basescanner
 // @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.7
+// @version     1.8.8
 // @author      BlinDManX
 // @grant       none
 // @copyright   2012+, Claus Neumann
@@ -11,7 +11,7 @@
 // ==/UserScript==
 (function () {
 	var MaelstromTools_Basescanner = function () {
-		window.__msbs_version = "1.8.5";
+		window.__msbs_version = "1.8.8";
 		function createMaelstromTools_Basescanner() {
 
 			qx.Class.define("Addons.BaseScannerGUI", {
