@@ -3,7 +3,7 @@
 // @description Implements a new TradeOverlay class, allowing you to select individual, multiple or all bases to transfer resources from
 // @namespace NewTradeOverlay
 // @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.4.9
+// @version 1.4.9.1
 // @author Chiantii
 // ==/UserScript==
 (function () {
@@ -367,8 +367,8 @@
 						var dollarImage = new qx.ui.basic.Image("webfrontend/ui/common/icon_res_large_credits.png").set({
 							width : 18,
 							height : 20,
-							scale : true,
-							AutoFlipH : false
+							scale : true
+							//AutoFlipH : false
 						});
 						tradeCostBox.add(new qx.ui.core.Spacer(), {
 							flex : 1
@@ -387,7 +387,7 @@
 						tradeCostContainer.add(tradeCostBox);
 						tradeCostContainer.add(this.tradeButton);
 						var tradeWindowCanvas = new qx.ui.container.Composite(new qx.ui.layout.Canvas()).set({
-							decorator : new qx.ui.decoration.Background().set({
+							decorator : new qx.ui.decoration.Decorator().set({
 								backgroundRepeat : 'no-repeat',
 								backgroundImage : "webfrontend/ui/menues/resource_transfer/bgr_restransfer_summary.png"
 							})
