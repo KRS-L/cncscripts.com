@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name           TACS (Tiberium Alliances Combat Simulator)
 // @description    Allows you to simulate combat before actually attacking.
-// @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.52b
+// @namespace      https://*.alliances.commandandconquer.com/*/index.aspx*
+// @include        https://*.alliances.commandandconquer.com/*/index.aspx*
+// @version        3.53b
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
