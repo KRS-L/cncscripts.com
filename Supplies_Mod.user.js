@@ -2,8 +2,8 @@
 // @name Tiberium Alliances Supplies Mod
 // @description Some modifications to make the *improved shop feature* in the April patch a little bit more bearable.
 // @namespace supplies_mod
-// @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.41
+// @include https://*.alliances.commandandconquer.com/*/index.aspx*
+// @version 1.42
 // @author KRS_L
 // @updateURL https://userscripts.org/scripts/source/166220.meta.js
 // @downloadURL https://userscripts.org/scripts/source/166220.user.js
