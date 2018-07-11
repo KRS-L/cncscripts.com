@@ -2,8 +2,8 @@
 // @name infernal wrapper
 // @description Supplies some wrapper functions for public use 
 // @namespace infernal_wrapper
-// @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 0.390737.6
+// @include https://*.alliances.commandandconquer.com/*/index.aspx*
+// @version 0.390737.7
 // @author infernal_me, KRS_L, krisan
 // ==/UserScript==
 (function () {
