@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        Maelstrom ADDON Basescanner
-// @namespace   http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
+// @namespace   http*://*.alliances.commandandconquer.com/*/index.aspx*
 // @description Maelstrom ADDON Basescanner
-// @include     http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version     1.8.8
+// @include     http*://*.alliances.commandandconquer.com/*/index.aspx*
+// @version     1.8.9
 // @author      BlinDManX
 // @grant       none
 // @copyright   2012+, Claus Neumann
