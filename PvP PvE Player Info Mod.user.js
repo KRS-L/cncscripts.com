@@ -2,7 +2,7 @@
 // @name Tiberium Alliances PvP/PvE Player Info Mod
 // @description Separates the number of bases destroyed into PvP and PvE in the Player Info window. Now also includes a tab showing all the POI the player is holding.
 // @namespace player_info_mod
-// @include https://e*.alliances.commandandconquer.com/*/index.aspx*
+// @include https://*.alliances.commandandconquer.com/*/index.aspx*
 // @version 1.3.1
 // @author KRS_L
 // ==/UserScript==
