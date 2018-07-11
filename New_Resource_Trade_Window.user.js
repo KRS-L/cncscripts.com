@@ -2,8 +2,8 @@
 // @name Tiberium Alliances - New Resource Trade Window
 // @description Implements a new TradeOverlay class, allowing you to select individual, multiple or all bases to transfer resources from
 // @namespace NewTradeOverlay
-// @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.4.9.1
+// @include https://*.alliances.commandandconquer.com/*/index.aspx*
+// @version 1.4.9.2
 // @author Chiantii
 // ==/UserScript==
 (function () {
