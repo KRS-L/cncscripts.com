@@ -2,10 +2,8 @@
 // @name Tiberium Alliances URL Bug Fix
 // @description Simple solution to the ancient URL bug that EA has been unable or unwilling to fix.
 // @namespace URL_Bug_Fix
-// @include https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 1.1
-// @updateURL https://userscripts.org/scripts/source/204128.meta.js
-// @downloadURL https://userscripts.org/scripts/source/204128.user.js
+// @include https://*.alliances.commandandconquer.com/*/index.aspx*
+// @version 1.1.1
 // ==/UserScript==
 (function () {
 	var URL_Bug_Fix_main = function () {
