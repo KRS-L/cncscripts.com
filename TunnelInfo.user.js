@@ -2,10 +2,8 @@
 // @name Tiberium Alliances Tunnel Info
 // @description Tunnel info
 // @namespace TATI
-// @include http*://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version 2.2.1
-// @updateURL https://userscripts.org/scripts/source/293295.meta.js
-// @downloadURL https://userscripts.org/scripts/source/293295.user.js
+// @include http*://*.alliances.commandandconquer.com/*/index.aspx*
+// @version 2.2.2
 // @author KRS_L
 // ==/UserScript==
 (function () {
