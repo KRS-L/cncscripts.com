@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name           Tiberium Alliances Formation Saver
 // @description    Allows you to save attack formations
-// @namespace      https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @include        https://prodgame*.alliances.commandandconquer.com/*/index.aspx*
-// @version        2.2
+// @namespace      https://*.alliances.commandandconquer.com/*/index.aspx*
+// @include        https://*.alliances.commandandconquer.com/*/index.aspx*
+// @version        2.2.1
 // @author         Panavia, KRS_L
 // ==/UserScript==
 (function () {
