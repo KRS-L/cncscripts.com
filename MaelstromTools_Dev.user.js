@@ -2,7 +2,7 @@
 // @name        MaelstromTools Dev
 // @namespace   MaelstromTools
 // @description Just a set of statistics & summaries about repair time and base resources. Mainly for internal use, but you are free to test and comment it.
-// @version     0.1.4.9
+// @version     0.1.4.10
 // @author      Maelstrom, HuffyLuf, KRS_L and Krisan
 // @include     http*://*.alliances.commandandconquer.com/*/index.aspx*
 // ==/UserScript==
@@ -49,7 +49,7 @@ var cd=cr.GetResearchItemFomMdbId(cj);
           type: "singleton",
           extend: qx.core.Object,
           construct: function (language) {
-            this.Languages = ['de_DE', 'pt_PT', 'fr_FR', 'tr_TR']; // en is default, not needed in here!
+            this.Languages = ['de_DE', 'pt_PT', 'fr_FR', 'tr_TR', 'es_ES']; // en is default, not needed in here!
             if (language != null) {
               this.MyLanguage = language;
             }
@@ -68,89 +68,89 @@ var cd=cr.GetResearchItemFomMdbId(cj);
               }
 
               this.Data = {};
-              this.Data["Collect all packages"] = ["Alle Pakete einsammeln", "Recolher todos os pacotes", "Récupérez tous les paquets", "Tüm paketleri topla"][l];
-              this.Data["Overall production"] = ["Produktionsübersicht", "Produção global", "La production globale", "Genel üretim"][l];
-              this.Data["Army overview"] = ["Truppenübersicht", "Vista Geral de Exército", "Armée aperçu", "Ordu önizlemesi"][l];
-              this.Data["Base resources"] = ["Basis Ressourcen", "Recursos base", "ressources de base", "Üs önizlemesi"][l];
-              this.Data["Main menu"] = ["Hauptmenü", "Menu Principal", "menu principal", "Ana menü"][l];
-              this.Data["Repair all units"] = ["Alle Einheiten reparieren", "Reparar todas as unidades", "Réparer toutes les unités", "Tüm üniteleri onar"][l];
-              this.Data["Repair all defense buildings"] = ["Alle Verteidigungsgebäude reparieren", "Reparar todos os edifícios de defesa", "Réparer tous les bâtiments de défense", "Tüm savunma binalarını onar"][l];
-              this.Data["Repair all buildings"] = ["Alle Gebäurde reparieren", "Reparar todos os edifícios", "Réparer tous les bâtiments", "Tüm binaları onar"][l];
-              this.Data["Base status overview"] = ["Basisübersicht", "Estado geral da base", "aperçu de l'état de base", "Üs durumu önizlemesi"][l];
-              this.Data["Upgrade priority overview"] = ["Upgrade Übersicht", "Prioridade de upgrades", "aperçu des priorités de mise à niveau", "Yükseltme önceliği önizlemesi"][l];
-              this.Data["MaelstromTools Preferences"] = ["MaelstromTools Einstellungen", "Preferências de MaelstromTools", "Préférences MaelstromTools", "MaelstromTools Ayarları"][l];
-              this.Data["Options"] = ["Einstellungen", "Opções", "Options", "Seçenekler"][l];
+              this.Data["Collect all packages"] = ["Alle Pakete einsammeln", "Recolher todos os pacotes", "Récupérez tous les paquets", "Tüm paketleri topla", "Recoger todos los paquetes"][l];
+              this.Data["Overall production"] = ["Produktionsübersicht", "Produção global", "La production globale", "Genel üretim", "Producción total"][l];
+              this.Data["Army overview"] = ["Truppenübersicht", "Vista Geral de Exército", "Armée aperçu", "Ordu önizlemesi", "Vista del ejército"][l];
+              this.Data["Base resources"] = ["Basis Ressourcen", "Recursos base", "ressources de base", "Üs önizlemesi", "Recursos de la base"][l];
+              this.Data["Main menu"] = ["Hauptmenü", "Menu Principal", "menu principal", "Ana menü", "Menú principal"][l];
+              this.Data["Repair all units"] = ["Alle Einheiten reparieren", "Reparar todas as unidades", "Réparer toutes les unités", "Tüm üniteleri onar", "Reparar todas las unidades"][l];
+              this.Data["Repair all defense buildings"] = ["Alle Verteidigungsgebäude reparieren", "Reparar todos os edifícios de defesa", "Réparer tous les bâtiments de défense", "Tüm savunma binalarını onar", "Reparar todos los edificios defensivos"][l];
+              this.Data["Repair all buildings"] = ["Alle Gebäurde reparieren", "Reparar todos os edifícios", "Réparer tous les bâtiments", "Tüm binaları onar", "Reparar todos los edificios"][l];
+              this.Data["Base status overview"] = ["Basisübersicht", "Estado geral da base", "aperçu de l'état de base", "Üs durumu önizlemesi", "Descripción de los apoyos por base"][l];
+              this.Data["Upgrade priority overview"] = ["Upgrade Übersicht", "Prioridade de upgrades", "aperçu des priorités de mise à niveau", "Yükseltme önceliği önizlemesi", "Vista de prioridad de mejoras"][l];
+              this.Data["MaelstromTools Preferences"] = ["MaelstromTools Einstellungen", "Preferências de MaelstromTools", "Préférences MaelstromTools", "MaelstromTools Ayarları", "Preferencias de MaelstromTools"][l];
+              this.Data["Options"] = ["Einstellungen", "Opções", "Options", "Seçenekler", "Opciones"][l];
               this.Data["Target out of range, no resource calculation possible"] = ["Ziel nicht in Reichweite, kann die plünderbaren Ressourcen nicht berechnen", "Alvo fora do alcance, não é possivel calcular os recursos", "Cible hors de portée, pas de calcul de ressources possible",
-			  "Hedef menzil dışında, kaynak hesaplaması olanaksız"][l];
-              this.Data["Lootable resources"] = ["Plünderbare Ressourcen", "Recursos roubáveis", "Ressources à piller", "Yağmalanabilir kaynaklar"][l];
-              this.Data["per CP"] = ["pro KP", "por PC", "par PC", "KP başına"][l];
-              this.Data["2nd run"] = ["2. Angriff", "2º ataque", "2° attaque", "2. saldırı"][l];
-              this.Data["3rd run"] = ["3. Angriff", "3º ataque", "3° attaque", "3. saldırı"][l];
-              this.Data["Calculating resources..."] = ["Berechne plünderbare Ressourcen...", "A calcular recursos...", "calcul de ressources ...", "Kaynaklar hesaplanıyor..."][l];
-              this.Data["Next MCV"] = ["MBF", "MCV", "VCM"][l];
-              this.Data["Show time to next MCV"] = ["Zeige Zeit bis zum nächsten MBF", "Mostrar tempo restante até ao próximo MCV", "Afficher l'heure pour le prochain VCM ", "Sırdaki MCV için gereken süreyi göster"][l];
-              this.Data["Show lootable resources (restart required)"] = ["Zeige plünderbare Ressourcen (Neustart nötig)", "Mostrar recursos roubáveis (é necessário reiniciar)", "Afficher les ressources fouiller (redémarrage nécessaire)", "Yağmalanabilir kaynakları göster (yeniden başlatma gerekli)"][l];
-              this.Data["Use dedicated Main Menu (restart required)"] = ["Verwende extra Hauptmenü (Neustart nötig)", "Usar botão para o Menu Principal (é necessário reiniciar)", "Utiliser dédiée du menu principal (redémarrage nécessaire)", "Ana menü tuşunu kullan (yeniden başlatma gerekli)"][l];
-              this.Data["Autocollect packages"] = ["Sammle Pakete automatisch", "Auto recolher pacotes", "paquets autocollecté", "Paketleri otomatik topla"][l];
-              this.Data["Autorepair units"] = ["Repariere Einheiten automatisch", "Auto reparar o exército", "unités autoréparé", "Üniteleri otomatik onar"][l];
-              this.Data["Autorepair defense (higher prio than buildings)"] = ["Repariere Verteidigung automatisch (höhere Prio als Gebäude)", "Auto reparar defesa (maior prioridade do que os edifícios)", "réparation automatique la défense (priorité plus élevé que les bâtiments) ", "Savunmayı otomatik onar (binalardan daha yüksek öncelikli olarak)"][l];
-              this.Data["Autorepair buildings"] = ["Repariere Gebäude automatisch", "Auto reparar edifícios", "bâtiments autoréparé", "Binaları otomatik onar"][l];
-              this.Data["Automatic interval in minutes"] = ["Auto-Intervall in Minuten", "Intervalo de tempo automático (em minutos)", "intervalle automatique en quelques minutes", "Otomatik toplama aralığı (dk)"][l];
-              this.Data["Apply changes"] = ["Speichern", "Confirmar", "Appliquer changements", "Uygula"][l];
-              this.Data["Discard changes"] = ["Abbrechen", "Cancelar", "Annuler changements", "İptal"][l];
-              this.Data["Reset to default"] = ["Auf Standard zurücksetzen", "Definições padrão", "Réinitialiser", "Sıfırla"][l];
-              this.Data["Continuous"] = ["Kontinuierlich", "Contínua", "continue", "Sürekli"][l];
-              this.Data["Bonus"] = ["Pakete", "Bónus", "Bonus", "Bonus"][l];
-              this.Data["POI"] = ["POI", "POI", "POI", "POI"][l];
-              this.Data["Total / h"] = ["Gesamt / h", "Total / h", "Total / h", "Toplam / sa."][l];
-              this.Data["Repaircharges"] = ["Reparaturzeiten", "Custo de reparação", "frais de réparation", "Onarım maliyeti"][l];
-              this.Data["Repairtime"] = ["Max. verfügbar", "Tempo de reparação", "Temps de réparation", "Onarım süresi"][l];
-              this.Data["Attacks"] = ["Angriffe", "Ataques", "Attaques", "Saldırılar"][l];
-              this.Data[MaelstromTools.Statics.Infantry] = ["Infanterie", "Infantaria", "Infanterie", "Piyade"][l];
-              this.Data[MaelstromTools.Statics.Vehicle] = ["Fahrzeuge", "Veículos", "Vehicule", "Motorlu B."][l];
-              this.Data[MaelstromTools.Statics.Aircraft] = ["Flugzeuge", "Aeronaves", "Aviation", "Hava A."][l];
-              this.Data[MaelstromTools.Statics.Tiberium] = ["Tiberium", "Tibério", "Tiberium", "Tiberium"][l];
-              this.Data[MaelstromTools.Statics.Crystal] = ["Kristalle", "Cristal", "Cristal", "Kristal"][l];
-              this.Data[MaelstromTools.Statics.Power] = ["Strom", "Potência", "Energie", "Güç"][l];
-              this.Data[MaelstromTools.Statics.Dollar] = ["Credits", "Créditos", "Crédit", "Kredi"][l];
-              this.Data[MaelstromTools.Statics.Research] = ["Forschung", "Investigação", "Recherche", "Araştırma"][l];
-              this.Data["Base"] = ["Basis", "Base", "Base", "Üs"][l];
-              this.Data["Defense"] = ["Verteidigung", "Defesa", "Défense", "Savunma"][l];
-              this.Data["Army"] = ["Armee", "Exército", "Armée", "Ordu"][l];
-              this.Data["Level"] = ["Stufe", "Nível", "Niveau", "Seviye"][l];
-              this.Data["Buildings"] = ["Gebäude", "Edifícios", "Bâtiments", "Binalar"][l];
-              this.Data["Health"] = ["Leben", "Vida", "Santé", "Sağlık"][l];
-              this.Data["Units"] = ["Einheiten", "Unidades", "Unités", "Üniteler"][l];
-              this.Data["Hide Mission Tracker"] = ["Missionsfenster ausblenden", "Esconder janela das Missões", "Cacher la fenêtre de mission", "Görev İzleyicisini Gizle"][l];
-              this.Data["none"] = ["keine", "nenhum", "aucun", "hiçbiri"][l];
-              this.Data["Cooldown"] = ["Cooldown", "Relocalização", "Recharge", "Cooldown"][l];
-              this.Data["Protection"] = ["Geschützt bis", "Protecção", "Protection", "Koruma"][l];
-              this.Data["Available weapon"] = ["Verfügbare Artillerie", "Apoio disponível", "arme disponible", "Mevcut silah"][l];
-              this.Data["Calibrated on"] = ["Kalibriert auf", "Calibrado em", "Calibré sur ", "Kalibreli"][l];
-              this.Data["Total resources"] = ["Gesamt", "Total de recursos", "Ressources totales", "Toplam kaynaklar"][l];
-              this.Data["Max. storage"] = ["Max. Kapazität", "Armazenamento Máx.", "Max. de stockage", "Maks. Depo"][l];
-              this.Data["Storage full!"] = ["Lager voll!", "Armazenamento cheio!", "Stockage plein", "Depo dolu!"][l];
-              this.Data["Storage"] = ["Lagerstand", "Armazenamento", "Stockage", "Depo"][l];
-              this.Data["display only top buildings"] = ["Nur Top-Gebäude anzeigen", "Mostrar apenas melhores edifícios", "afficher uniquement les bâtiments principaux", "yalnızca en iyi binaları göster"][l];
-              this.Data["display only affordable buildings"] = ["Nur einsetzbare Gebäude anzeigen", "Mostrar apenas edíficios acessíveis", "afficher uniquement les bâtiments abordables", "yalnızca satın alınabilir binaları göster"][l];
-              this.Data["City"] = ["Stadt", "Base", "Base", "Şehir"][l];
-              this.Data["Type (coord)"] = ["Typ (Koord.)", "Escrever (coord)", "Type (coord)", "Tip (koord.)"][l];
-              this.Data["to Level"] = ["Auf Stufe", "para nível", "à Niveau ", "Seviye için"][l];
-              this.Data["Gain/h"] = ["Zuwachs/h", "Melhoria/h", "Gain / h", "Kazanç / sa."][l];
-              this.Data["Factor"] = ["Faktor", "Factor", "Facteur", "Faktör"][l];
-              this.Data["Tib/gain"] = ["Tib./Zuwachs", "Tib/melhoria", "Tib / gain", "Tib/Kazanç"][l];
-              this.Data["Pow/gain"] = ["Strom/Zuwachs", "Potencia/melhoria", "Puissance / Gain", "Güç/Kazanç"][l];
-              this.Data["ETA"] = ["Verfügbar in", "Tempo restante", "Temps restant", "Kalan Zaman"][l];
-              this.Data["Upgrade"] = ["Aufrüsten", "Upgrade", "Upgrade", "Yükselt"][l];
-              this.Data["Powerplant"] = ["Kratfwerk", "Central de Energia", "Centrale", "Güç Santrali"][l];
-              this.Data["Refinery"] = ["Raffinerie", "Refinaria", "Raffinerie", "Rafineri"][l];
-              this.Data["Harvester"] = ["Sammler", "Harvester", "Collecteur", "Biçerdöver"][l];
-              this.Data["Silo"] = ["Silo", "Silo", "Silo", "Silo"][l];
-              this.Data["Accumulator"] = ["Akkumulator", "Acumulador", "Accumulateur", "Akümülatör"][l];
-              this.Data["Calibrate support"] = ["Artillerie kalibrieren", "Calibrar apoio", "Calibrer soutien", "Takviyeyi kalibre et"][l];
-              this.Data["Access"] = ["Öffne", "Aceder", "Accès ", "Aç"][l];
-              this.Data["Focus on"] = ["Zentriere auf", "Concentrar em", "Centré sur", "Odaklan"][l];
-              this.Data["Possible attacks from this base (available CP)"] = ["Mögliche Angriffe (verfügbare KP)", "Possible attacks from this base (available CP)","Possible attacks from this base (available CP)", "Bu üsten yapılması mümkün olan saldırılar (mevcut KP)"][l];
+"Hedef menzil dışında, kaynak hesaplaması olanaksız", "Objetivo fuera de alcance, no es posible calcular sus recursos"][l];
+              this.Data["Lootable resources"] = ["Plünderbare Ressourcen", "Recursos roubáveis", "Ressources à piller", "Yağmalanabilir kaynaklar", "Recursos saqueables"][l];
+              this.Data["per CP"] = ["pro KP", "por PC", "par PC", "KP başına", "por PM"][l];
+              this.Data["2nd run"] = ["2. Angriff", "2º ataque", "2° attaque", "2. saldırı", "2º ataque"][l];
+              this.Data["3rd run"] = ["3. Angriff", "3º ataque", "3° attaque", "3. saldırı", "3º ataque"][l];
+              this.Data["Calculating resources..."] = ["Berechne plünderbare Ressourcen...", "A calcular recursos...", "calcul de ressources ...", "Kaynaklar hesaplanıyor...", "Calculando recursos..."][l];
+              this.Data["Next MCV"] = ["MBF", "MCV", "VCM", "Siguiente VMC"][l];
+              this.Data["Show time to next MCV"] = ["Zeige Zeit bis zum nächsten MBF", "Mostrar tempo restante até ao próximo MCV", "Afficher l'heure pour le prochain VCM ", "Sırdaki MCV için gereken süreyi göster", "Mostrar tiempo para siguiente VMC"][l];
+              this.Data["Show lootable resources (restart required)"] = ["Zeige plünderbare Ressourcen (Neustart nötig)", "Mostrar recursos roubáveis (é necessário reiniciar)", "Afficher les ressources fouiller (redémarrage nécessaire)", "Yağmalanabilir kaynakları göster (yeniden başlatma gerekli)", "Mostrar recursos saqueables (recarga necesaria)"][l];
+              this.Data["Use dedicated Main Menu (restart required)"] = ["Verwende extra Hauptmenü (Neustart nötig)", "Usar botão para o Menu Principal (é necessário reiniciar)", "Utiliser dédiée du menu principal (redémarrage nécessaire)", "Ana menü tuşunu kullan (yeniden başlatma gerekli)", "Usar menú principal dedicado (recarga necesaria)"][l];
+              this.Data["Autocollect packages"] = ["Sammle Pakete automatisch", "Auto recolher pacotes", "paquets autocollecté", "Paketleri otomatik topla", "Autorecogida de paquetes"][l];
+              this.Data["Autorepair units"] = ["Repariere Einheiten automatisch", "Auto reparar o exército", "unités autoréparé", "Üniteleri otomatik onar", "Autoreparación de unidades"][l];
+              this.Data["Autorepair defense (higher prio than buildings)"] = ["Repariere Verteidigung automatisch (höhere Prio als Gebäude)", "Auto reparar defesa (maior prioridade do que os edifícios)", "réparation automatique la défense (priorité plus élevé que les bâtiments) ", "Savunmayı otomatik onar (binalardan daha yüksek öncelikli olarak)", "Autoreparación de defensas (mayor prioridad que los edificios)"][l];
+              this.Data["Autorepair buildings"] = ["Repariere Gebäude automatisch", "Auto reparar edifícios", "bâtiments autoréparé", "Binaları otomatik onar", "Autoreparar edificios"][l];
+              this.Data["Automatic interval in minutes"] = ["Auto-Intervall in Minuten", "Intervalo de tempo automático (em minutos)", "intervalle automatique en quelques minutes", "Otomatik toplama aralığı (dk)", "Intervalo automático en minutos"][l];
+              this.Data["Apply changes"] = ["Speichern", "Confirmar", "Appliquer changements", "Uygula", "Aplicar cambios"][l];
+              this.Data["Discard changes"] = ["Abbrechen", "Cancelar", "Annuler changements", "İptal", "Descartar cambios"][l];
+              this.Data["Reset to default"] = ["Auf Standard zurücksetzen", "Definições padrão", "Réinitialiser", "Sıfırla", "Reiniciar a defecto"][l];
+              this.Data["Continuous"] = ["Kontinuierlich", "Contínua", "continue", "Sürekli", "Continua"][l];
+              this.Data["Bonus"] = ["Pakete", "Bónus", "Bonus", "Bonus", "Bonos"][l];
+              this.Data["POI"] = ["POI", "POI", "POI", "POI", "PDI"][l];
+              this.Data["Total / h"] = ["Gesamt / h", "Total / h", "Total / h", "Toplam / sa.", "Total / h"][l];
+              this.Data["Repaircharges"] = ["Reparaturzeiten", "Custo de reparação", "frais de réparation", "Onarım maliyeti", "Coste de reparación"][l];
+              this.Data["Repairtime"] = ["Max. verfügbar", "Tempo de reparação", "Temps de réparation", "Onarım süresi", "Tiempo de reparación"][l];
+              this.Data["Attacks"] = ["Angriffe", "Ataques", "Attaques", "Saldırılar", "Ataques"][l];
+              this.Data[MaelstromTools.Statics.Infantry] = ["Infanterie", "Infantaria", "Infanterie", "Piyade", "Infantería"][l];
+              this.Data[MaelstromTools.Statics.Vehicle] = ["Fahrzeuge", "Veículos", "Vehicule", "Motorlu B.", "Vehículos"][l];
+              this.Data[MaelstromTools.Statics.Aircraft] = ["Flugzeuge", "Aeronaves", "Aviation", "Hava A.", "Aviación"][l];
+              this.Data[MaelstromTools.Statics.Tiberium] = ["Tiberium", "Tibério", "Tiberium", "Tiberium", "Tiberio"][l];
+              this.Data[MaelstromTools.Statics.Crystal] = ["Kristalle", "Cristal", "Cristal", "Kristal", "Cristal"][l];
+              this.Data[MaelstromTools.Statics.Power] = ["Strom", "Potência", "Energie", "Güç", "Energía"][l];
+              this.Data[MaelstromTools.Statics.Dollar] = ["Credits", "Créditos", "Crédit", "Kredi", "Créditos"][l];
+              this.Data[MaelstromTools.Statics.Research] = ["Forschung", "Investigação", "Recherche", "Araştırma", "Investigación"][l];
+              this.Data["Base"] = ["Basis", "Base", "Base", "Üs", "Base"][l];
+              this.Data["Defense"] = ["Verteidigung", "Defesa", "Défense", "Savunma", "Defensa"][l];
+              this.Data["Army"] = ["Armee", "Exército", "Armée", "Ordu", "Ejército"][l];
+              this.Data["Level"] = ["Stufe", "Nível", "Niveau", "Seviye", "Nivel"][l];
+              this.Data["Buildings"] = ["Gebäude", "Edifícios", "Bâtiments", "Binalar", "Edificios"][l];
+              this.Data["Health"] = ["Leben", "Vida", "Santé", "Sağlık", "Salud"][l];
+              this.Data["Units"] = ["Einheiten", "Unidades", "Unités", "Üniteler", "Unidades"][l];
+              this.Data["Hide Mission Tracker"] = ["Missionsfenster ausblenden", "Esconder janela das Missões", "Cacher la fenêtre de mission", "Görev İzleyicisini Gizle", "Ocultar ventana de misiones"][l];
+              this.Data["none"] = ["keine", "nenhum", "aucun", "hiçbiri", "ninguno"][l];
+              this.Data["Cooldown"] = ["Cooldown", "Relocalização", "Recharge", "Cooldown", "Congelación"][l];
+              this.Data["Protection"] = ["Geschützt bis", "Protecção", "Protection", "Koruma", "Protección"][l];
+              this.Data["Available weapon"] = ["Verfügbare Artillerie", "Apoio disponível", "arme disponible", "Mevcut silah", "Armamento disponible"][l];
+              this.Data["Calibrated on"] = ["Kalibriert auf", "Calibrado em", "Calibré sur ", "Kalibreli", "Calibar sobre"][l];
+              this.Data["Total resources"] = ["Gesamt", "Total de recursos", "Ressources totales", "Toplam kaynaklar", "Recursos totales"][l];
+              this.Data["Max. storage"] = ["Max. Kapazität", "Armazenamento Máx.", "Max. de stockage", "Maks. Depo", "Max. almacenamiento"][l];
+              this.Data["Storage full!"] = ["Lager voll!", "Armazenamento cheio!", "Stockage plein", "Depo dolu!", "Almacenamiento completo"][l];
+              this.Data["Storage"] = ["Lagerstand", "Armazenamento", "Stockage", "Depo", "Almacenamiento"][l];
+              this.Data["display only top buildings"] = ["Nur Top-Gebäude anzeigen", "Mostrar apenas melhores edifícios", "afficher uniquement les bâtiments principaux", "yalnızca en iyi binaları göster", "Mostrar sólo edificios mayores"][l];
+              this.Data["display only affordable buildings"] = ["Nur einsetzbare Gebäude anzeigen", "Mostrar apenas edíficios acessíveis", "afficher uniquement les bâtiments abordables", "yalnızca satın alınabilir binaları göster", "Mostrar sólo edificios asequibles"][l];
+              this.Data["City"] = ["Stadt", "Base", "Base", "Şehir", "Ciudad"][l];
+              this.Data["Type (coord)"] = ["Typ (Koord.)", "Escrever (coord)", "Type (coord)", "Tip (koord.)", "Escribe (coord)"][l];
+              this.Data["to Level"] = ["Auf Stufe", "para nível", "à Niveau ", "Seviye için", "a nivel"][l];
+              this.Data["Gain/h"] = ["Zuwachs/h", "Melhoria/h", "Gain / h", "Kazanç / sa.", "Mejora/h"][l];
+              this.Data["Factor"] = ["Faktor", "Factor", "Facteur", "Faktör", "Factor"][l];
+              this.Data["Tib/gain"] = ["Tib./Zuwachs", "Tib/melhoria", "Tib / gain", "Tib/Kazanç", "Mejora/tib"][l];
+              this.Data["Pow/gain"] = ["Strom/Zuwachs", "Potencia/melhoria", "Puissance / Gain", "Güç/Kazanç", "Mejora/energía"][l];
+              this.Data["ETA"] = ["Verfügbar in", "Tempo restante", "Temps restant", "Kalan Zaman", "Tiempo restante"][l];
+              this.Data["Upgrade"] = ["Aufrüsten", "Upgrade", "Upgrade", "Yükselt", "Mejora"][l];
+              this.Data["Powerplant"] = ["Kratfwerk", "Central de Energia", "Centrale", "Güç Santrali", "Planta de energía"][l];
+              this.Data["Refinery"] = ["Raffinerie", "Refinaria", "Raffinerie", "Rafineri", "Refinería"][l];
+              this.Data["Harvester"] = ["Sammler", "Harvester", "Collecteur", "Biçerdöver", "Recolector"][l];
+              this.Data["Silo"] = ["Silo", "Silo", "Silo", "Silo", "Silo"][l];
+              this.Data["Accumulator"] = ["Akkumulator", "Acumulador", "Accumulateur", "Akümülatör", "Acumulador"][l];
+              this.Data["Calibrate support"] = ["Artillerie kalibrieren", "Calibrar apoio", "Calibrer soutien", "Takviyeyi kalibre et", "Calibrar apoyo"][l];
+              this.Data["Access"] = ["Öffne", "Aceder", "Accès ", "Aç", "Acceso"][l];
+              this.Data["Focus on"] = ["Zentriere auf", "Concentrar em", "Centré sur", "Odaklan", "Concentrar en"][l];
+              this.Data["Possible attacks from this base (available CP)"] = ["Mögliche Angriffe (verfügbare KP)", "Possible attacks from this base (available CP)","Possible attacks from this base (available CP)", "Bu üsten yapılması mümkün olan saldırılar (mevcut KP)", "Ataques posibles desde esta base (PM disponibles)"][l];
               //this.Data[""] = [""][l];
             },
             get: function (ident) {
