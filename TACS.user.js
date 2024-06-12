@@ -32,96 +32,96 @@ window.TACS_version = GM_info.script.version;
 		var locale = null;
 		var languages = ["tr_TR", "de_DE", "pt_PT", "it_IT", "nl_NL", "hu_HU", "fr_FR", "fi_FI", "ro_RO"]; //en is default
 		var translations = {
-			"Stats" : ["İstatistik", "Statistik", "Estatística", "Statistiche", "Statistieken", "Statisztika", "Statistiques", "Tiedot", "Statistici"],
-			"Enemy Base:" : ["Düşman Üssü:", "Feindliche Basis:", "Base Inimiga:", "Base Nemica:", "Vijandelijke Basis:", "Ellenséges bázis:", "Base Ennemie:", "Vihollisen tukikohta:", "Baza inamică"],
-			"Defences:" : ["Savunma Üniteleri:", "Verteidigung:", "Defesas:", "Difesa:", "Verdediging:", "Védelem:", "Défenses:", "Puolustus:", "Apărare"],
-			"Buildings:" : ["Binalar:", "Gebäude:", "Edifícios:", "Strutture:", "Gebouwen:", "Épületek:", "Bâtiments:", "Rakennelmat:", "Clădiri"],
-			"Construction Yard:" : ["Şantiye:", "Bauhof:", "Estaleiro:", "Cantiere:", "Bouwplaats:", "Központ:", "Chantier De Construction:", "Rakennustukikohta:", "Șantierul de construcții"],
-			"Defense Facility:" : ["Savunma Tesisi:", "Verteidigungseinrichtung:", "Instalações de Defesa:", "Stazione di Difesa:", "Defensiefaciliteit:", "Védelmi Bázis:", "Complexe De Défense:", "Puolustuslaitos:", "Unitate de apărare"],
-			"Command Center:" : ["Komuta Merkezi:", "Kommandozentrale:", "Centro de Comando:", "Centro di Comando:", "Commandocentrum:", "Parancsnoki központ:", "Centre De Commandement:", "Komentokeskus:", "Centrul de comandă"],
-			"Available Repair:" : ["Mevcut Onarım:", "Verfügbare Reparaturen", "", "", "", "", "", "Korjausaikaa jäljellä:", "Timp de reparare disponibil"],
-			"Available Attacks:" : ["Mevcut Saldırılar:", "Verfügbare Angriffe", "", "", "", "", "", "Hyökkäyksiä:", "Atacuri disponibile"],
-			"Overall:" : ["Tüm Birlikler:", "Gesamt:", "Geral:", "Totale:", "Totaal:", "Áttekintés:", "Total:", "Yhteensä:", "Ansamblu"],
-			"Infantry:" : ["Piyadeler:", "Infanterie:", "Infantaria:", "Fanteria:", "Infanterie:", "Gyalogság:", "Infanterie:", "Jalkaväki:", "Infanterie"],
-			"Vehicle:" : ["Motorlu Birlikler:", "Fahrzeuge:", "Veículos:", "Veicoli:", "Voertuigen:", "Jármu:", "Véhicules:", "Ajoneuvot:", "Vehicule"],
-			"Aircraft:" : ["Hava Araçları:", "Flugzeuge:", "Aviões:", "Velivoli:", "Vliegtuigen:", "Légiero:", "Avions:", "Lentokoneet:", "Aviație"],
-			"Outcome:" : ["Sonuç:", "Ergebnis:", "Resultado:", "Esito:", "Uitkomst:", "Eredmény:", "Résultat:", "Lopputulos:", "Rezultat"],
-			"Unknown" : ["Bilinmiyor", "Unbekannt", "Desconhecido", "Sconosciuto", "Onbekend", "Ismeretlen", "Inconnu", "Tuntematon", "Necunoscut"],
-			"Battle Time:" : ["Savaş Süresi:", "Kampfdauer:", "Tempo de Batalha:", "Tempo di Battaglia:", "Gevechtsduur:", "Csata ideje:", "Durée Du Combat:", "Taistelun kesto:", "Timp de atac"],
-			"Layouts" : ["Diziliş", "Layouts", "Formações", "Formazione", "Indelingen", "Elrendezés", "Dispositions", "Asetelmat", "Scheme"],
-			"Load" : ["Yükle", "Laden", "Carregar", "Carica", "Laad", "Töltés", "Charger", "Lataa", "Încarcă"],
-			"Load this saved layout." : ["Kayıtlı dizilişi yükle.", "Gespeichertes Layout laden.", "Carregar esta formação guardada.", "Carica questa formazione salvata.", "Laad deze opgeslagen indeling.", "Töltsd be ezt az elmentett elrendezést.", "Charger Cette Disposition.", "Lataa valittu asetelma.", "Încarcă acest formație salvată."],
-			"Delete" : ["Sil", "Löschen", "Apagar", "Cancella", "Verwijder", "Törlés", "Effacer", "Poista", "Șterge"],
-			"Name: " : ["İsim: ", "Name: ", "Nome: ", "Nome: ", "Naam: ", "Név: ", "Nom: ", "Nimi: ", "Nume: "],
-			"Delete this saved layout." : ["Kayıtlı dizilişi sil.", "Gewähltes Layout löschen.", "Apagar esta formação guardada.", "Cancella questa formazione salvata.", "Verwijder deze opgeslagen indeling.", "Töröld ezt az elmentett elrendezést.", "Effacer Cette Disposition.", "Poista valittu asetelma.", "Șterge acest formație salvat."],
-			"Save" : ["Kaydet", "Speichern", "Guardar", "Salva", "Opslaan", "Mentés", "Sauvegarder", "Tallenna", "Salvează"],
-			"Save this layout." : ["Bu dizilişi kaydet.", "Layout speichern.", "Guardar esta formação.", "Salva questa formazione.", "Deze indeling opslaan.", "Mentsd el ezt az elrendezést.", "Sauvegarder Cette Disposition.", "Tallenna nykyinen asetelma.", "Salvează acest formație "],
-			"Info" : ["Bilgi", "Info", "Info", "Info", "Info", "Info", "Infos", "Tietoa", "Info"],
-			"Forums" : ["Forum", "Forum", "Fóruns", "Forum", "Forums", "Fórum", "Forums", "Keskustelupalsta", "Forum"],
-			"Spoils" : ["Ganimetler", "Rohstoffausbeute", "Espólios", "Bottino", "Opbrengst", "Zsákmény", "Butin", "Sotasaalis", "Pradă"],
-			"Options" : ["Seçenekler", "Optionen", "Opções:", "Opzioni:", "Opties:", "Opciók:", "Options:", "Asetukset", "Opțiuni"],
+			"Stats": ["İstatistik", "Statistik", "Estatística", "Statistiche", "Statistieken", "Statisztika", "Statistiques", "Tiedot", "Statistici"],
+			"Enemy Base:": ["Düşman Üssü:", "Feindliche Basis:", "Base Inimiga:", "Base Nemica:", "Vijandelijke Basis:", "Ellenséges bázis:", "Base Ennemie:", "Vihollisen tukikohta:", "Baza inamică"],
+			"Defences:": ["Savunma Üniteleri:", "Verteidigung:", "Defesas:", "Difesa:", "Verdediging:", "Védelem:", "Défenses:", "Puolustus:", "Apărare"],
+			"Buildings:": ["Binalar:", "Gebäude:", "Edifícios:", "Strutture:", "Gebouwen:", "Épületek:", "Bâtiments:", "Rakennelmat:", "Clădiri"],
+			"Construction Yard:": ["Şantiye:", "Bauhof:", "Estaleiro:", "Cantiere:", "Bouwplaats:", "Központ:", "Chantier De Construction:", "Rakennustukikohta:", "Șantierul de construcții"],
+			"Defense Facility:": ["Savunma Tesisi:", "Verteidigungseinrichtung:", "Instalações de Defesa:", "Stazione di Difesa:", "Defensiefaciliteit:", "Védelmi Bázis:", "Complexe De Défense:", "Puolustuslaitos:", "Unitate de apărare"],
+			"Command Center:": ["Komuta Merkezi:", "Kommandozentrale:", "Centro de Comando:", "Centro di Comando:", "Commandocentrum:", "Parancsnoki központ:", "Centre De Commandement:", "Komentokeskus:", "Centrul de comandă"],
+			"Available Repair:": ["Mevcut Onarım:", "Verfügbare Reparaturen", "", "", "", "", "", "Korjausaikaa jäljellä:", "Timp de reparare disponibil"],
+			"Available Attacks:": ["Mevcut Saldırılar:", "Verfügbare Angriffe", "", "", "", "", "", "Hyökkäyksiä:", "Atacuri disponibile"],
+			"Overall:": ["Tüm Birlikler:", "Gesamt:", "Geral:", "Totale:", "Totaal:", "Áttekintés:", "Total:", "Yhteensä:", "Ansamblu"],
+			"Infantry:": ["Piyadeler:", "Infanterie:", "Infantaria:", "Fanteria:", "Infanterie:", "Gyalogság:", "Infanterie:", "Jalkaväki:", "Infanterie"],
+			"Vehicle:": ["Motorlu Birlikler:", "Fahrzeuge:", "Veículos:", "Veicoli:", "Voertuigen:", "Jármu:", "Véhicules:", "Ajoneuvot:", "Vehicule"],
+			"Aircraft:": ["Hava Araçları:", "Flugzeuge:", "Aviões:", "Velivoli:", "Vliegtuigen:", "Légiero:", "Avions:", "Lentokoneet:", "Aviație"],
+			"Outcome:": ["Sonuç:", "Ergebnis:", "Resultado:", "Esito:", "Uitkomst:", "Eredmény:", "Résultat:", "Lopputulos:", "Rezultat"],
+			"Unknown": ["Bilinmiyor", "Unbekannt", "Desconhecido", "Sconosciuto", "Onbekend", "Ismeretlen", "Inconnu", "Tuntematon", "Necunoscut"],
+			"Battle Time:": ["Savaş Süresi:", "Kampfdauer:", "Tempo de Batalha:", "Tempo di Battaglia:", "Gevechtsduur:", "Csata ideje:", "Durée Du Combat:", "Taistelun kesto:", "Timp de atac"],
+			"Layouts": ["Diziliş", "Layouts", "Formações", "Formazione", "Indelingen", "Elrendezés", "Dispositions", "Asetelmat", "Scheme"],
+			"Load": ["Yükle", "Laden", "Carregar", "Carica", "Laad", "Töltés", "Charger", "Lataa", "Încarcă"],
+			"Load this saved layout.": ["Kayıtlı dizilişi yükle.", "Gespeichertes Layout laden.", "Carregar esta formação guardada.", "Carica questa formazione salvata.", "Laad deze opgeslagen indeling.", "Töltsd be ezt az elmentett elrendezést.", "Charger Cette Disposition.", "Lataa valittu asetelma.", "Încarcă acest formație salvată."],
+			"Delete": ["Sil", "Löschen", "Apagar", "Cancella", "Verwijder", "Törlés", "Effacer", "Poista", "Șterge"],
+			"Name: ": ["İsim: ", "Name: ", "Nome: ", "Nome: ", "Naam: ", "Név: ", "Nom: ", "Nimi: ", "Nume: "],
+			"Delete this saved layout.": ["Kayıtlı dizilişi sil.", "Gewähltes Layout löschen.", "Apagar esta formação guardada.", "Cancella questa formazione salvata.", "Verwijder deze opgeslagen indeling.", "Töröld ezt az elmentett elrendezést.", "Effacer Cette Disposition.", "Poista valittu asetelma.", "Șterge acest formație salvat."],
+			"Save": ["Kaydet", "Speichern", "Guardar", "Salva", "Opslaan", "Mentés", "Sauvegarder", "Tallenna", "Salvează"],
+			"Save this layout.": ["Bu dizilişi kaydet.", "Layout speichern.", "Guardar esta formação.", "Salva questa formazione.", "Deze indeling opslaan.", "Mentsd el ezt az elrendezést.", "Sauvegarder Cette Disposition.", "Tallenna nykyinen asetelma.", "Salvează acest formație "],
+			"Info": ["Bilgi", "Info", "Info", "Info", "Info", "Info", "Infos", "Tietoa", "Info"],
+			"Forums": ["Forum", "Forum", "Fóruns", "Forum", "Forums", "Fórum", "Forums", "Keskustelupalsta", "Forum"],
+			"Spoils": ["Ganimetler", "Rohstoffausbeute", "Espólios", "Bottino", "Opbrengst", "Zsákmény", "Butin", "Sotasaalis", "Pradă"],
+			"Options": ["Seçenekler", "Optionen", "Opções:", "Opzioni:", "Opties:", "Opciók:", "Options:", "Asetukset", "Opțiuni"],
 			"TACS Options": ["TACS Seçenekleri", "TACS Optionen", "", "", "", "", "", "", "Opțiuni TACS: "],
-			"Auto display stats" : ["İstatistik penceresini otomatik olarak göster", "Dieses Fenster automatisch öffnen", "Mostrar esta caixa automaticamente", "Apri automaticamente la finestra Strumenti", "Dit venster automatisch weergeven", "Ezen ablak autómatikus megjelenítése", "Affich. Auto. de cette Fenêtre", "Näytä simuloinnin tiedot automaattisesti", "Afișează automat statisticile"], // need to change translations
-			"Show shift buttons" : ["Kaydırma tuşlarını göster", "Bewegungstasten anzeigen", "Mostrar botões de deslocamento", "Mostra i pulsanti di spostamento", "Verschuifknoppen weergeven", "Eltoló gombok megjelenítése", "Affich. Auto. Boutons de Déplacement", "Näytä armeijan siirtopainikkeet", "Afișează butoanele de deplasare"],
-			"Warning!" : ["Uyarı!", "Warnung!", "Aviso!", "Attenzione!", "Waarschuwing!", "Figyelem!", "Attention!", "Varoitus!", "Atenție!"],
-			"Simulate" : ["Simule et", "Simulieren", "Simular", "Simula", "Simuleer", "Szimuláció", "Simuler", "Simuloi", "Simulează"],
-			"Start Combat Simulation" : ["Savaş Simulasyonunu Başlat", "Kampfsimulation starten", "Começar a simalação de combate", "Avvia simulazione", "Start Gevechtssimulatie", "Csata szimuláció elindítása", "Démarrer La Simulation Du Combat", "Aloita taistelun simulaatio", "Începe simularea luptei"],
-			"Setup" : ["Düzen", "Aufstellung", "Configuração", "Setup", "Opzet", "Elrendezés", "Organisation", "Takaisin", "Pregătire"],
-			"Return to Combat Setup" : ["Ordu düzenini göster", "Zurück zur Einheitenaufstellung", "Voltar à configuração de combate", "Ritorna alla configurazione", "Keer terug naar Gevechtsopzet", "Vissza az egységek elrendezéséhez", "Retourner à l'Organisation Des Troupes", "Return to Combat Setup", "Întoarcere la ecranul pentru pregătirea luptei"],
-			"Unlock" : ["Kilidi aç", "Freigabe", "Desbloquear", "Sblocca", "Ontgrendel", "Felold", "Debloquer", "Avaa", "Descuie"],
+			"Auto display stats": ["İstatistik penceresini otomatik olarak göster", "Dieses Fenster automatisch öffnen", "Mostrar esta caixa automaticamente", "Apri automaticamente la finestra Strumenti", "Dit venster automatisch weergeven", "Ezen ablak autómatikus megjelenítése", "Affich. Auto. de cette Fenêtre", "Näytä simuloinnin tiedot automaattisesti", "Afișează automat statisticile"], // need to change translations
+			"Show shift buttons": ["Kaydırma tuşlarını göster", "Bewegungstasten anzeigen", "Mostrar botões de deslocamento", "Mostra i pulsanti di spostamento", "Verschuifknoppen weergeven", "Eltoló gombok megjelenítése", "Affich. Auto. Boutons de Déplacement", "Näytä armeijan siirtopainikkeet", "Afișează butoanele de deplasare"],
+			"Warning!": ["Uyarı!", "Warnung!", "Aviso!", "Attenzione!", "Waarschuwing!", "Figyelem!", "Attention!", "Varoitus!", "Atenție!"],
+			"Simulate": ["Simule et", "Simulieren", "Simular", "Simula", "Simuleer", "Szimuláció", "Simuler", "Simuloi", "Simulează"],
+			"Start Combat Simulation": ["Savaş Simulasyonunu Başlat", "Kampfsimulation starten", "Começar a simalação de combate", "Avvia simulazione", "Start Gevechtssimulatie", "Csata szimuláció elindítása", "Démarrer La Simulation Du Combat", "Aloita taistelun simulaatio", "Începe simularea luptei"],
+			"Setup": ["Düzen", "Aufstellung", "Configuração", "Setup", "Opzet", "Elrendezés", "Organisation", "Takaisin", "Pregătire"],
+			"Return to Combat Setup": ["Ordu düzenini göster", "Zurück zur Einheitenaufstellung", "Voltar à configuração de combate", "Ritorna alla configurazione", "Keer terug naar Gevechtsopzet", "Vissza az egységek elrendezéséhez", "Retourner à l'Organisation Des Troupes", "Return to Combat Setup", "Întoarcere la ecranul pentru pregătirea luptei"],
+			"Unlock": ["Kilidi aç", "Freigabe", "Desbloquear", "Sblocca", "Ontgrendel", "Felold", "Debloquer", "Avaa", "Descuie"],
 			//"Tools" : ["Araçlar", "Extras", "Ferramentas", "Strumenti", "Gereedschap", "Eszközök", "Outils", "Työkalut"],
-			"Open Simulator Tools" : ["Simulatör Araçlarını Göster", "Extras öffnen", "Abrir as ferramentas do simulador", "Apri strumenti", "Open Simulator Gereedschap", "Megnyitja a szimulátor információs ablakát", "Ouvrir Les Réglages Du Simulateur", "Avaa simulaattorin työkalut", "Deschide opțiunile simulatorului"],
-			"Shift units left" : ["Birlikleri sola kaydır", "Einheiten nach links bewegen", "Deslocar as unidades para a esquerda", "Spostare le unità a sinistra", "Verschuif eenheden links", "Egységek eltolása balra", "Déplacer Les Unités Vers La Gauche", "Siirtää yksikköjä vasemmalle", "Deplasează unitățile la stânga"],
-			"Shift units right" : ["Birlikleri sağa kaydır", "Einheiten nach rechts bewegen", "Deslocar as unidades para a direita", "Spostare le unità a destra", "Verschuif eenheden rechts", "Egységek eltolása jobbra", "Déplacer Les Unités Vers La Droite", "Siirtää yksikköjä oikealle", "Deplasează unitățile la dreapta"],
-			"Shift units up" : ["Birlikleri yukarı kaydır", "Einheiten nach oben bewegen", "Deslocar as unidades para cima", "Spostare le unità in alto", "Verschuif eenheden omhoog", "Egységek eltolása fel", "Déplacer Les Unités Vers Le Haut", "Siirtää yksikköjä ylös", "Deplasează unitățile mai sus"],
-			"Shift units down" : ["Birlikleri aşağı kaydır", "Einheiten nach unten bewegen", "Deslocar as unidades para baixo", "Spostare le unità in basso", "Verschuif eenheden omlaag", "Egységek eltolása le", "Déplacer Les Unités Vers Le Bas", "Siirtää yksikköjä alas", "Deplasează unitățile mai jos"],
+			"Open Simulator Tools": ["Simulatör Araçlarını Göster", "Extras öffnen", "Abrir as ferramentas do simulador", "Apri strumenti", "Open Simulator Gereedschap", "Megnyitja a szimulátor információs ablakát", "Ouvrir Les Réglages Du Simulateur", "Avaa simulaattorin työkalut", "Deschide opțiunile simulatorului"],
+			"Shift units left": ["Birlikleri sola kaydır", "Einheiten nach links bewegen", "Deslocar as unidades para a esquerda", "Spostare le unità a sinistra", "Verschuif eenheden links", "Egységek eltolása balra", "Déplacer Les Unités Vers La Gauche", "Siirtää yksikköjä vasemmalle", "Deplasează unitățile la stânga"],
+			"Shift units right": ["Birlikleri sağa kaydır", "Einheiten nach rechts bewegen", "Deslocar as unidades para a direita", "Spostare le unità a destra", "Verschuif eenheden rechts", "Egységek eltolása jobbra", "Déplacer Les Unités Vers La Droite", "Siirtää yksikköjä oikealle", "Deplasează unitățile la dreapta"],
+			"Shift units up": ["Birlikleri yukarı kaydır", "Einheiten nach oben bewegen", "Deslocar as unidades para cima", "Spostare le unità in alto", "Verschuif eenheden omhoog", "Egységek eltolása fel", "Déplacer Les Unités Vers Le Haut", "Siirtää yksikköjä ylös", "Deplasează unitățile mai sus"],
+			"Shift units down": ["Birlikleri aşağı kaydır", "Einheiten nach unten bewegen", "Deslocar as unidades para baixo", "Spostare le unità in basso", "Verschuif eenheden omlaag", "Egységek eltolása le", "Déplacer Les Unités Vers Le Bas", "Siirtää yksikköjä alas", "Deplasează unitățile mai jos"],
 			//"Battle Simulator" : ["Savaş Simulatörü", "Kampfsimulator", "Simulador de Combate", "Simulatore", "Gevechtssimulator", "Csata szimulátor", "Simulateur De Combat", "Taistelusimulaattori"],
-			"Total Victory" : ["Mutlak Zafer", "Gesamtsieg", "Vitória Total", "Vittoria Totale", "Totale Overwinning", "Teljes gyozelem", "Victoire Totale", "Totaalinen Voitto","Victorie totală"],
-			"Victory" : ["Zafer", "Sieg", "Vitória", "Vittoria", "Overwinning", "Gyozelem", "Victoire", "Voitto", "Victorie"],
-			"Total Defeat" : ["Mutlak Yenilgi", "Totale Niederlage", "Derrota total", "Sconfitta Totale", "Totale Nederlaag", "Teljes vereség", "Défaite Totale", "Total Tappio", "Înfrângere totală"],
-			"Support lvl " : ["Takviye seviyesi ", "Stufe Supportwaffe ", "Nível do Suporte ", "Supporto lvl ", "Ondersteuningsniveau ", '"Support" épület szintje ', "Lvl. Du Support ", "Tukitykistön taso ", "Nivelul suportului "],
-			"Refresh" : ["Yenile", "Erfrischen", "Actualizar", "Rinfrescare", "Verversen", "Felfrissít", "Actualiser", "Päivitä", "Împrospătează"], //google translate non-PT langs
-			"Refresh Stats" : ["İstatistikleri Yenile", "Erfrischen Statistik", "Estatística", "Rinfrescare Statistiche", "Verversen Statistieken", "Frissítés Stats", "Actualiser Les Stats", "Päivitä tiedot", "Împrospătează statisticile"], //google translate non-PT langs 'refresh' + statistics label
-			"Side:" : ["Taraf:", "Seite", "Lado:", "", "Zijde", "", "Côté", "Sijainti:", "Lateral"],
-			"Left" : ["Sol", "Links", "Esquerda", "", "Links", "", "Gauche", "Vasen", "Stânga"],
-			"Right" : ["Sağ", "Rechts", "Direita", "", "Rechts", "", "Droite", "Oikea", "Dreapta"],
-			"Locks:" : ["Kilitler:", "Freigabe", "Bloquear:", "", "Vergrendelingen:", "", "Vérouiller:", "Varmistimet:", "Blochează:"],
-			"Attack" : ["Saldırı", "Angriff", "Atacar", "", "Aanvallen", "", "Attaquer", "Hyökkäys", "Atacă "],
-			"Repair" : ["Onarım", "Reparatur", "Reparar", "", "Repareren", "", "Réparer", "Korjaus", "Reparare"],
-			"Reset" : ["Sıfırla", "Zurücksetzen", "", "", "", "", "", "Palauta", "Resetare"],
-			"Simulation will be based on most recently refreshed stats!" : ["Simulasyon en son güncellenen istatistiklere göre yapılacaktır!", "Die Simulation basiert auf den zuletzt aktualisierten Stand", "A simulação vai ser baseada na mais recente data!", "", "Simulatie zal gebaseerd worden op meest recentelijke ververste statistieken!", "", "La Simulation sera basée en fonction des dernières stats actualisées !", "Simulaatio suoritetaan viimeisimmän päivityksen tiedoilla!", "Simularea se va baza pe cele mai recente statistici!"],
-			"Unlock Attack Button" : ["Saldırı Düğmesinin Kilidini Aç", "Angriffsbutton freigeben", "Desbloquear o botão de ataque", "Sblocca pulsante d'attacco", "Ontgrendel Aanvalsknop", "a Támadás gomb feloldása", "Débloquer Le Bouton d'Attaque", "Poista hyökkäusnapin lukitus", "Descuie butonul de atac"],
-			"Unlock Repair Button" : ["Onarım Düğmesinin Kilidini Aç", "Reparaturbutton freigeben", "Desbloquear botão de reparação", "", "Ontgrendel Repareerknop", "", "Débloquer Le Bouton de Réparation", "Poista korjausnapin lukitus", "Descuie butonul de reparare"],
-			"Unlock Reset Button" : ["Sıfırlama Düğmesinin Kilidini Aç", "", "", "", "", "", "", "Avaa Tyhjennä nappi", "Descuie butonul de resetare"],
+			"Total Victory": ["Mutlak Zafer", "Gesamtsieg", "Vitória Total", "Vittoria Totale", "Totale Overwinning", "Teljes gyozelem", "Victoire Totale", "Totaalinen Voitto", "Victorie totală"],
+			"Victory": ["Zafer", "Sieg", "Vitória", "Vittoria", "Overwinning", "Gyozelem", "Victoire", "Voitto", "Victorie"],
+			"Total Defeat": ["Mutlak Yenilgi", "Totale Niederlage", "Derrota total", "Sconfitta Totale", "Totale Nederlaag", "Teljes vereség", "Défaite Totale", "Total Tappio", "Înfrângere totală"],
+			"Support lvl ": ["Takviye seviyesi ", "Stufe Supportwaffe ", "Nível do Suporte ", "Supporto lvl ", "Ondersteuningsniveau ", '"Support" épület szintje ', "Lvl. Du Support ", "Tukitykistön taso ", "Nivelul suportului "],
+			"Refresh": ["Yenile", "Erfrischen", "Actualizar", "Rinfrescare", "Verversen", "Felfrissít", "Actualiser", "Päivitä", "Împrospătează"], //google translate non-PT langs
+			"Refresh Stats": ["İstatistikleri Yenile", "Erfrischen Statistik", "Estatística", "Rinfrescare Statistiche", "Verversen Statistieken", "Frissítés Stats", "Actualiser Les Stats", "Päivitä tiedot", "Împrospătează statisticile"], //google translate non-PT langs 'refresh' + statistics label
+			"Side:": ["Taraf:", "Seite", "Lado:", "", "Zijde", "", "Côté", "Sijainti:", "Lateral"],
+			"Left": ["Sol", "Links", "Esquerda", "", "Links", "", "Gauche", "Vasen", "Stânga"],
+			"Right": ["Sağ", "Rechts", "Direita", "", "Rechts", "", "Droite", "Oikea", "Dreapta"],
+			"Locks:": ["Kilitler:", "Freigabe", "Bloquear:", "", "Vergrendelingen:", "", "Vérouiller:", "Varmistimet:", "Blochează:"],
+			"Attack": ["Saldırı", "Angriff", "Atacar", "", "Aanvallen", "", "Attaquer", "Hyökkäys", "Atacă "],
+			"Repair": ["Onarım", "Reparatur", "Reparar", "", "Repareren", "", "Réparer", "Korjaus", "Reparare"],
+			"Reset": ["Sıfırla", "Zurücksetzen", "", "", "", "", "", "Palauta", "Resetare"],
+			"Simulation will be based on most recently refreshed stats!": ["Simulasyon en son güncellenen istatistiklere göre yapılacaktır!", "Die Simulation basiert auf den zuletzt aktualisierten Stand", "A simulação vai ser baseada na mais recente data!", "", "Simulatie zal gebaseerd worden op meest recentelijke ververste statistieken!", "", "La Simulation sera basée en fonction des dernières stats actualisées !", "Simulaatio suoritetaan viimeisimmän päivityksen tiedoilla!", "Simularea se va baza pe cele mai recente statistici!"],
+			"Unlock Attack Button": ["Saldırı Düğmesinin Kilidini Aç", "Angriffsbutton freigeben", "Desbloquear o botão de ataque", "Sblocca pulsante d'attacco", "Ontgrendel Aanvalsknop", "a Támadás gomb feloldása", "Débloquer Le Bouton d'Attaque", "Poista hyökkäusnapin lukitus", "Descuie butonul de atac"],
+			"Unlock Repair Button": ["Onarım Düğmesinin Kilidini Aç", "Reparaturbutton freigeben", "Desbloquear botão de reparação", "", "Ontgrendel Repareerknop", "", "Débloquer Le Bouton de Réparation", "Poista korjausnapin lukitus", "Descuie butonul de reparare"],
+			"Unlock Reset Button": ["Sıfırlama Düğmesinin Kilidini Aç", "", "", "", "", "", "", "Avaa Tyhjennä nappi", "Descuie butonul de resetare"],
 			"SKIP": ["ATLA", "Überspringen", "", "", "", "", "", "", ""],
-			"Skip to end" : ["Simulasyonu atla", "Zum Ende Vorspringen", "", "", "", "", "", "Mene loppuun", "Sari la final"],
-			"Reset Formation" : ["Dizilişi Sıfırla", "Formation zurücksetzen", "", "", "", "", "", "Palauta armeijan oletusasetelma", "Resetează formația"],
-			"Flip Horizontal" : ["Yatay Çevir", "Horizontal Spiegeln", "", "", "", "", "", "Käännä vaakasuunnassa", "Întoarce orizontal"],
-			"Flip Vertical" : ["Dikey Çevir", "Vertikal Spiegeln", "", "", "", "", "", "Käännä pystysuunnassa", "Întoarce vertical"],
-			"Activate All" : ["Hepsini Aktifleştir", "Alle Aktivieren", "", "", "", "", "", "Aktivoi kaikki", "Activează totul"],
-			"Deactivate All" : ["Hepsini Deaktifleştir", "Alle Deaktivieren", "", "", "", "", "", "Poista kaikki käytöstä", "Dezactivează totul"],
-			"Activate Infantry" : ["Piyadeleri Aktifleştir", "Infanterie Aktivieren", "", "", "", "", "", "Aktivoi jalkaväki", "Activează infanteria"],
-			"Deactivate Infantry" : ["Piyadeleri Deaktifleştir", "Infanterie Deaktivieren", "", "", "", "", "", "Poista jalkaväki käytöstä", "Dezactivează infanteria"],
-			"Activate Vehicles" : ["Motorlu Birlikleri Aktifleştir", "Fahrzeuge Aktivieren", "", "", "", "", "", "Aktivoi ajoneuvot", "Activează vehiculele"],
-			"Deactivate Vehicles" : ["Motorlu Birlikleri Deaktifleştir", "Fahrzeuge Deaktivieren", "", "", "", "", "", "Poista ajoneuvot käytöstä", "Dezactivează vehiculele"],
-			"Activate Air" : ["Hava Araçlarını Aktifleştir", "Flugzeuge Aktivieren", "", "", "", "", "", "Aktivoi lentokoneet", "Activează avioanele"],
-			"Deactivate Air" : ["Hava Araçlarını Deaktifleştir", "Flugzeuge Deaktivieren", "", "", "", "", "", "Poista lentokoneet käytöstä", "Dezactivează avioanele"],
-			"Activate Repair Mode" : ["Onarım Modunu Aç", "Reparatur Modus Aktivieren", "", "", "", "", "", "Aktivoi korjaustila", "Activează modul de reparare"],
-			"Deactivate Repair Mode" : ["Onarım Modunu Kapat", "Reparatur Modus Deaktivieren", "", "", "", "", "", "Poista korjaustila käytöstä", "Dezactivează modul de reparare"],
-			"Version: " : ["Sürüm: ", "", "", "", "", "", "", "Versio: ", "Versiunea: "],
-			"Mark saved targets on region map" : ["Kaydedilmiş hedefleri haritada işaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle", "Marchează țintele salvate pe harta regiunii"], // region view
-			"Enable 'Double-click to (De)activate units'" : ["Çift-tıklama ile birlikleri (de)aktifleştirmeyi etkinleştir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt", "Activează \"Dublu click pentru a (De)activa unitățile\""],
-			"Show Loot Summary" : ["", "Zeige Beute-Zusammenfassung", "", "", "", "", "", "", "Afișează rezumatul prăzii"],
-			"Show Resource Layout Window" : ["", "", "", "", "", "", "", "", "Afișează fereastra cu schema resurselor"],
-			"Show Stats During Attack" : ["İstatistikleri saldırı sırasında göster", "Zeige Statistik während des Angriffs", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana", "Afișează statisticile în timpul atacului"],
-			"Show Stats During Simulation" : ["İstatistikleri simulasyondayken göster", "Zeige Statistik während der Simulation", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana", "Afișează statisticile în timpul simulării"],
-			"Skip Victory-Popup After Battle" : ["Savaş Bitiminde Zafer Bildirimini Atla", "Siegesbildschirm überspringen", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu", "Sari peste popup-ul victoriei după luptă"],
-			"Stats Window Opacity" : ["İstatistik Penceresi Saydamlığı", "Transparenz des Statistik-Fenster", "", "", "", "", "", "Tiedot -ikkunan läpinäkyvyys", "Opacitatea ferestrei de statistici"],
-			"Disable Unit Tooltips In Army Formation Manager" : ["Ordu Dizilişi Yöneticisinde Birlik İpuçlarını Gizle", "", "", "", "", "", "", "Poista käytöstä yksiköiden työkaluvihjeet armeijan muodostamisikkunassa", "Dezactivează tooltip-urile unităților în managerul formației armatei"],
-			"Disable Tooltips In Attack Preparation View" : ["Saldırı Hazırlık Görünümünde İpuçlarını Gizle", "", "", "", "", "", "", "Poista työkaluvihjeet käytöstä hyökkäyksen valmisteluikkunassa", "Dezactivează tooltip-urile unităților în ecranul preparării armatei"],
-			"Undo" : ["Geri Al", "", "", "", "", "", "", "Kumoa", "Anulează"],
-			"Redo" : ["İleri Al", "", "", "", "", "", "", "Tee uudelleen", "Refă"],
-			"Open Stats Window" : ["İstatistik Penceresini Aç", "Statistik öffnen", "", "", "", "", "", "Avaa tiedot -ikkuna", "Deschide fereastra de statistici"]
+			"Skip to end": ["Simulasyonu atla", "Zum Ende Vorspringen", "", "", "", "", "", "Mene loppuun", "Sari la final"],
+			"Reset Formation": ["Dizilişi Sıfırla", "Formation zurücksetzen", "", "", "", "", "", "Palauta armeijan oletusasetelma", "Resetează formația"],
+			"Flip Horizontal": ["Yatay Çevir", "Horizontal Spiegeln", "", "", "", "", "", "Käännä vaakasuunnassa", "Întoarce orizontal"],
+			"Flip Vertical": ["Dikey Çevir", "Vertikal Spiegeln", "", "", "", "", "", "Käännä pystysuunnassa", "Întoarce vertical"],
+			"Activate All": ["Hepsini Aktifleştir", "Alle Aktivieren", "", "", "", "", "", "Aktivoi kaikki", "Activează totul"],
+			"Deactivate All": ["Hepsini Deaktifleştir", "Alle Deaktivieren", "", "", "", "", "", "Poista kaikki käytöstä", "Dezactivează totul"],
+			"Activate Infantry": ["Piyadeleri Aktifleştir", "Infanterie Aktivieren", "", "", "", "", "", "Aktivoi jalkaväki", "Activează infanteria"],
+			"Deactivate Infantry": ["Piyadeleri Deaktifleştir", "Infanterie Deaktivieren", "", "", "", "", "", "Poista jalkaväki käytöstä", "Dezactivează infanteria"],
+			"Activate Vehicles": ["Motorlu Birlikleri Aktifleştir", "Fahrzeuge Aktivieren", "", "", "", "", "", "Aktivoi ajoneuvot", "Activează vehiculele"],
+			"Deactivate Vehicles": ["Motorlu Birlikleri Deaktifleştir", "Fahrzeuge Deaktivieren", "", "", "", "", "", "Poista ajoneuvot käytöstä", "Dezactivează vehiculele"],
+			"Activate Air": ["Hava Araçlarını Aktifleştir", "Flugzeuge Aktivieren", "", "", "", "", "", "Aktivoi lentokoneet", "Activează avioanele"],
+			"Deactivate Air": ["Hava Araçlarını Deaktifleştir", "Flugzeuge Deaktivieren", "", "", "", "", "", "Poista lentokoneet käytöstä", "Dezactivează avioanele"],
+			"Activate Repair Mode": ["Onarım Modunu Aç", "Reparatur Modus Aktivieren", "", "", "", "", "", "Aktivoi korjaustila", "Activează modul de reparare"],
+			"Deactivate Repair Mode": ["Onarım Modunu Kapat", "Reparatur Modus Deaktivieren", "", "", "", "", "", "Poista korjaustila käytöstä", "Dezactivează modul de reparare"],
+			"Version: ": ["Sürüm: ", "", "", "", "", "", "", "Versio: ", "Versiunea: "],
+			"Mark saved targets on region map": ["Kaydedilmiş hedefleri haritada işaretle", "Gespeicherte Ziele auf der Karte Markieren", "", "", "", "", "", "Merkitse tallennetut kohteet alue kartalle", "Marchează țintele salvate pe harta regiunii"], // region view
+			"Enable 'Double-click to (De)activate units'": ["Çift-tıklama ile birlikleri (de)aktifleştirmeyi etkinleştir", "Doppel-Klick zum Einheiten (De)-Aktivieren ", "", "", "", "", "", "Tuplaklikkaus aktivoi/deaktivoi yksiköt", "Activează \"Dublu click pentru a (De)activa unitățile\""],
+			"Show Loot Summary": ["", "Zeige Beute-Zusammenfassung", "", "", "", "", "", "", "Afișează rezumatul prăzii"],
+			"Show Resource Layout Window": ["", "", "", "", "", "", "", "", "Afișează fereastra cu schema resurselor"],
+			"Show Stats During Attack": ["İstatistikleri saldırı sırasında göster", "Zeige Statistik während des Angriffs", "", "", "", "", "", "Näytä tiedot -ikkuna hyökkäyksen aikana", "Afișează statisticile în timpul atacului"],
+			"Show Stats During Simulation": ["İstatistikleri simulasyondayken göster", "Zeige Statistik während der Simulation", "", "", "", "", "", "Näytä tiedot -ikkuna simuloinnin aikana", "Afișează statisticile în timpul simulării"],
+			"Skip Victory-Popup After Battle": ["Savaş Bitiminde Zafer Bildirimini Atla", "Siegesbildschirm überspringen", "", "", "", "", "", "Ohita taistelun jälkeinen voittoruutu", "Sari peste popup-ul victoriei după luptă"],
+			"Stats Window Opacity": ["İstatistik Penceresi Saydamlığı", "Transparenz des Statistik-Fenster", "", "", "", "", "", "Tiedot -ikkunan läpinäkyvyys", "Opacitatea ferestrei de statistici"],
+			"Disable Unit Tooltips In Army Formation Manager": ["Ordu Dizilişi Yöneticisinde Birlik İpuçlarını Gizle", "", "", "", "", "", "", "Poista käytöstä yksiköiden työkaluvihjeet armeijan muodostamisikkunassa", "Dezactivează tooltip-urile unităților în managerul formației armatei"],
+			"Disable Tooltips In Attack Preparation View": ["Saldırı Hazırlık Görünümünde İpuçlarını Gizle", "", "", "", "", "", "", "Poista työkaluvihjeet käytöstä hyökkäyksen valmisteluikkunassa", "Dezactivează tooltip-urile unităților în ecranul preparării armatei"],
+			"Undo": ["Geri Al", "", "", "", "", "", "", "Kumoa", "Anulează"],
+			"Redo": ["İleri Al", "", "", "", "", "", "", "Tee uudelleen", "Refă"],
+			"Open Stats Window": ["İstatistik Penceresini Aç", "Statistik öffnen", "", "", "", "", "", "Avaa tiedot -ikkuna", "Deschide fereastra de statistici"]
 		};
 
 		function lang(text) {
@@ -146,256 +146,256 @@ window.TACS_version = GM_info.script.version;
 		function CreateTweak() {
 			var TASuite = {};
 			qx.Class.define("TACS", {
-				type : "singleton",
-				extend : qx.core.Object,
-				members : {
+				type: "singleton",
+				extend: qx.core.Object,
+				members: {
 					// Default settings
-					saveObj : {
+					saveObj: {
 						// section.option
-						section : {
-							option : "foo"
+						section: {
+							option: "foo"
 						},
-						bounds : {
-							battleResultsBoxLeft : 125,
-							battleResultsBoxTop : 125,
-							resourceLayoutWindowLeft : 125,
-							resourceLayoutWindowTop : 550
+						bounds: {
+							battleResultsBoxLeft: 125,
+							battleResultsBoxTop: 125,
+							resourceLayoutWindowLeft: 125,
+							resourceLayoutWindowTop: 550
 						},
-						checkbox : {
-							showLootSummary : true,
-							showResourceLayoutWindow : true,
-							showStatsDuringAttack : true,
-							showStatsDuringSimulation : true,
-							skipVictoryPopup : false,
-							disableArmyFormationManagerTooltips : false,
-							disableAttackPreparationTooltips : false
+						checkbox: {
+							showLootSummary: true,
+							showResourceLayoutWindow: true,
+							showStatsDuringAttack: true,
+							showStatsDuringSimulation: true,
+							skipVictoryPopup: false,
+							disableArmyFormationManagerTooltips: false,
+							disableAttackPreparationTooltips: false
 						},
-						audio : {
-							playRepairSound : true
+						audio: {
+							playRepairSound: true
 						},
-						slider : {
-							statsOpacity : 100
+						slider: {
+							statsOpacity: 100
 						}
 					},
-					buttons : {
-						attack : {
-							layout : {
-								save : null, // buttonLayoutSave
-								load : null // buttonLayoutLoad
+					buttons: {
+						attack: {
+							layout: {
+								save: null, // buttonLayoutSave
+								load: null // buttonLayoutLoad
 							},
-							simulate : null, // buttonSimulateCombat
-							unlock : null, // buttonUnlockAttack
-							repair : null, // buttonUnlockRepair
-							unlockReset : null, // buttonUnlockReset
-							tools : null, // buttonTools
-							refreshStats : null, // buttonRefreshStats
-							formationReset : null, // buttonResetFormation
-							flipVertical : null, // buttonFlipVertical
-							flipHorizontal : null, // buttonFlipHorizontal
-							activateInfantry : null, // buttonActivateInfantry
-							activateVehicles : null, // buttonActivateVehicles
-							activateAir : null, // buttonActivateAir
-							activateAll : null, // buttonActivateAll
-							repairMode : null, // buttonToggleRepairMode
-							toolbarRefreshStats : null, // buttontoolbarRefreshStats
-							toolbarShowStats : null,
-							toolbarUndo : null,
-							toolbarRedo : null,
-							options : null // buttonOptions
+							simulate: null, // buttonSimulateCombat
+							unlock: null, // buttonUnlockAttack
+							repair: null, // buttonUnlockRepair
+							unlockReset: null, // buttonUnlockReset
+							tools: null, // buttonTools
+							refreshStats: null, // buttonRefreshStats
+							formationReset: null, // buttonResetFormation
+							flipVertical: null, // buttonFlipVertical
+							flipHorizontal: null, // buttonFlipHorizontal
+							activateInfantry: null, // buttonActivateInfantry
+							activateVehicles: null, // buttonActivateVehicles
+							activateAir: null, // buttonActivateAir
+							activateAll: null, // buttonActivateAll
+							repairMode: null, // buttonToggleRepairMode
+							toolbarRefreshStats: null, // buttontoolbarRefreshStats
+							toolbarShowStats: null,
+							toolbarUndo: null,
+							toolbarRedo: null,
+							options: null // buttonOptions
 						},
-						simulate : {
-							back : null, // buttonReturnSetup
-							skip : null // buttonSkipSimulation
+						simulate: {
+							back: null, // buttonReturnSetup
+							skip: null // buttonSkipSimulation
 						},
-						shiftFormationUp : null,
-						shiftFormationDown : null,
-						shiftFormationLeft : null,
-						shiftFormationRight : null,
-						optionStats : null
+						shiftFormationUp: null,
+						shiftFormationDown: null,
+						shiftFormationLeft: null,
+						shiftFormationRight: null,
+						optionStats: null
 					},
-					stats : {
-						spoils : {
-							tiberium : null, // tiberiumSpoils
-							crystal : null, // crystalSpoils
-							credit : null, // creditSpoils
-							research : null // researchSpoils
+					stats: {
+						spoils: {
+							tiberium: null, // tiberiumSpoils
+							crystal: null, // crystalSpoils
+							credit: null, // creditSpoils
+							research: null // researchSpoils
 						},
-						health : {
-							infantry : null, // lastInfantryPercentage
-							vehicle : null, // lastVehiclePercentage
-							aircraft : null, // lastAirPercentage
-							overall : null // lastPercentage
+						health: {
+							infantry: null, // lastInfantryPercentage
+							vehicle: null, // lastVehiclePercentage
+							aircraft: null, // lastAirPercentage
+							overall: null // lastPercentage
 						},
-						repair : {
-							infantry : null, // lastInfantryRepairTime
-							vehicle : null, // lastVehicleRepairTime
-							aircraft : null, // lastAircraftRepairTime
-							overall : null, // lastRepairTime
-							available : null, // storedRepairTime
-							max : null // maxRepairCharges
+						repair: {
+							infantry: null, // lastInfantryRepairTime
+							vehicle: null, // lastVehicleRepairTime
+							aircraft: null, // lastAircraftRepairTime
+							overall: null, // lastRepairTime
+							available: null, // storedRepairTime
+							max: null // maxRepairCharges
 						},
-						attacks : {
-							availableCP : null,
-							attackCost : null,
+						attacks: {
+							availableCP: null,
+							attackCost: null,
 							availableAttacksCP: null,
 							availableAttacksAtFullStrength: null,
 							availableAttacksWithCurrentRepairCharges: null
 						},
-						damage : {
-							units : {
-								overall : null // lastEnemyUnitsPercentage
+						damage: {
+							units: {
+								overall: null // lastEnemyUnitsPercentage
 							},
-							structures : {
-								construction : null, // lastCYPercentage
-								defense : null, // lastDFPercentage
-								command : null, // lastCCPercentage
-								support : null,
-								overall : null // lastEnemyBuildingsPercentage
+							structures: {
+								construction: null, // lastCYPercentage
+								defense: null, // lastDFPercentage
+								command: null, // lastCCPercentage
+								support: null,
+								overall: null // lastEnemyBuildingsPercentage
 							},
-							overall : null // lastEnemyPercentage
+							overall: null // lastEnemyPercentage
 						},
-						resourcesummary : {
-							research : null,
-							credits : null,
-							crystal : null,
-							tiberium : null
+						resourcesummary: {
+							research: null,
+							credits: null,
+							crystal: null,
+							tiberium: null
 						},
-						time : null,
-						supportLevel : null
+						time: null,
+						supportLevel: null
 					},
-					labels : {
-						health : {
-							infantry : null, // infantryTroopStrengthLabel
-							vehicle : null, // vehicleTroopStrengthLabel
-							aircraft : null, // airTroopStrengthLabel
-							overall : null // simTroopDamageLabel
+					labels: {
+						health: {
+							infantry: null, // infantryTroopStrengthLabel
+							vehicle: null, // vehicleTroopStrengthLabel
+							aircraft: null, // airTroopStrengthLabel
+							overall: null // simTroopDamageLabel
 						},
-						repair : {
-							available : null
+						repair: {
+							available: null
 						},
-						repairinfos : {
-							infantry : null,
-							vehicle : null,
-							aircraft : null,
-							available : null
+						repairinfos: {
+							infantry: null,
+							vehicle: null,
+							aircraft: null,
+							available: null
 						},
-						attacks : {
-							available : null
+						attacks: {
+							available: null
 						},
-						damage : {
-							units : {
-								overall : null // enemyUnitsStrengthLabel
+						damage: {
+							units: {
+								overall: null // enemyUnitsStrengthLabel
 							},
-							structures : {
-								construction : null, // CYTroopStrengthLabel
-								defense : null, // DFTroopStrengthLabel
-								command : null, // CCTroopStrengthLabel
-								support : null, // enemySupportStrengthLabel
-								overall : null // enemyBuildingsStrengthLabel
+							structures: {
+								construction: null, // CYTroopStrengthLabel
+								defense: null, // DFTroopStrengthLabel
+								command: null, // CCTroopStrengthLabel
+								support: null, // enemySupportStrengthLabel
+								overall: null // enemyBuildingsStrengthLabel
 							},
-							overall : null, // enemyTroopStrengthLabel
-							outcome : null // simVictoryLabel
+							overall: null, // enemyTroopStrengthLabel
+							outcome: null // simVictoryLabel
 						},
-						resourcesummary : {
-							research : null,
-							credits : null,
-							crystal : null,
-							tiberium : null
+						resourcesummary: {
+							research: null,
+							credits: null,
+							crystal: null,
+							tiberium: null
 						},
-						time : null, // simTimeLabel
-						supportLevel : null, // enemySupportLevelLabel
-						countDown : null // countDownLabel
+						time: null, // simTimeLabel
+						supportLevel: null, // enemySupportLevelLabel
+						countDown: null // countDownLabel
 					},
-					view : {
-						playerCity : null,
-						playerCityDefenseBonus : null,
-						ownCity : null,
-						ownCityId : null,
-						targetCityId : null,
-						lastUnits : null,
-						lastUnitList : null
+					view: {
+						playerCity: null,
+						playerCityDefenseBonus: null,
+						ownCity: null,
+						ownCityId: null,
+						targetCityId: null,
+						lastUnits: null,
+						lastUnitList: null
 					},
-					layouts : {
-						label : null,
-						list : null,
-						all : null,
-						current : null,
-						restore : null
+					layouts: {
+						label: null,
+						list: null,
+						all: null,
+						current: null,
+						restore: null
 					},
-					options : {
-						autoDisplayStats : null,
-						showShift : null,
-						sideLabel : null,
-						locksLabel : null,
-						leftSide : null,
-						rightSide : null,
-						attackLock : null,
-						repairLock : null,
-						markSavedTargets : null,
-						dblClick2DeActivate : null,
-						showLootSummary : null,
-						showResourceLayoutWindow : null,
-						showStatsDuringAttack : null,
-						showStatsDuringSimulation : null,
-						skipVictoryPopup : null,
-						statsOpacityLabel : null,
-						statsOpacity : null,
+					options: {
+						autoDisplayStats: null,
+						showShift: null,
+						sideLabel: null,
+						locksLabel: null,
+						leftSide: null,
+						rightSide: null,
+						attackLock: null,
+						repairLock: null,
+						markSavedTargets: null,
+						dblClick2DeActivate: null,
+						showLootSummary: null,
+						showResourceLayoutWindow: null,
+						showStatsDuringAttack: null,
+						showStatsDuringSimulation: null,
+						skipVictoryPopup: null,
+						statsOpacityLabel: null,
+						statsOpacity: null,
 						statsOpacityOutput: null,
-						disableArmyFormationManagerTooltips : null,
-						disableAttackPreparationTooltips : null
+						disableArmyFormationManagerTooltips: null,
+						disableAttackPreparationTooltips: null
 					},
-					audio : {
-						soundRepairImpact : null,
-						soundRepairReload : null
+					audio: {
+						soundRepairImpact: null,
+						soundRepairReload: null
 					},
 
-					_Application : null,
-					_MainData : null,
-					_Cities : null,
-					_VisMain : null,
-					_ActiveView : null,
-					_PlayArea : null,
-					_armyBarContainer : null,
-					_armyBar : null,
-					attacker_modules : null,
-					defender_modules : null,
-					resourceSummaryVerticalBox : null,
-					battleResultsBox : null,
-					optionsWindow : null,
-					resourceLayoutWindow : null,
-					statsPage : null,
-					lastSimulation : null,
-					count : null,
-					counter : null,
-					statsOnly : null,
-					simulationWarning : null,
-					warningIcon : null,
-					userInterface : null,
-					infantryActivated : null,
-					vehiclesActivated : null,
-					airActivated : null,
-					allActivated : null,
-					toolBar : null,
-					toolBarParent : null,
-					TOOL_BAR_LOW : 113, // hidden
-					TOOL_BAR_HIGH : 155, // popped-up
-					TOOL_BAR_WIDTH : 740,
-					resourceLayout : null,
-					repairInfo : null,
-					repairButtons : [],
-					repairButtonsRedrawTimer : null,
-					armybarClickCount : null,
-					armybarClearnClickCounter : null,
-					repairModeTimer : null,
-					curPAVM : null,
-					curViewMode : null,
-					DEFAULTS : null,
-					undoCache : [],
-					ts1 : null, //timestamps
-					ts2 : null,
-					attackUnitsLoaded : null,
+					_Application: null,
+					_MainData: null,
+					_Cities: null,
+					_VisMain: null,
+					_ActiveView: null,
+					_PlayArea: null,
+					_armyBarContainer: null,
+					_armyBar: null,
+					attacker_modules: null,
+					defender_modules: null,
+					resourceSummaryVerticalBox: null,
+					battleResultsBox: null,
+					optionsWindow: null,
+					resourceLayoutWindow: null,
+					statsPage: null,
+					lastSimulation: null,
+					count: null,
+					counter: null,
+					statsOnly: null,
+					simulationWarning: null,
+					warningIcon: null,
+					userInterface: null,
+					infantryActivated: null,
+					vehiclesActivated: null,
+					airActivated: null,
+					allActivated: null,
+					toolBar: null,
+					toolBarParent: null,
+					TOOL_BAR_LOW: 113, // hidden
+					TOOL_BAR_HIGH: 155, // popped-up
+					TOOL_BAR_WIDTH: 740,
+					resourceLayout: null,
+					repairInfo: null,
+					repairButtons: [],
+					repairButtonsRedrawTimer: null,
+					armybarClickCount: null,
+					armybarClearnClickCounter: null,
+					repairModeTimer: null,
+					curPAVM: null,
+					curViewMode: null,
+					DEFAULTS: null,
+					undoCache: [],
+					ts1: null, //timestamps
+					ts2: null,
+					attackUnitsLoaded: null,
 
-					loadData : function () {
+					loadData: function () {
 						var str = localStorage.getItem("TACS");
 						var temp;
 						// this needs to be thoroughly checked
@@ -423,12 +423,12 @@ window.TACS_version = GM_info.script.version;
 							this.saveData();
 						}
 					},
-					saveData : function () {
+					saveData: function () {
 						var obj = this.saveObj || window.TACS.getInstance().saveObj;
 						var str = JSON.stringify(obj);
 						localStorage.setItem("TACS", str);
 					},
-					initialize : function () {
+					initialize: function () {
 						try {
 							this.loadData();
 							locale = ClientLib.Config.Main.GetInstance().GetConfig(ClientLib.Config.Main.CONFIG_LANGUAGE);
@@ -442,7 +442,7 @@ window.TACS_version = GM_info.script.version;
 							this._PlayArea = this._Application.getPlayArea();
 							this._armyBarContainer = this._Application.getArmySetupAttackBar();
 							this._armyBar = this._Application.getUIItem(ClientLib.Data.Missions.PATH.BAR_ATTACKSETUP);
-							
+
 							if (PerforceChangelist >= 443425) { // 16.1 patch
 								for (var i in this._armyBarContainer) {
 									if (typeof this._armyBarContainer[i] == "object" && this._armyBarContainer[i] != null) {
@@ -469,14 +469,14 @@ window.TACS_version = GM_info.script.version;
 
 							// Fix Defense Bonus Rounding
 							for (var key in ClientLib.Data.City.prototype) {
-									if (typeof ClientLib.Data.City.prototype[key] === 'function') {
-										var strFunction = ClientLib.Data.City.prototype[key].toString();
-										if (strFunction.indexOf("Math.floor(a.adb)") > -1) {
-											ClientLib.Data.City.prototype[key] = this.fixBonusRounding(ClientLib.Data.City.prototype[key], "a");
-											break;
-										}
+								if (typeof ClientLib.Data.City.prototype[key] === 'function') {
+									var strFunction = ClientLib.Data.City.prototype[key].toString();
+									if (strFunction.indexOf("Math.floor(a.adb)") > -1) {
+										ClientLib.Data.City.prototype[key] = this.fixBonusRounding(ClientLib.Data.City.prototype[key], "a");
+										break;
 									}
 								}
+							}
 
 							// Event Handlers
 							phe.cnc.Util.attachNetEvent(ClientLib.API.Battleground.GetInstance(), "OnSimulateBattleFinished", ClientLib.API.OnSimulateBattleFinished, this, this.onSimulateBattleFinishedEvent);
@@ -487,44 +487,44 @@ window.TACS_version = GM_info.script.version;
 							// Setup Button
 							this.buttons.simulate.back = new qx.ui.form.Button(lang("Setup"));
 							this.buttons.simulate.back.set({
-								width : 80,
-								height : 24,
-								appearance : "button-addpoints",
-								toolTipText : lang("Return to Combat Setup")
+								width: 80,
+								height: 24,
+								appearance: "button-addpoints",
+								toolTipText: lang("Return to Combat Setup")
 							});
 							this.buttons.simulate.back.addListener("click", this.returnSetup, this);
 
 							// Skip to end Button
 							this.buttons.simulate.skip = new qx.ui.form.Button();
 							this.buttons.simulate.skip.set({
-								width : 35,
-								height : 24,
-								appearance : "button-addpoints",
-								icon : "FactionUI/icons/icon_replay_skip.png",
-								toolTipText : lang("Skip to end")
+								width: 35,
+								height: 24,
+								appearance: "button-addpoints",
+								icon: "FactionUI/icons/icon_replay_skip.png",
+								toolTipText: lang("Skip to end")
 							});
 							this.buttons.simulate.skip.addListener("click", this.skipSimulation, this);
 
 							var replayBar = this._Application.getReportReplayOverlay();
 							replayBar.add(this.buttons.simulate.back, {
-								top : 21,
-								left : 185
+								top: 21,
+								left: 185
 							});
 							if (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled) {
 								replayBar.add(this.buttons.simulate.skip, {
-									top : 21,
-									left : 435
+									top: 21,
+									left: 435
 								});
 							}
 
 							// Unlock Button
 							this.buttons.attack.unlock = new qx.ui.form.Button(lang("Unlock"));
 							this.buttons.attack.unlock.set({
-								width : 54,
-								height : 37,
-								padding : 0,
-								appearance : "button-text-small",
-								toolTipText : lang("Unlock Attack Button")
+								width: 54,
+								height: 37,
+								padding: 0,
+								appearance: "button-text-small",
+								toolTipText: lang("Unlock Attack Button")
 							});
 							this.buttons.attack.unlock.addListener("click", this.unlockAttacks, this);
 							this.buttons.attack.unlock.setOpacity(0.5);
@@ -536,19 +536,19 @@ window.TACS_version = GM_info.script.version;
 							}
 							if (temp) {
 								this._armyBar.add(this.buttons.attack.unlock, {
-									top : 108,
-									right : 10
+									top: 108,
+									right: 10
 								});
 							}
 
 							// Unlock Repair
 							this.buttons.attack.repair = new qx.ui.form.Button(lang("Unlock"));
 							this.buttons.attack.repair.set({
-								width : 54,
-								height : 44,
-								padding : 0,
-								appearance : "button-text-small",
-								toolTipText : lang("Unlock Repair Button")
+								width: 54,
+								height: 44,
+								padding: 0,
+								appearance: "button-text-small",
+								toolTipText: lang("Unlock Repair Button")
 							});
 							this.buttons.attack.repair.addListener("click", this.unlockRepairs, this);
 							this.buttons.attack.repair.setOpacity(0.5);
@@ -560,8 +560,8 @@ window.TACS_version = GM_info.script.version;
 							}
 							if (temp) {
 								this._armyBar.add(this.buttons.attack.repair, {
-									top : 23,
-									right : 10
+									top: 23,
+									right: 10
 								});
 							}
 
@@ -597,22 +597,22 @@ window.TACS_version = GM_info.script.version;
 
 							// The Options Window
 							this.optionsWindow = new qx.ui.window.Window(lang("Options"), "FactionUI/icons/icon_forum_properties.png").set({
-									contentPaddingTop : 1,
-									contentPaddingBottom : 8,
-									contentPaddingRight : 8,
-									contentPaddingLeft : 8,
-									//width : 400,
-									height : 400,
-									showMaximize : false,
-									showMinimize : false,
-									allowMaximize : false,
-									allowMinimize : false,
-									resizable : false
-								});
+								contentPaddingTop: 1,
+								contentPaddingBottom: 8,
+								contentPaddingRight: 8,
+								contentPaddingLeft: 8,
+								//width : 400,
+								height: 400,
+								showMaximize: false,
+								showMinimize: false,
+								allowMaximize: false,
+								allowMinimize: false,
+								resizable: false
+							});
 							this.optionsWindow.getChildControl("icon").set({
-								scale : true,
-								width : 25,
-								height : 25
+								scale: true,
+								width: 25,
+								height: 25
 							});
 							this.optionsWindow.setLayout(new qx.ui.layout.VBox());
 							var optionsWindowTop = localStorage.ta_sim_options_top;
@@ -631,21 +631,21 @@ window.TACS_version = GM_info.script.version;
 
 							// Resource Layout Window
 							this.resourceLayoutWindow = new qx.ui.window.Window().set({
-									contentPaddingTop : 1,
-									contentPaddingBottom : 8,
-									contentPaddingRight : 8,
-									contentPaddingLeft : 8,
-									width : 185,
-									showMaximize : false,
-									showMinimize : false,
-									allowMaximize : false,
-									allowMinimize : false,
-									resizable : false
-								});
+								contentPaddingTop: 1,
+								contentPaddingBottom: 8,
+								contentPaddingRight: 8,
+								contentPaddingLeft: 8,
+								width: 185,
+								showMaximize: false,
+								showMinimize: false,
+								allowMaximize: false,
+								allowMinimize: false,
+								resizable: false
+							});
 							/*this.resourceLayoutWindow.getChildControl("icon").set({
-								scale : true,
-								width : 25,
-								height : 25
+							scale : true,
+							width : 25,
+							height : 25
 							});*/
 							this.resourceLayoutWindow.setLayout(new qx.ui.layout.HBox());
 							this.resourceLayoutWindow.moveTo(this.saveObj.bounds.resourceLayoutWindowLeft, this.saveObj.bounds.resourceLayoutWindowTop);
@@ -661,20 +661,20 @@ window.TACS_version = GM_info.script.version;
 
 							// The Battle Simulator box
 							this.battleResultsBox = new qx.ui.window.Window("TACS", "FactionUI/icons/icon_res_plinfo_command_points.png").set({
-									contentPaddingTop : 0,
-									contentPaddingBottom : 2,
-									contentPaddingRight : 2,
-									contentPaddingLeft : 6,
-									showMaximize : false,
-									showMinimize : false,
-									allowMaximize : false,
-									allowMinimize : false,
-									resizable : false
-								});
+								contentPaddingTop: 0,
+								contentPaddingBottom: 2,
+								contentPaddingRight: 2,
+								contentPaddingLeft: 6,
+								showMaximize: false,
+								showMinimize: false,
+								allowMaximize: false,
+								allowMinimize: false,
+								resizable: false
+							});
 							this.battleResultsBox.getChildControl("icon").set({
-								scale : true,
-								width : 20,
-								height : 20,
+								scale: true,
+								width: 20,
+								height: 20,
 								alignY: "middle"
 							});
 							this.battleResultsBox.setLayout(new qx.ui.layout.HBox());
@@ -685,14 +685,14 @@ window.TACS_version = GM_info.script.version;
 								this.saveData();
 							}, this);
 							this.battleResultsBox.addListener("appear", function () {
-								this.battleResultsBox.setOpacity(this.saveObj.slider.statsOpacity/100);
+								this.battleResultsBox.setOpacity(this.saveObj.slider.statsOpacity / 100);
 							}, this);
 							var tabView = new qx.ui.tabview.TabView().set({
-									contentPaddingTop : 3,
-									contentPaddingBottom : 6,
-									contentPaddingRight : 7,
-									contentPaddingLeft : 3
-								});
+								contentPaddingTop: 3,
+								contentPaddingBottom: 6,
+								contentPaddingRight: 7,
+								contentPaddingLeft: 3
+							});
 							this.battleResultsBox.add(tabView);
 							this.initializeStats(tabView);
 							this.initializeLayout(tabView);
@@ -730,18 +730,19 @@ window.TACS_version = GM_info.script.version;
 						}
 					},
 					fixBonusRounding: function (bonus, data) {
-							try {
-								if (data == null) data = "";
-								var strFunction = bonus.toString();
-								strFunction = strFunction.replace("floor", "round");
-								var functionBody = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
-								var fn = Function(data, functionBody);
-								return fn;
-							} catch (e) {
-								console.log("fixBonusRounding error: ", e);
-							}
-						},
-					initializeStats : function (tabView) {
+						try {
+							if (data == null)
+								data = "";
+							var strFunction = bonus.toString();
+							strFunction = strFunction.replace("floor", "round");
+							var functionBody = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
+							var fn = Function(data, functionBody);
+							return fn;
+						} catch (e) {
+							console.log("fixBonusRounding error: ", e);
+						}
+					},
+					initializeStats: function (tabView) {
 						try {
 							////////////////// Stats ////////////////////
 							this.statsPage = new qx.ui.tabview.Page(lang("Stats"));
@@ -763,26 +764,26 @@ window.TACS_version = GM_info.script.version;
 							// Countdown for next refresh
 							this.labels.countDown = new qx.ui.basic.Label("");
 							this.labels.countDown.set({
-								width : 0,
-								height : 10,
-								marginLeft : 5,
-								backgroundColor : "#B40404"
+								width: 0,
+								height: 10,
+								marginLeft: 5,
+								backgroundColor: "#B40404"
 							});
 							container.add(this.labels.countDown, {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 
 							this.buttons.attack.refreshStats = new qx.ui.form.Button(lang("Refresh"));
 							this.buttons.attack.refreshStats.set({
-								width : 58,
-								appearance : "button-text-small",
-								toolTipText : lang("Refresh Stats")
+								width: 58,
+								appearance: "button-text-small",
+								toolTipText: lang("Refresh Stats")
 							});
 							this.buttons.attack.refreshStats.addListener("click", this.refreshStatistics, this);
 							container.add(this.buttons.attack.refreshStats, {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 
 							// The Enemy Vertical Box
@@ -797,80 +798,80 @@ window.TACS_version = GM_info.script.version;
 
 							// The Enemy Troop Strength Label
 							container.add(new qx.ui.basic.Label(lang("Enemy Base:")), {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 							this.labels.damage.overall = new qx.ui.basic.Label("100");
 							container.add(this.labels.damage.overall, {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 
 							// Units
 							container.add(new qx.ui.basic.Label(lang("Defences:")), {
-								row : 1,
-								column : 0
+								row: 1,
+								column: 0
 							});
 							this.labels.damage.units.overall = new qx.ui.basic.Label("100");
 							container.add(this.labels.damage.units.overall, {
-								row : 1,
-								column : 1
+								row: 1,
+								column: 1
 							});
 
 							// Buildings
 							container.add(new qx.ui.basic.Label(lang("Buildings:")), {
-								row : 2,
-								column : 0
+								row: 2,
+								column: 0
 							});
 							this.labels.damage.structures.overall = new qx.ui.basic.Label("100");
 							container.add(this.labels.damage.structures.overall, {
-								row : 2,
-								column : 1
+								row: 2,
+								column: 1
 							});
 
 							// Command Center
 							container.add(new qx.ui.basic.Label(lang("Construction Yard:")), {
-								row : 3,
-								column : 0
+								row: 3,
+								column: 0
 							});
 							this.labels.damage.structures.construction = new qx.ui.basic.Label("100");
 							container.add(this.labels.damage.structures.construction, {
-								row : 3,
-								column : 1
+								row: 3,
+								column: 1
 							});
 
 							// Defense Facility
 							container.add(new qx.ui.basic.Label(lang("Defense Facility:")), {
-								row : 4,
-								column : 0
+								row: 4,
+								column: 0
 							});
 							this.labels.damage.structures.defense = new qx.ui.basic.Label("100");
 							container.add(this.labels.damage.structures.defense, {
-								row : 4,
-								column : 1
+								row: 4,
+								column: 1
 							});
 
 							// Command Center
 							container.add(new qx.ui.basic.Label(lang("Command Center:")), {
-								row : 5,
-								column : 0
+								row: 5,
+								column: 0
 							});
 							this.labels.damage.structures.command = new qx.ui.basic.Label("100");
 							container.add(this.labels.damage.structures.command, {
-								row : 5,
-								column : 1
+								row: 5,
+								column: 1
 							});
 
 							// The Support Horizontal Box
 							this.labels.supportLevel = new qx.ui.basic.Label("");
 							container.add(this.labels.supportLevel, {
-								row : 6,
-								column : 0
+								row: 6,
+								column: 0
 							});
 							this.labels.damage.structures.support = new qx.ui.basic.Label("");
 							container.add(this.labels.damage.structures.support, {
-								row : 6,
-								column : 1
+								row: 6,
+								column: 1
 							});
 
 							// The Troops Vertical Box
@@ -885,46 +886,46 @@ window.TACS_version = GM_info.script.version;
 
 							// The Troop Strength Label
 							container.add(new qx.ui.basic.Label(lang("Overall:")), {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 							this.labels.health.overall = new qx.ui.basic.Label("100");
 							container.add(this.labels.health.overall, {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 
 							// The Infantry Troop Strength Label
 							container.add(new qx.ui.basic.Label(lang("Infantry:")), {
-								row : 1,
-								column : 0
+								row: 1,
+								column: 0
 							});
 							this.labels.health.infantry = new qx.ui.basic.Label("100");
 							container.add(this.labels.health.infantry, {
-								row : 1,
-								column : 1
+								row: 1,
+								column: 1
 							});
 
 							// The Vehicle Troop Strength Label
 							container.add(new qx.ui.basic.Label(lang("Vehicle:")), {
-								row : 2,
-								column : 0
+								row: 2,
+								column: 0
 							});
 							this.labels.health.vehicle = new qx.ui.basic.Label("100");
 							container.add(this.labels.health.vehicle, {
-								row : 2,
-								column : 1
+								row: 2,
+								column: 1
 							});
 
 							// The Air Troop Strength Label
 							container.add(new qx.ui.basic.Label(lang("Aircraft:")), {
-								row : 3,
-								column : 0
+								row: 3,
+								column: 0
 							});
 							this.labels.health.aircraft = new qx.ui.basic.Label("100");
 							container.add(this.labels.health.aircraft, {
-								row : 3,
-								column : 1
+								row: 3,
+								column: 1
 							});
 
 							// The inner Vertical Box
@@ -939,26 +940,26 @@ window.TACS_version = GM_info.script.version;
 
 							// The Victory Label
 							container.add(new qx.ui.basic.Label(lang("Outcome:")), {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 							this.labels.damage.outcome = new qx.ui.basic.Label(lang("Unknown"));
 							container.add(this.labels.damage.outcome, {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 
 							// The Battle Time Label
 							container.add(new qx.ui.basic.Label(lang("Battle Time:")), {
-								row : 1,
-								column : 0
+								row: 1,
+								column: 0
 							});
 							this.labels.time = new qx.ui.basic.Label("120");
 							container.add(this.labels.time, {
-								row : 1,
-								column : 1
+								row: 1,
+								column: 1
 							});
-							
+
 							// Available RT/Attacks Vertical Box
 							container = new qx.ui.container.Composite();
 							layout = new qx.ui.layout.Grid();
@@ -971,26 +972,26 @@ window.TACS_version = GM_info.script.version;
 
 							// Available Repair Time Label
 							container.add(new qx.ui.basic.Label(lang("Available Repair:")), {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 							this.labels.repair.available = new qx.ui.basic.Label("00:00:00");
 							container.add(this.labels.repair.available, {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 
 							// Available Attacks Label
 							container.add(new qx.ui.basic.Label(lang("Available Attacks:")), {
-								row : 1,
-								column : 0
+								row: 1,
+								column: 0
 							});
 							this.labels.attacks.available = new qx.ui.basic.Label("CP:- / FR:- / CFR:-");
 							container.add(this.labels.attacks.available, {
-								row : 1,
-								column : 1
+								row: 1,
+								column: 1
 							});
-							
+
 							// Resource Summary Vertical Box
 							this.resourceSummaryVerticalBox = new qx.ui.container.Composite();
 							var layout = new qx.ui.layout.Grid();
@@ -1002,36 +1003,36 @@ window.TACS_version = GM_info.script.version;
 							if (this.saveObj.checkbox.showLootSummary) {
 								this.statsPage.add(this.resourceSummaryVerticalBox);
 							}
-							
+
 							// Research Icon/Label
 							this.labels.resourcesummary.research = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_research_mission.png");
 							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.research, {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 							// Tiberium Icon/Label
 							this.labels.resourcesummary.tiberium = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_tiberium.png");
 							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.tiberium, {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 							// Credits Icon/Label
 							this.labels.resourcesummary.credits = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_dollar.png");
 							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.credits, {
-								row : 1,
-								column : 0
+								row: 1,
+								column: 0
 							});
 							// Crystal Icon/Label
 							this.labels.resourcesummary.crystal = new qx.ui.basic.Atom("0", "webfrontend/ui/common/icn_res_chrystal.png");
 							this.resourceSummaryVerticalBox.add(this.labels.resourcesummary.crystal, {
-								row : 1,
-								column : 1
+								row: 1,
+								column: 1
 							});
 						} catch (e) {
 							console.log(e);
 						}
 					},
-					initializeLayout : function (tabView) {
+					initializeLayout: function (tabView) {
 						try {
 							////////////////// Layouts ////////////////////
 							var layoutPage = new qx.ui.tabview.Page(lang("Layouts"));
@@ -1040,8 +1041,8 @@ window.TACS_version = GM_info.script.version;
 
 							this.layouts.list = new qx.ui.form.List();
 							this.layouts.list.set({
-								height : 174,
-								selectionMode : "one"
+								height: 174,
+								selectionMode: "one"
 							});
 							layoutPage.add(this.layouts.list);
 
@@ -1052,9 +1053,9 @@ window.TACS_version = GM_info.script.version;
 							// Load button
 							this.buttons.attack.layout.load = new qx.ui.form.Button(lang("Load"));
 							this.buttons.attack.layout.load.set({
-								width : 80,
-								appearance : "button-text-small",
-								toolTipText : lang("Load this saved layout.")
+								width: 80,
+								appearance: "button-text-small",
+								toolTipText: lang("Load this saved layout.")
 							});
 							this.buttons.attack.layout.load.addListener("click", this.loadCityLayout, this);
 							layHBox.add(this.buttons.attack.layout.load);
@@ -1062,9 +1063,9 @@ window.TACS_version = GM_info.script.version;
 							// Delete button
 							this.buttonLayoutDelete = new qx.ui.form.Button(lang("Delete"));
 							this.buttonLayoutDelete.set({
-								width : 80,
-								appearance : "button-text-small",
-								toolTipText : lang("Delete this saved layout.")
+								width: 80,
+								appearance: "button-text-small",
+								toolTipText: lang("Delete this saved layout.")
 							});
 							this.buttonLayoutDelete.addListener("click", this.deleteCityLayout, this);
 							layHBox.add(this.buttonLayoutDelete);
@@ -1088,9 +1089,9 @@ window.TACS_version = GM_info.script.version;
 							// Save Button
 							this.buttons.attack.layout.save = new qx.ui.form.Button(lang("Save"));
 							this.buttons.attack.layout.save.set({
-								width : 80,
-								appearance : "button-text-small",
-								toolTipText : lang("Save this layout.")
+								width: 80,
+								appearance: "button-text-small",
+								toolTipText: lang("Save this layout.")
 							});
 							this.buttons.attack.layout.save.addListener("click", this.saveCityLayout, this);
 							layVBox.add(this.buttons.attack.layout.save);
@@ -1099,7 +1100,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					initializeInfo : function (tabView) {
+					initializeInfo: function (tabView) {
 						try {
 							////////////////// Info ////////////////////
 							var infoPage = new qx.ui.tabview.Page(lang("Info"));
@@ -1114,9 +1115,9 @@ window.TACS_version = GM_info.script.version;
 							pVBox.setThemedBackgroundColor("#eef");
 							infoPage.add(pVBox);
 							var proHelpBar = new qx.ui.basic.Label().set({
-									value : "<a target='_blank' href='http://cncscripts.com/'>cncscripts.com</a>",
-									rich : true
-								});
+								value: "<a target='_blank' href='http://cncscripts.com/'>cncscripts.com</a>",
+								rich: true
+							});
 							pVBox.add(proHelpBar);
 
 							// The Spoils
@@ -1150,19 +1151,19 @@ window.TACS_version = GM_info.script.version;
 							infoPage.add(pssVBox);
 
 							this.buttons.optionStats = new qx.ui.form.Button().set({
-									height : 25,
-									width : 160,
-									margin : 15,
-									alignX : "center",
-									label : lang("Options"),
-									appearance : "button-text-small",
-									icon : "FactionUI/icons/icon_forum_properties.png",
-									toolTipText : lang("TACS Options")
-								});
+								height: 25,
+								width: 160,
+								margin: 15,
+								alignX: "center",
+								label: lang("Options"),
+								appearance: "button-text-small",
+								icon: "FactionUI/icons/icon_forum_properties.png",
+								toolTipText: lang("TACS Options")
+							});
 							this.buttons.optionStats.addListener("click", this.toggleOptionsWindow, this);
 							pssVBox.add(this.buttons.optionStats, {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 
 							/*
@@ -1263,7 +1264,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					initializeOptions : function () {
+					initializeOptions: function () {
 						try {
 							var options = new qx.ui.container.Composite(); //hello
 							options.setLayout(new qx.ui.layout.VBox(1)); //hey
@@ -1280,9 +1281,9 @@ window.TACS_version = GM_info.script.version;
 							pssVBox.setThemedBackgroundColor("#eef");
 							options.add(pssVBox);
 							pssVBox.add(new qx.ui.basic.Label(lang("Version: ") + window.TACS_version), {
-								row : 0,
-								column : 0,
-								colSpan : 3
+								row: 0,
+								column: 0,
+								colSpan: 3
 							});
 
 							// Popup Checkbox
@@ -1296,9 +1297,9 @@ window.TACS_version = GM_info.script.version;
 							}
 							this.options.autoDisplayStats.addListener("click", this.optionPopup, this);
 							pssVBox.add(this.options.autoDisplayStats, {
-								row : 1,
-								column : 0,
-								colSpan : 3
+								row: 1,
+								column: 0,
+								colSpan: 3
 							});
 
 							// Mark Saved Targets Checkbox
@@ -1314,9 +1315,9 @@ window.TACS_version = GM_info.script.version;
 								localStorage.ta_sim_marksavedtargets = JSON.stringify(this.options.markSavedTargets.getValue());
 							}, this);
 							pssVBox.add(this.options.markSavedTargets, {
-								row : 2,
-								column : 0,
-								colSpan : 3
+								row: 2,
+								column: 0,
+								colSpan: 3
 							});
 
 							// Double-click to (De)activate Checkbox
@@ -1332,9 +1333,9 @@ window.TACS_version = GM_info.script.version;
 								localStorage.ta_sim_dblClick2DeActivate = JSON.stringify(this.options.dblClick2DeActivate.getValue());
 							}, this);
 							pssVBox.add(this.options.dblClick2DeActivate, {
-								row : 3,
-								column : 0,
-								colSpan : 3
+								row: 3,
+								column: 0,
+								colSpan: 3
 							});
 
 							// showShift Checkbox
@@ -1348,9 +1349,9 @@ window.TACS_version = GM_info.script.version;
 							}
 							this.options.showShift.addListener("click", this.optionShowShift, this);
 							pssVBox.add(this.options.showShift, {
-								row : 4,
-								column : 0,
-								colSpan : 3
+								row: 4,
+								column: 0,
+								colSpan: 3
 							});
 
 							// side RadioButtons
@@ -1368,16 +1369,16 @@ window.TACS_version = GM_info.script.version;
 							}
 							sideRadioGroup.addListener("changeSelection", this.setupInterface, this);
 							pssVBox.add(this.options.sideLabel, {
-								row : 5,
-								column : 0
+								row: 5,
+								column: 0
 							});
 							pssVBox.add(this.options.leftSide, {
-								row : 5,
-								column : 1
+								row: 5,
+								column: 1
 							});
 							pssVBox.add(this.options.rightSide, {
-								row : 5,
-								column : 2
+								row: 5,
+								column: 2
 							});
 
 							// locks Checkboxes
@@ -1401,16 +1402,16 @@ window.TACS_version = GM_info.script.version;
 							this.options.attackLock.addListener("click", this.optionAttackLock, this);
 							this.options.repairLock.addListener("click", this.optionRepairLock, this);
 							pssVBox.add(this.options.locksLabel, {
-								row : 6,
-								column : 0
+								row: 6,
+								column: 0
 							});
 							pssVBox.add(this.options.attackLock, {
-								row : 6,
-								column : 1
+								row: 6,
+								column: 1
 							});
 							pssVBox.add(this.options.repairLock, {
-								row : 6,
-								column : 2
+								row: 6,
+								column: 2
 							});
 
 							// showLootSummary Checkbox
@@ -1419,31 +1420,31 @@ window.TACS_version = GM_info.script.version;
 							this.options.showLootSummary.setValue(this.saveObj.checkbox.showLootSummary);
 							this.options.showLootSummary.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showLootSummary, {
-								row : 7,
-								column : 0,
-								colSpan : 3
+								row: 7,
+								column: 0,
+								colSpan: 3
 							});
-							
+
 							// showResourceLayoutWindow Checkbox
 							this.options.showResourceLayoutWindow = new qx.ui.form.CheckBox(lang("Show Resource Layout Window"));
 							this.options.showResourceLayoutWindow.saveLocation = "showResourceLayoutWindow";
 							this.options.showResourceLayoutWindow.setValue(this.saveObj.checkbox.showResourceLayoutWindow);
 							this.options.showResourceLayoutWindow.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showResourceLayoutWindow, {
-								row : 8,
-								column : 0,
-								colSpan : 3
+								row: 8,
+								column: 0,
+								colSpan: 3
 							});
-							
+
 							// showStatsDuringAttack Checkbox
 							this.options.showStatsDuringAttack = new qx.ui.form.CheckBox(lang("Show Stats During Attack"));
 							this.options.showStatsDuringAttack.saveLocation = "showStatsDuringAttack";
 							this.options.showStatsDuringAttack.setValue(this.saveObj.checkbox.showStatsDuringAttack);
 							this.options.showStatsDuringAttack.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showStatsDuringAttack, {
-								row : 9,
-								column : 0,
-								colSpan : 3
+								row: 9,
+								column: 0,
+								colSpan: 3
 							});
 
 							// showStatsDuringSimulation Checkbox
@@ -1452,9 +1453,9 @@ window.TACS_version = GM_info.script.version;
 							this.options.showStatsDuringSimulation.setValue(this.saveObj.checkbox.showStatsDuringSimulation);
 							this.options.showStatsDuringSimulation.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.showStatsDuringSimulation, {
-								row : 10,
-								column : 0,
-								colSpan : 3
+								row: 10,
+								column: 0,
+								colSpan: 3
 							});
 
 							// skipVictoryPopup Checkbox
@@ -1463,16 +1464,16 @@ window.TACS_version = GM_info.script.version;
 							this.options.skipVictoryPopup.setValue(this.saveObj.checkbox.skipVictoryPopup);
 							this.options.skipVictoryPopup.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.skipVictoryPopup, {
-								row : 11,
-								column : 0,
-								colSpan : 3
+								row: 11,
+								column: 0,
+								colSpan: 3
 							});
 							webfrontend.gui.reports.CombatVictoryPopup.getInstance().addListener("appear", function () {
 								/*if (this.toolBar.isVisible()) {
-									this.toolBar.hide();
+								this.toolBar.hide();
 								}
 								if (this.toolBarMouse.isVisible()) {
-									this.toolBarMouse.hide();
+								this.toolBarMouse.hide();
 								}*/
 								if (this.saveObj.checkbox.skipVictoryPopup) {
 									webfrontend.gui.reports.CombatVictoryPopup.getInstance()._onBtnClose();
@@ -1485,9 +1486,9 @@ window.TACS_version = GM_info.script.version;
 							this.options.disableAttackPreparationTooltips.setValue(this.saveObj.checkbox.disableAttackPreparationTooltips);
 							this.options.disableAttackPreparationTooltips.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.disableAttackPreparationTooltips, {
-								row : 12,
-								column : 0,
-								colSpan : 3
+								row: 12,
+								column: 0,
+								colSpan: 3
 							});
 
 							// disableArmyFormationManagerTooltips Checkbox
@@ -1496,40 +1497,39 @@ window.TACS_version = GM_info.script.version;
 							this.options.disableArmyFormationManagerTooltips.setValue(this.saveObj.checkbox.disableArmyFormationManagerTooltips);
 							this.options.disableArmyFormationManagerTooltips.addListener("click", this.toggleCheckboxOption, this);
 							pssVBox.add(this.options.disableArmyFormationManagerTooltips, {
-								row : 13,
-								column : 0,
-								colSpan : 3
+								row: 13,
+								column: 0,
+								colSpan: 3
 							});
 
 							this.options.statsOpacityLabel = new qx.ui.basic.Label(lang("Stats Window Opacity"));
 							this.options.statsOpacityLabel.setMarginTop(10);
 							pssVBox.add(this.options.statsOpacityLabel, {
-								row : 14,
-								column : 0,
-								colSpan : 3
+								row: 14,
+								column: 0,
+								colSpan: 3
 							});
 
 							this.options.statsOpacity = new qx.ui.form.Slider();
 							pssVBox.add(this.options.statsOpacity, {
-								row : 15,
-								column : 1,
-								colSpan : 2
+								row: 15,
+								column: 1,
+								colSpan: 2
 							});
 							this.options.statsOpacity.setValue(this.saveObj.slider.statsOpacity);
 
 							this.options.statsOpacityOutput = new qx.ui.basic.Label(String(this.saveObj.slider.statsOpacity));
 							pssVBox.add(this.options.statsOpacityOutput, {
-								row : 16,
-								column : 0
+								row: 16,
+								column: 0
 							});
 
 							this.options.statsOpacity.addListener("changeValue", function () {
 								var val = this.options.statsOpacity.getValue();
-								this.battleResultsBox.setOpacity(val/100);
-								this.options.statsOpacityOutput.setValue(String(val)+"%");
+								this.battleResultsBox.setOpacity(val / 100);
+								this.options.statsOpacityOutput.setValue(String(val) + "%");
 								this.saveObj.slider.statsOpacity = val;
 							}, this);
-
 
 							// The Help Vertical Box
 							var pVBox = new qx.ui.container.Composite();
@@ -1540,16 +1540,16 @@ window.TACS_version = GM_info.script.version;
 							pVBox.setThemedBackgroundColor("#eef");
 							options.add(pVBox);
 							var proHelpBar = new qx.ui.basic.Label().set({
-									value : "<a target='_blank' href='http://cncscripts.com/'>cncscripts.com</a>",
-									rich : true
-								});
+								value: "<a target='_blank' href='http://cncscripts.com/'>cncscripts.com</a>",
+								rich: true
+							});
 							pVBox.add(proHelpBar);
 
 						} catch (e) {
 							console.log(e);
 						}
 					},
-					toggleCheckboxOption : function (evt) {
+					toggleCheckboxOption: function (evt) {
 						var tgt = evt.getTarget();
 						var val = tgt.getValue();
 						this.saveObj.checkbox[tgt.saveLocation] = val;
@@ -1571,7 +1571,7 @@ window.TACS_version = GM_info.script.version;
 						}
 						this.saveData();
 					},
-					createHasAttackFormationFunction : function () {
+					createHasAttackFormationFunction: function () {
 						try {
 							ClientLib.Data.City.prototype.HasAttackFormation = function (targetCity) {
 								var $createHelper;
@@ -1584,8 +1584,8 @@ window.TACS_version = GM_info.script.version;
 												count++;
 											}
 										}
-									if (count > 0)
-										return true;
+										if (count > 0)
+											return true;
 									} else {
 										return false;
 									}
@@ -1595,15 +1595,15 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					createBasePlateFunction : function (r) {
+					createBasePlateFunction: function (r) {
 						try {
 							var regionObject = r.prototype;
 							for (var key in regionObject) {
 								if (typeof regionObject[key] === 'function') {
 									var strFunction = regionObject[key].toString();
-									if (strFunction.indexOf("Blue") > -1 && strFunction.indexOf("Black") > -1 ) {
+									if (strFunction.indexOf("Blue") > -1 && strFunction.indexOf("Black") > -1) {
 										if (r == ClientLib.Vis.Region.RegionNPCCamp || r == ClientLib.Vis.Region.RegionNPCBase) {
-											regionObject[key]=function () {
+											regionObject[key] = function () {
 												var $createHelper;
 												var basePlateColor = ClientLib.Vis.EBackgroundPlateColor.Black;
 												if ((ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity() != null) && ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity().HasAttackFormation(this.get_Id())) {
@@ -1614,7 +1614,7 @@ window.TACS_version = GM_info.script.version;
 											}
 											break;
 										} else {
-											regionObject[key]=function () {
+											regionObject[key] = function () {
 												var $createHelper;
 												var basePlateColor = ClientLib.Vis.EBackgroundPlateColor.Black;
 												if (this.get_Type() == ClientLib.Vis.Region.RegionCity.ERegionCityType.Own) {
@@ -1636,7 +1636,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					initToolBarListeners : function () {
+					initToolBarListeners: function () {
 						try {
 							var playAreaBounds = this._PlayArea.getLayoutParent().getBounds();
 							var playAreaWidth = this._PlayArea.getLayoutParent().getBounds().width;
@@ -1645,12 +1645,12 @@ window.TACS_version = GM_info.script.version;
 								if (this.toolBar.isVisible()) {
 									this.toolBarMouse.show();
 									this.toolBar.setLayoutProperties({
-										bottom : this.TOOL_BAR_LOW
+										bottom: this.TOOL_BAR_LOW
 									});
 									this.toolBar.setZIndex(1);
 								}
 							}, this);
-							
+
 							this._armyBarContainer.addListener("appear", function () {
 								//console.log("_armyBarContainer appeared");
 								this._armyBarContainer.setZIndex(3);
@@ -1677,15 +1677,15 @@ window.TACS_version = GM_info.script.version;
 
 									//need to do this on maximize as well
 									var armyBarBounds = this._armyBarContainer.getBounds();
-									if (armyBarBounds){
-										this.toolBar.setDomLeft(armyBarBounds.left + ((armyBarBounds.width - this.TOOL_BAR_WIDTH)/2));
-										this.toolBarMouse.setDomLeft(armyBarBounds.left + ((armyBarBounds.width - this.TOOL_BAR_WIDTH)/2));
+									if (armyBarBounds) {
+										this.toolBar.setDomLeft(armyBarBounds.left + ((armyBarBounds.width - this.TOOL_BAR_WIDTH) / 2));
+										this.toolBarMouse.setDomLeft(armyBarBounds.left + ((armyBarBounds.width - this.TOOL_BAR_WIDTH) / 2));
 									}
 								}
 								this.toolBarMouse.hide();
 								this.toolBar.setZIndex(11);
 								this.toolBar.setLayoutProperties({
-									bottom : this.TOOL_BAR_HIGH
+									bottom: this.TOOL_BAR_HIGH
 								});
 							}, this);
 
@@ -1698,7 +1698,7 @@ window.TACS_version = GM_info.script.version;
 								this.toolBarMouse.show();
 								this.toolBar.setZIndex(1);
 								this.toolBar.setLayoutProperties({
-									bottom : this.TOOL_BAR_LOW
+									bottom: this.TOOL_BAR_LOW
 								});
 							}, this);
 
@@ -1708,18 +1708,18 @@ window.TACS_version = GM_info.script.version;
 									this.armybarClearnClickCounter = setInterval(this.resetDblClick, 500);
 								}
 							}, this);
-						} catch(err){
+						} catch (err) {
 							console.log(err);
 						}
 					},
-					setupInterface : function () {
+					setupInterface: function () {
 						try {
 							////////////////// Interface Side ////////////////////
 							localStorage.ta_sim_side = JSON.stringify(this.options.rightSide.getValue());
-							
+
 							// qx.core.Init.getApplication().getPlayArea()
 							// might need to use this instead, mouseovers are not being registered during attacks
-							
+
 							var playArea = this._Application.getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA);
 							var playAreaWidth = this._Application.getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA).getLayoutParent().getLayoutParent().getBounds().width;
 							this.armybarClickCount = 0;
@@ -1762,61 +1762,61 @@ window.TACS_version = GM_info.script.version;
 							this.repairInfo.setLayout(layout);
 							this.repairInfo.setThemedFont("bold");
 							this.repairInfo.set({
-								visibility : false
+								visibility: false
 							});
 							//this.repairInfo.setThemedBackgroundColor("#eef");
 							// Available Repair Label
 							this.repairInfo.add(new qx.ui.basic.Image("webfrontend/ui/icons/icn_repair_off_points.png"), {
-								row : 0,
-								column : 1
+								row: 0,
+								column: 1
 							});
 							this.labels.repairinfos.available = new qx.ui.basic.Label("100").set({
-									textColor : "white"
-								});
+								textColor: "white"
+							});
 							this.repairInfo.add(this.labels.repairinfos.available, {
-								row : 0,
-								column : 0
+								row: 0,
+								column: 0
 							});
 							// Max Infantry Repaircharge Label
 							this.repairInfo.add(new qx.ui.basic.Image("webfrontend/ui/icons/icon_res_repair_inf.png"), {
-								row : 1,
-								column : 1
+								row: 1,
+								column: 1
 							});
 							this.labels.repairinfos.infantry = new qx.ui.basic.Label("100").set({
-									textColor : "white"
-								});
+								textColor: "white"
+							});
 							this.repairInfo.add(this.labels.repairinfos.infantry, {
-								row : 1,
-								column : 0
+								row: 1,
+								column: 0
 							});
 							// Max Vehicle Repaircharge Label
 							this.repairInfo.add(new qx.ui.basic.Image("webfrontend/ui/icons/icon_res_repair_tnk.png"), {
-								row : 2,
-								column : 1
+								row: 2,
+								column: 1
 							});
 							this.labels.repairinfos.vehicle = new qx.ui.basic.Label("100").set({
-									textColor : "white"
-								});
+								textColor: "white"
+							});
 							this.repairInfo.add(this.labels.repairinfos.vehicle, {
-								row : 2,
-								column : 0
+								row: 2,
+								column: 0
 							});
 							// Max Air Repaircharge Label
 							this.repairInfo.add(new qx.ui.basic.Image("webfrontend/ui/icons/icon_res_repair_air.png"), {
-								row : 3,
-								column : 1
+								row: 3,
+								column: 1
 							});
 							this.labels.repairinfos.aircraft = new qx.ui.basic.Label("100").set({
-									textColor : "white"
-								});
+								textColor: "white"
+							});
 							this.repairInfo.add(this.labels.repairinfos.aircraft, {
-								row : 3,
-								column : 0
+								row: 3,
+								column: 0
 							});
 
 							playArea.add(this.repairInfo, {
-								bottom : 130,
-								right : 3
+								bottom: 130,
+								right: 3
 							});
 
 							// Toolbar
@@ -1825,10 +1825,10 @@ window.TACS_version = GM_info.script.version;
 							this.toolBar.setHeight(53);
 							this.toolBar.setWidth(this.TOOL_BAR_WIDTH);
 							this.toolBar.set({
-								decorator : new qx.ui.decoration.Decorator().set({
-									backgroundImage : "FactionUI/menues/victory_screen/bgr_victscr_header.png"
+								decorator: new qx.ui.decoration.Decorator().set({
+									backgroundImage: "FactionUI/menues/victory_screen/bgr_victscr_header.png"
 								}),
-								visibility : false
+								visibility: false
 							});
 
 							if (PerforceChangelist >= 441272) { // 15.4 patch
@@ -1838,9 +1838,9 @@ window.TACS_version = GM_info.script.version;
 							}
 
 							this.toolBarParent.add(this.toolBar, {
-								bottom : this.TOOL_BAR_HIGH,
-								left : (playAreaWidth - this.TOOL_BAR_WIDTH) / 2,
-								visibility : false
+								bottom: this.TOOL_BAR_HIGH,
+								left: (playAreaWidth - this.TOOL_BAR_WIDTH) / 2,
+								visibility: false
 							});
 
 							// Toolbar Mouse Region
@@ -1849,15 +1849,14 @@ window.TACS_version = GM_info.script.version;
 							this.toolBarMouse.setHeight(25);
 							this.toolBarMouse.setWidth(740);
 							this.toolBarParent.add(this.toolBarMouse, {
-								bottom : 155,
-								left : (playAreaWidth - this.TOOL_BAR_WIDTH) / 2
+								bottom: 155,
+								left: (playAreaWidth - this.TOOL_BAR_WIDTH) / 2
 							});
 							this.toolBarMouse.hide();
 							this.toolBarMouse.setBackgroundColor("#FF0000");
 							this.toolBarMouse.setOpacity(0);
 							this.toolBarMouse.setZIndex(10);
-							
-							
+
 							this.initToolBarListeners();
 							/*
 							// does the game init in combat mode?
@@ -1874,21 +1873,21 @@ window.TACS_version = GM_info.script.version;
 							// (De)activate All Button
 							this.buttons.attack.activateAll = new qx.ui.form.ToggleButton("", "FactionUI/icons/icon_disable_unit_active.png");
 							this.buttons.attack.activateAll.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Deactivate All")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Deactivate All") + "</strong>"
 							});
 							this.buttons.attack.activateAll.addListener("changeValue", function () {
 								var btnActivateAll = this.buttons.attack.activateAll;
 								if (!btnActivateAll.getValue()) {
 									btnActivateAll.setOpacity(1);
-									btnActivateAll.setToolTipText("<strong>"+lang("Deactivate All")+"</strong>");
+									btnActivateAll.setToolTipText("<strong>" + lang("Deactivate All") + "</strong>");
 								} else {
 									btnActivateAll.setOpacity(0.75);
-									btnActivateAll.setToolTipText("<strong>"+lang("Activate All")+"</strong>");
+									btnActivateAll.setToolTipText("<strong>" + lang("Activate All") + "</strong>");
 								}
 							}, this);
 							this.buttons.attack.activateAll.addListener("execute", function () {
@@ -1907,10 +1906,10 @@ window.TACS_version = GM_info.script.version;
 							// (De)activate Infantry Button
 							this.buttons.attack.activateInfantry = new qx.ui.form.ToggleButton("", "FactionUI/icons/icon_alliance_bonus_inf.png");
 							this.buttons.attack.activateInfantry.set({
-								width : 44,
-								height : 40,
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Deactivate Infantry")+"</strong>"
+								width: 44,
+								height: 40,
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Deactivate Infantry") + "</strong>"
 							});
 							this.buttons.attack.activateInfantry.addListener("changeValue", function () {
 								var btnActivateInfantry = this.buttons.attack.activateInfantry;
@@ -1920,20 +1919,20 @@ window.TACS_version = GM_info.script.version;
 								this.activateUnits('infantry', !btnActivateInfantry.getValue());
 								if (!btnActivateInfantry.getValue()) {
 									btnActivateInfantry.setOpacity(1);
-									btnActivateInfantry.setToolTipText("<strong>"+lang("Deactivate Infantry")+"</strong>");
+									btnActivateInfantry.setToolTipText("<strong>" + lang("Deactivate Infantry") + "</strong>");
 								} else {
 									btnActivateInfantry.setOpacity(0.75);
-									btnActivateInfantry.setToolTipText("<strong>"+lang("Activate Infantry")+"</strong>");
+									btnActivateInfantry.setToolTipText("<strong>" + lang("Activate Infantry") + "</strong>");
 								}
 							}, this);
 
 							// (De)activate Vehicles Button
 							this.buttons.attack.activateVehicles = new qx.ui.form.ToggleButton("", "FactionUI/icons/icon_alliance_bonus_tnk.png");
 							this.buttons.attack.activateVehicles.set({
-								width : 44,
-								height : 40,
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Deactivate Vehicles")+"</strong>"
+								width: 44,
+								height: 40,
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Deactivate Vehicles") + "</strong>"
 							});
 							this.buttons.attack.activateVehicles.addListener("changeValue", function () {
 								var btnActivateVehicles = this.buttons.attack.activateVehicles;
@@ -1943,20 +1942,20 @@ window.TACS_version = GM_info.script.version;
 								this.activateUnits('vehicles', !btnActivateVehicles.getValue());
 								if (!btnActivateVehicles.getValue()) {
 									btnActivateVehicles.setOpacity(1);
-									btnActivateVehicles.setToolTipText("<strong>"+lang("Deactivate Vehicles")+"</strong>");
+									btnActivateVehicles.setToolTipText("<strong>" + lang("Deactivate Vehicles") + "</strong>");
 								} else {
 									btnActivateVehicles.setOpacity(0.75);
-									btnActivateVehicles.setToolTipText("<strong>"+lang("Activate Vehicles")+"</strong>");
+									btnActivateVehicles.setToolTipText("<strong>" + lang("Activate Vehicles") + "</strong>");
 								}
 							}, this);
 
 							// (De)activate Air Button
 							this.buttons.attack.activateAir = new qx.ui.form.ToggleButton("", "FactionUI/icons/icon_alliance_bonus_air.png");
 							this.buttons.attack.activateAir.set({
-								width : 44,
-								height : 40,
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Deactivate Air")+"</strong>"
+								width: 44,
+								height: 40,
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Deactivate Air") + "</strong>"
 							});
 							this.buttons.attack.activateAir.addListener("changeValue", function () {
 								var btnActivateAir = this.buttons.attack.activateAir;
@@ -1966,32 +1965,32 @@ window.TACS_version = GM_info.script.version;
 								this.activateUnits('air', !btnActivateAir.getValue());
 								if (!btnActivateAir.getValue()) {
 									btnActivateAir.setOpacity(1);
-									btnActivateAir.setToolTipText("<strong>"+lang("Deactivate Air")+"</strong>");
+									btnActivateAir.setToolTipText("<strong>" + lang("Deactivate Air") + "</strong>");
 								} else {
 									btnActivateAir.setOpacity(0.75);
-									btnActivateAir.setToolTipText("<strong>"+lang("Activate Air")+"</strong>");
+									btnActivateAir.setToolTipText("<strong>" + lang("Activate Air") + "</strong>");
 								}
 							}, this);
 
 							// Reset Formation Button
 							this.buttons.attack.formationReset = new qx.ui.form.Button("", resetIcon);
 							this.buttons.attack.formationReset.set({
-								width : 44,
-								height : 40,
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Reset Formation")+"</strong>"
+								width: 44,
+								height: 40,
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Reset Formation") + "</strong>"
 							});
 							this.buttons.attack.formationReset.addListener("click", this.resetFormation, this);
 
 							// Flip Horizontal Button
 							this.buttons.attack.flipHorizontal = new qx.ui.form.Button("", iconFlipHorizontal);
 							this.buttons.attack.flipHorizontal.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Flip Horizontal")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Flip Horizontal") + "</strong>"
 							});
 							this.buttons.attack.flipHorizontal.addListener("click", function () {
 								this.flipFormation('horizontal');
@@ -2000,12 +1999,12 @@ window.TACS_version = GM_info.script.version;
 							// Flip Vertical Button
 							this.buttons.attack.flipVertical = new qx.ui.form.Button("", iconFlipVertical);
 							this.buttons.attack.flipVertical.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Flip Vertical")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Flip Vertical") + "</strong>"
 							});
 							this.buttons.attack.flipVertical.addListener("click", function () {
 								this.flipFormation('vertical');
@@ -2014,20 +2013,20 @@ window.TACS_version = GM_info.script.version;
 							// Repair Mode Button
 							this.buttons.attack.repairMode = new qx.ui.form.ToggleButton("", "FactionUI/icons/icon_mode_repair_active.png");
 							this.buttons.attack.repairMode.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Activate Repair Mode")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Activate Repair Mode") + "</strong>"
 							});
 							this.buttons.attack.repairMode.addListener("execute", this.toggleRepairMode, this);
 							this.buttons.attack.repairMode.addListener("changeValue", function () {
 								var btnRepairMode = this.buttons.attack.repairMode;
 								if (!btnRepairMode.getValue()) {
-									btnRepairMode.setToolTipText("<strong>"+lang("Deactivate Repair Mode")+"</strong>");
+									btnRepairMode.setToolTipText("<strong>" + lang("Deactivate Repair Mode") + "</strong>");
 								} else {
-									btnRepairMode.setToolTipText("<strong>"+lang("Activate Repair Mode")+"</strong>");
+									btnRepairMode.setToolTipText("<strong>" + lang("Activate Repair Mode") + "</strong>");
 								}
 							}, this);
 
@@ -2035,118 +2034,119 @@ window.TACS_version = GM_info.script.version;
 							this.buttons.attack.toolbarRefreshStats = new qx.ui.form.Button("", iconRefresh);
 							this.buttons.attack.toolbarRefreshStats.addListener("click", this.refreshStatistics, this);
 							this.buttons.attack.toolbarRefreshStats.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Refresh Stats")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Refresh Stats") + "</strong>"
 							});
-							
+
 							// The new stats window button
 							this.buttons.attack.toolbarShowStats = new qx.ui.form.Button("", statsIcon);
 							this.buttons.attack.toolbarShowStats.addListener("click", this.toggleTools, this);
 							this.buttons.attack.toolbarShowStats.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								toolTipText : "<strong>"+lang("Open Stats Window")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								toolTipText: "<strong>" + lang("Open Stats Window") + "</strong>"
 							});
-							
+
 							// Undo
 							this.buttons.attack.toolbarUndo = new qx.ui.form.Button("", undoIcon);
-							this.buttons.attack.toolbarUndo.addListener("click", function(){console.log("Undo");}, this);
+							this.buttons.attack.toolbarUndo.addListener("click", function () {
+								console.log("Undo");
+							}, this);
 							this.buttons.attack.toolbarUndo.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								enabled : false,
-								toolTipText : "<strong>"+lang("Undo")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								enabled: false,
+								toolTipText: "<strong>" + lang("Undo") + "</strong>"
 							});
-							
+
 							// Redo (if possible)
 							this.buttons.attack.toolbarRedo = new qx.ui.form.Button("", redoIcon);
-							this.buttons.attack.toolbarRedo.addListener("click", function(){console.log("Redo");}, this);
+							this.buttons.attack.toolbarRedo.addListener("click", function () {
+								console.log("Redo");
+							}, this);
 							this.buttons.attack.toolbarRedo.set({
-								width : 44,
-								height : 40,
-								padding : 0,
-								show : "icon",
-								appearance : "button-text-small",
-								enabled : false,
-								toolTipText : "<strong>"+lang("Redo")+"</strong>"
+								width: 44,
+								height: 40,
+								padding: 0,
+								show: "icon",
+								appearance: "button-text-small",
+								enabled: false,
+								toolTipText: "<strong>" + lang("Redo") + "</strong>"
 							});
-							
-							
 
 							// Options Button
 							this.buttons.attack.options = new qx.ui.form.Button().set({
-									width : 44,
-									height : 40,
-									appearance : "button-text-small",
-									icon : "FactionUI/icons/icon_forum_properties.png",
-									toolTipText : "<strong>"+lang("Options")+"</strong>"
-								});
+								width: 44,
+								height: 40,
+								appearance: "button-text-small",
+								icon: "FactionUI/icons/icon_forum_properties.png",
+								toolTipText: "<strong>" + lang("Options") + "</strong>"
+							});
 							this.buttons.attack.options.addListener("click", this.toggleOptionsWindow, this);
 
 							this.toolBar.add(this.buttons.attack.flipVertical, {
-								top : 10,
-								left : 10
+								top: 10,
+								left: 10
 							});
 							this.toolBar.add(this.buttons.attack.flipHorizontal, {
-								top : 10,
-								left : 60
+								top: 10,
+								left: 60
 							});
 							this.toolBar.add(this.buttons.attack.activateAll, {
-								top : 10,
-								left : 130
+								top: 10,
+								left: 130
 							});
 							this.toolBar.add(this.buttons.attack.activateInfantry, {
-								top : 10,
-								left : 180
+								top: 10,
+								left: 180
 							});
 							this.toolBar.add(this.buttons.attack.activateVehicles, {
-								top : 10,
-								left : 230
+								top: 10,
+								left: 230
 							});
 							this.toolBar.add(this.buttons.attack.activateAir, {
-								top : 10,
-								left : 280
+								top: 10,
+								left: 280
 							});
 							this.toolBar.add(this.buttons.attack.toolbarRefreshStats, {
-								top : 10,
-								left : 349
+								top: 10,
+								left: 349
 							});
 							// right bound buttons
 							this.toolBar.add(this.buttons.attack.options, {
-								top : 10,
-								right : 10
+								top: 10,
+								right: 10
 							});
 							this.toolBar.add(this.buttons.attack.repairMode, {
-								top : 10,
-								right : 60
+								top: 10,
+								right: 60
 							});
 							this.toolBar.add(this.buttons.attack.toolbarShowStats, {
-								top : 10,
-								right : 110
+								top: 10,
+								right: 110
 							});
 							this.toolBar.add(this.buttons.attack.toolbarRedo, {
-								top : 10,
-								right : 175
+								top: 10,
+								right: 175
 							});
 							this.toolBar.add(this.buttons.attack.toolbarUndo, {
-								top : 10,
-								right : 225
+								top: 10,
+								right: 225
 							});
 							this.toolBar.add(this.buttons.attack.formationReset, {
-								top : 10,
-								right : 275
+								top: 10,
+								right: 275
 							});
-							
 
 							if (this.userInterface) {
 								this._armyBar.remove(this.userInterface);
@@ -2176,48 +2176,48 @@ window.TACS_version = GM_info.script.version;
 							this.userInterface.setHeight(160);
 							this.userInterface.setWidth(canvasWidth);
 							this.userInterface.set({
-								decorator : new qx.ui.decoration.Decorator().set({
-									backgroundImage : interfaceBG
+								decorator: new qx.ui.decoration.Decorator().set({
+									backgroundImage: interfaceBG
 								})
 							});
 							if (this.options.rightSide.getValue()) {
 								this._armyBar.add(this.userInterface, {
-									top : 0,
-									right : 65
+									top: 0,
+									right: 65
 								});
 							} else {
 								this._armyBar.add(this.userInterface, {
-									top : 0,
-									left : 0
+									top: 0,
+									left: 0
 								});
 							}
 
 							// Simulate Button
 							this.buttons.attack.simulate = new qx.ui.form.Button();
 							this.buttons.attack.simulate.set({
-								width : 58,
-								height : 37,
-								appearance : "button-baseviews",
-								icon : "FactionUI/icons/icon_play.png",
-								toolTipText : lang("Start Combat Simulation")
+								width: 58,
+								height: 37,
+								appearance: "button-baseviews",
+								icon: "FactionUI/icons/icon_play.png",
+								toolTipText: lang("Start Combat Simulation")
 							});
 							this.buttons.attack.simulate.addListener("click", this.startSimulation, this);
 
 							// Tools Button
 							this.buttons.attack.tools = new qx.ui.form.Button(lang("Stats"));
 							this.buttons.attack.tools.set({
-								width : 58,
-								appearance : "button-text-small",
-								toolTipText : lang("Open Simulator Tools")
+								width: 58,
+								appearance: "button-text-small",
+								toolTipText: lang("Open Simulator Tools")
 							});
 							this.buttons.attack.tools.addListener("click", this.toggleTools, this);
 
 							//Shift Buttons
 							this.buttons.shiftFormationLeft = new qx.ui.form.Button("<");
 							this.buttons.shiftFormationLeft.set({
-								width : 30,
-								appearance : "button-text-small",
-								toolTipText : lang("Shift units left")
+								width: 30,
+								appearance: "button-text-small",
+								toolTipText: lang("Shift units left")
 							});
 							this.buttons.shiftFormationLeft.addListener("click", function () {
 								this.shiftFormation('l');
@@ -2225,9 +2225,9 @@ window.TACS_version = GM_info.script.version;
 
 							this.buttons.shiftFormationRight = new qx.ui.form.Button(">");
 							this.buttons.shiftFormationRight.set({
-								width : 30,
-								appearance : "button-text-small",
-								toolTipText : lang("Shift units right")
+								width: 30,
+								appearance: "button-text-small",
+								toolTipText: lang("Shift units right")
 							});
 							this.buttons.shiftFormationRight.addListener("click", function () {
 								this.shiftFormation('r');
@@ -2235,9 +2235,9 @@ window.TACS_version = GM_info.script.version;
 
 							this.buttons.shiftFormationUp = new qx.ui.form.Button("^");
 							this.buttons.shiftFormationUp.set({
-								width : 30,
-								appearance : "button-text-small",
-								toolTipText : lang("Shift units up")
+								width: 30,
+								appearance: "button-text-small",
+								toolTipText: lang("Shift units up")
 							});
 							this.buttons.shiftFormationUp.addListener("click", function () {
 								this.shiftFormation('u');
@@ -2245,9 +2245,9 @@ window.TACS_version = GM_info.script.version;
 
 							this.buttons.shiftFormationDown = new qx.ui.form.Button("v");
 							this.buttons.shiftFormationDown.set({
-								width : 30,
-								appearance : "button-text-small",
-								toolTipText : lang("Shift units down")
+								width: 30,
+								appearance: "button-text-small",
+								toolTipText: lang("Shift units down")
 							});
 							this.buttons.shiftFormationDown.addListener("click", function () {
 								this.shiftFormation('d');
@@ -2261,36 +2261,36 @@ window.TACS_version = GM_info.script.version;
 							}
 							if (temp) {
 								this.userInterface.add(this.buttons.shiftFormationUp, {
-									top : 16,
-									right : shiftURightPos
+									top: 16,
+									right: shiftURightPos
 								});
 								this.userInterface.add(this.buttons.shiftFormationLeft, {
-									top : 35,
-									right : shiftLRightPos
+									top: 35,
+									right: shiftLRightPos
 								});
 								this.userInterface.add(this.buttons.shiftFormationRight, {
-									top : 35,
-									right : shiftRRightPos
+									top: 35,
+									right: shiftRRightPos
 								});
 								this.userInterface.add(this.buttons.shiftFormationDown, {
-									top : 54,
-									right : shiftDRightPos
+									top: 54,
+									right: shiftDRightPos
 								});
 							}
 
 							this.userInterface.add(this.buttons.attack.tools, {
-								top : 82,
-								left : buttonsLeftPosition
+								top: 82,
+								left: buttonsLeftPosition
 							});
 							this.userInterface.add(this.buttons.attack.simulate, {
-								top : 108,
-								left : buttonsLeftPosition
+								top: 108,
+								left: buttonsLeftPosition
 							});
 						} catch (e) {
 							console.log(e);
 						}
 					},
-					getAttackUnits : function () {
+					getAttackUnits: function () {
 						try {
 							var base_city = this._MainData.get_Cities().get_CurrentOwnCity();
 							var target_city = this._MainData.get_Cities().get_CurrentCity();
@@ -2305,10 +2305,10 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					optionPopup : function () {
+					optionPopup: function () {
 						localStorage.ta_sim_popup = JSON.stringify(this.options.autoDisplayStats.getValue());
 					},
-					optionShowShift : function () {
+					optionShowShift: function () {
 						localStorage.ta_sim_showShift = JSON.stringify(this.options.showShift.getValue());
 						if (this.options.showShift.getValue()) {
 							this.setupInterface();
@@ -2319,13 +2319,13 @@ window.TACS_version = GM_info.script.version;
 							this.userInterface.remove(this.buttons.shiftFormationDown);
 						}
 					},
-					optionAttackLock : function () {
+					optionAttackLock: function () {
 						try {
 							localStorage.ta_sim_attackLock = JSON.stringify(this.options.attackLock.getValue());
 							if (this.options.attackLock.getValue()) {
 								this._armyBar.add(this.buttons.attack.unlock, {
-									top : 108,
-									right : 9
+									top: 108,
+									right: 9
 								});
 							} else {
 								this._armyBar.remove(this.buttons.attack.unlock);
@@ -2334,13 +2334,13 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					optionRepairLock : function () {
+					optionRepairLock: function () {
 						try {
 							localStorage.ta_sim_repairLock = JSON.stringify(this.options.repairLock.getValue());
 							if (this.options.repairLock.getValue()) {
 								this._armyBar.add(this.buttons.attack.repair, {
-									top : 16,
-									right : 9
+									top: 16,
+									right: 9
 								});
 							} else {
 								this._armyBar.remove(this.buttons.attack.repair);
@@ -2349,16 +2349,16 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					toggleTools : function () {
+					toggleTools: function () {
 						this.battleResultsBox.isVisible() ? this.battleResultsBox.close() : this.battleResultsBox.open();
 					},
-					toggleOptionsWindow : function () {
+					toggleOptionsWindow: function () {
 						this.optionsWindow.isVisible() ? this.optionsWindow.close() : this.optionsWindow.open();
 					},
-					getAllUnitsDeactivated : function () {
+					getAllUnitsDeactivated: function () {
 						var f = this.getFormation();
 						var unitEnabled = false;
-						for (var i = 0; i < f.length; i++){
+						for (var i = 0; i < f.length; i++) {
 							if (f[i].e) {
 								unitEnabled = true;
 								break;
@@ -2367,12 +2367,12 @@ window.TACS_version = GM_info.script.version;
 						//console.log(unitEnabled);
 						if (unitEnabled) {
 							return false;
-						}else{
+						} else {
 							return true;
 						}
 					},
-					refreshStatistics : function () {
-						
+					refreshStatistics: function () {
+
 						try {
 							var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
 							if (!this.getAllUnitsDeactivated() && ownCity.GetOffenseConditionInPercent() > 0) {
@@ -2389,7 +2389,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					countDownToNextSimulation : function () {
+					countDownToNextSimulation: function () {
 						try {
 							var _this = window.TACS.getInstance();
 							_this.count = _this.count - 1;
@@ -2408,7 +2408,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					formationChangeHandler : function () {
+					formationChangeHandler: function () {
 						try {
 							var _this = this;
 							if (this.labels.countDown.getWidth() != 0) {
@@ -2416,17 +2416,17 @@ window.TACS_version = GM_info.script.version;
 									// Simulation Warning
 									_this.simulationWarning = new qx.ui.basic.Image("https://eaassets-a.akamaihd.net/cncalliancesgame/cdn/data/d75cf9c68c248256dfb416d8b7a86037.png");
 									_this.simulationWarning.set({
-										toolTipText : lang("Simulation will be based on most recently refreshed stats!")
+										toolTipText: lang("Simulation will be based on most recently refreshed stats!")
 									});
 									if (this.options.rightSide.getValue()) {
 										this._armyBar.add(_this.simulationWarning, {
-											top : 122,
-											right : 67
+											top: 122,
+											right: 67
 										});
 									} else {
 										this._armyBar.add(_this.simulationWarning, {
-											top : 122,
-											left : 27
+											top: 122,
+											left: 27
 										});
 									}
 									_this.warningIcon = true;
@@ -2436,18 +2436,18 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					calculateLoot : function () {
+					calculateLoot: function () {
 						try {
 							// Adapted from the CNC Loot script:
 							// http://userscripts.org/scripts/show/135953
 							//var city = this._MainData.get_Cities().get_CurrentCity(); // not used
 							var mod;
 							var spoils = {
-								1 : 0,
-								2 : 0,
-								3 : 0,
-								6 : 0,
-								7 : 0
+								1: 0,
+								2: 0,
+								3: 0,
+								6: 0,
+								7: 0
 							};
 
 							var loot = ClientLib.API.Battleground.GetInstance().GetLootFromCurrentCity();
@@ -2463,7 +2463,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					getRepairCost : function (unitStartHealth, unitEndHealth, unitMaxHealth, unitLevel, unitMDBID) {
+					getRepairCost: function (unitStartHealth, unitEndHealth, unitMaxHealth, unitLevel, unitMDBID) {
 						if (unitStartHealth != unitEndHealth) {
 							if (unitEndHealth > 0) {
 								var damageRatio = ((unitStartHealth - unitEndHealth) / 16) / unitMaxHealth;
@@ -2493,7 +2493,7 @@ window.TACS_version = GM_info.script.version;
 						}
 						return 0;
 					},
-					setLabelColor : function (obj, val, dir) {
+					setLabelColor: function (obj, val, dir) {
 						var colors = ['green', 'blue', 'black', 'red'];
 						var color = colors[0];
 						var v = val;
@@ -2507,17 +2507,17 @@ window.TACS_version = GM_info.script.version;
 							color = colors[1];
 						obj.setTextColor(color);
 					},
-					updateLabel100 : function (obj, val, dir) {
+					updateLabel100: function (obj, val, dir) {
 						this.setLabelColor(obj, val, dir);
 						val = Math.ceil(val * 100) / 100;
 						obj.setValue(val.toFixed(2).toString());
 					},
-					updateLabel100time : function (obj, val, dir, time) {
+					updateLabel100time: function (obj, val, dir, time) {
 						var s = val.toFixed(2).toString() + " @ " + phe.cnc.Util.getTimespanString(time);
 						this.setLabelColor(obj, val, dir);
 						obj.setValue(s);
 					},
-					updateStatsWindow : function () {
+					updateStatsWindow: function () {
 						var _this = this;
 						var colors = ['black', 'blue', 'green', 'red'];
 						var s = "";
@@ -2571,7 +2571,7 @@ window.TACS_version = GM_info.script.version;
 						}, 1);
 						//this.saveUndoState();
 					},
-					formatNumberWithCommas : function (x) {
+					formatNumberWithCommas: function (x) {
 						return Math.floor(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 					},
 					/* Not used:
@@ -2597,14 +2597,14 @@ window.TACS_version = GM_info.script.version;
 					}
 					},
 					 */
-					unlockAttacks : function () {
+					unlockAttacks: function () {
 						this._armyBar.remove(this.buttons.attack.unlock);
 						var _this = this;
 						setTimeout(function () {
 							_this._armyBar.add(_this.buttons.attack.unlock);
 						}, 2000);
 					},
-					unlockRepairs : function () {
+					unlockRepairs: function () {
 						this._armyBar.remove(this.buttons.attack.repair);
 						var _this = this;
 						setTimeout(function () {
@@ -2612,15 +2612,15 @@ window.TACS_version = GM_info.script.version;
 						}, 5000);
 					},
 					/*calculateDefenseBonus : function (context, data) {
-						try {
-							var score = data.rpois[6].s;
-							var rank = data.rpois[6].r;
-							this.view.playerCityDefenseBonus = Math.round(ClientLib.Base.PointOfInterestTypes.GetTotalBonusByType(ClientLib.Base.EPOIType.DefenseBonus, rank, score));
-						} catch (e) {
-							console.log(e);
-						}
+					try {
+					var score = data.rpois[6].s;
+					var rank = data.rpois[6].r;
+					this.view.playerCityDefenseBonus = Math.round(ClientLib.Base.PointOfInterestTypes.GetTotalBonusByType(ClientLib.Base.EPOIType.DefenseBonus, rank, score));
+					} catch (e) {
+					console.log(e);
+					}
 					},*/
-					hideAll : function () {
+					hideAll: function () {
 						if (this.buttons.attack.repairMode.getValue())
 							this.buttons.attack.repairMode.execute();
 						if (this.battleResultsBox.isVisible())
@@ -2630,11 +2630,11 @@ window.TACS_version = GM_info.script.version;
 						if (this.optionsWindow.isVisible())
 							this.optionsWindow.close();
 						/*if (this.toolBar.isVisible())
-							this.toolBar.hide();
+						this.toolBar.hide();
 						if (this.toolBarMouse.isVisible())
-							this.toolBarMouse.hide();*/
+						this.toolBarMouse.hide();*/
 					},
-					gameOverlaysToFront : function () {
+					gameOverlaysToFront: function () {
 						webfrontend.gui.reports.ReportsOverlay.getInstance().setZIndex(20);
 						webfrontend.gui.mail.MailOverlay.getInstance().setZIndex(20);
 						//webfrontend.gui.mail.MailMessageOverlay.getInstance().setZIndex(20);
@@ -2644,7 +2644,7 @@ window.TACS_version = GM_info.script.version;
 						webfrontend.gui.monetization.ShopOverlay.getInstance().setZIndex(20);
 						webfrontend.gui.ranking.RankingOverlay.getInstance().setZIndex(20);
 					},
-					ownCityChangeHandler : function (oldId, newId) {
+					ownCityChangeHandler: function (oldId, newId) {
 						console.log("CurrentOwnChange event");
 						if (this._armyBarContainer.isVisible()) {
 							this.buttons.attack.refreshStats.setEnabled(false);
@@ -2655,7 +2655,7 @@ window.TACS_version = GM_info.script.version;
 						}
 					},
 					//onViewChange
-					viewChangeHandler : function (oldMode, newMode) {
+					viewChangeHandler: function (oldMode, newMode) {
 						//console.log("ViewModeChange event");
 						this.curViewMode = newMode;
 						this.buttons.attack.simulate.setEnabled(false);
@@ -2698,7 +2698,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					resetDisableButtons : function () {
+					resetDisableButtons: function () {
 						try {
 							if (this.buttons.attack.activateInfantry.getValue(true))
 								this.buttons.attack.activateInfantry.setValue(false);
@@ -2710,15 +2710,15 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					onCityLoadComplete : function () {
+					onCityLoadComplete: function () {
 						try {
 							var _this = this;
 							//console.log("Running onCityLoadComplete...");
 							if (this._VisMain.GetActiveView().get_VisAreaComplete()) {
 								/*setTimeout(function () {
-									var cbtSetup = ClientLib.Vis.VisMain.GetInstance().get_CombatSetup(); // No longer needed. They've fixed the issue in-game. Leaving here just in case.
-									cbtSetup.SetPosition(0, cbtSetup.get_MinYPosition() + cbtSetup.get_DefenseOffsetY() * cbtSetup.get_GridHeight());
-									//qx.core.Init.getApplication().getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA).getLayoutParent().setZIndex(1);
+								var cbtSetup = ClientLib.Vis.VisMain.GetInstance().get_CombatSetup(); // No longer needed. They've fixed the issue in-game. Leaving here just in case.
+								cbtSetup.SetPosition(0, cbtSetup.get_MinYPosition() + cbtSetup.get_DefenseOffsetY() * cbtSetup.get_GridHeight());
+								//qx.core.Init.getApplication().getUIItem(ClientLib.Data.Missions.PATH.OVL_PLAYAREA).getLayoutParent().setZIndex(1);
 								}, 500);*/
 
 								this.checkAttackRange();
@@ -2729,7 +2729,7 @@ window.TACS_version = GM_info.script.version;
 									if (currentcity != null) {
 										var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
 										var cityFaction = currentcity.get_CityFaction();
-										this.stats.attacks.attackCost = ownCity.CalculateAttackCommandPointCostToCoord(currentcity.get_PosX(),currentcity.get_PosY());
+										this.stats.attacks.attackCost = ownCity.CalculateAttackCommandPointCostToCoord(currentcity.get_PosX(), currentcity.get_PosY());
 										this.getAvailableRepairAndCP();
 										this.calculateLoot();
 										this.updateLayoutsList();
@@ -2745,11 +2745,12 @@ window.TACS_version = GM_info.script.version;
 												this.view.playerCityDefenseBonus = currentcity.get_AllianceDefenseBonus();
 												/*var cityAllianceId = currentcity.get_OwnerAllianceId();
 												ClientLib.Net.CommunicationManager.GetInstance().SendSimpleCommand("GetPublicAllianceInfo", {
-													id : cityAllianceId
+												id : cityAllianceId
 												}, phe.cnc.Util.createEventDelegate(ClientLib.Net.CommandResult, this, this.calculateDefenseBonus), null);*/
 											}
 										}
-										if (cityFaction >= 4 && cityFaction <= 6) this.createLayoutPreview();
+										if (cityFaction >= 4 && cityFaction <= 6)
+											this.createLayoutPreview();
 										this.targetCityId = currentcity.get_Id();
 									}
 								}
@@ -2763,14 +2764,14 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					createLayoutPreview : function () {
+					createLayoutPreview: function () {
 						try {
 							var fileManager = ClientLib.File.FileManager.GetInstance();
 							var images = {
-									0 : fileManager.GetPhysicalPath('ui/menues/main_menu/misc_empty_pixel.png'),
-									1 : fileManager.GetPhysicalPath('ui/common/icn_res_chrystal.png'),
-									2 : fileManager.GetPhysicalPath('ui/common/icn_res_tiberium.png')
-								}
+								0: fileManager.GetPhysicalPath('ui/menues/main_menu/misc_empty_pixel.png'),
+								1: fileManager.GetPhysicalPath('ui/common/icn_res_chrystal.png'),
+								2: fileManager.GetPhysicalPath('ui/common/icn_res_tiberium.png')
+							}
 							var currenLayout = this.getLayout();
 							var tibCount = currenLayout.match(/2/g).length;
 							switch (this._MainData.get_Player().get_Faction()) {
@@ -2787,23 +2788,24 @@ window.TACS_version = GM_info.script.version;
 							for (var i = 0; i < 72; i++) {
 								var row = Math.floor(i / 9);
 								var column = i - Math.floor(i / 9) * 9;
-								if (column == 0) html += '<tr>';
+								if (column == 0)
+									html += '<tr>';
 								html += '<td><img width="14" height="14" src="' + images[currenLayout.charAt(i)] + '"></td>';
-								if (column == 8) html += '</tr>';
+								if (column == 8)
+									html += '</tr>';
 							}
 
 							html += '</table><a href="' + cncOptURL + '" target="_blank" style="color:#FFFFFF;">CNCOpt';
 
 							this.resourceLayout = new qx.ui.basic.Label().set({
-								backgroundColor : "#303030",
-								value : html,
-								padding : 10,
-								rich : true
+								backgroundColor: "#303030",
+								value: html,
+								padding: 10,
+								rich: true
 							});
 							if (tibCount == 7) {
 								this.resourceLayout.setBackgroundColor("#202820");
-							}
-							else if (tibCount == 5) {
+							} else if (tibCount == 5) {
 								this.resourceLayout.setBackgroundColor("#202028");
 							}
 							this.resourceLayoutWindow.removeAll();
@@ -2813,7 +2815,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					getLayout : function () {
+					getLayout: function () {
 						try {
 							var resourceLayout = "";
 							for (var y = 0; y < 16; y++) {
@@ -2826,7 +2828,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					encodeToCNCOpt : function (data) {
+					encodeToCNCOpt: function (data) {
 						try {
 							var str = ".ct-jhlk";
 							for (var i = 0; i < 8; i++) {
@@ -2839,7 +2841,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					showCombatTools : function () {
+					showCombatTools: function () {
 						this.curPAVM = qx.core.Init.getApplication().getPlayArea().getViewMode();
 						//console.log("showCombatTools PAVM: " + this.curPAVM);
 						switch (this.curPAVM) {
@@ -2863,7 +2865,7 @@ window.TACS_version = GM_info.script.version;
 								if (this.options.autoDisplayStats.getValue() && this.saveObj.checkbox.showStatsDuringAttack) {
 									this.battleResultsBox.open();
 									/*if(this._armyBarContainer.isVisible()){
-										this.toolBar.show();
+									this.toolBar.show();
 									}*/
 								}
 								break;
@@ -2888,7 +2890,7 @@ window.TACS_version = GM_info.script.version;
 							}
 						}
 					},
-					getAvailableRepairAndCP : function () {
+					getAvailableRepairAndCP: function () {
 						try {
 							var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
 							var offHealth = ownCity.GetOffenseConditionInPercent();
@@ -2914,7 +2916,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					returnSetup : function () {
+					returnSetup: function () {
 						// Set the scene again, just in case it didn't work the first time
 						try {
 							this._Application.getPlayArea().setView(ClientLib.Data.PlayerAreaViewMode.pavmCombatSetupDefense, localStorage.ta_sim_last_city, 0, 0);
@@ -2923,7 +2925,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					checkAttackRange : function () {
+					checkAttackRange: function () {
 						try {
 							var cities = this._MainData.get_Cities();
 							var target_city = cities.get_CurrentCity();
@@ -2945,7 +2947,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					skipSimulation : function () {
+					skipSimulation: function () {
 						try {
 							while (this._VisMain.get_Battleground().get_Simulation().DoStep(false)) {}
 							this._VisMain.get_Battleground().set_ReplaySpeed(1);
@@ -2953,7 +2955,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					startSimulation : function () {
+					startSimulation: function () {
 						try {
 							if (PerforceChangelist >= 448942) {
 								var simTimeLimit = 3000;
@@ -2980,7 +2982,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					OnSimulateCombatReportEvent : function (data) {
+					OnSimulateCombatReportEvent: function (data) {
 						// console.log(data);
 						this.timerEnd("OnSimulateCombatReportEvent");
 						try {
@@ -2998,7 +3000,7 @@ window.TACS_version = GM_info.script.version;
 							console.log('OnSimulateCombatReportEvent()', e);
 						}
 					},
-					onSimulateBattleFinishedEvent : function (data) {
+					onSimulateBattleFinishedEvent: function (data) {
 						//console.log("data:");
 						//console.log(data);
 						this.timerEnd("onSimulateBattleFinishedEvent");
@@ -3039,9 +3041,10 @@ window.TACS_version = GM_info.script.version;
 							if (PerforceChangelist >= 448942) {
 								var countDownInterval = 300;
 							} else {
-								var countDownInterval = 1000;	
+								var countDownInterval = 1000;
 							}
-							if (this.count == 10) this.counter = setInterval(this.countDownToNextSimulation, countDownInterval);
+							if (this.count == 10)
+								this.counter = setInterval(this.countDownToNextSimulation, countDownInterval);
 
 							for (var i = 0; i < data.length; i++) {
 								var unitData = data[i].Value;
@@ -3158,7 +3161,7 @@ window.TACS_version = GM_info.script.version;
 							console.log('onSimulateBattleFinishedEvent()\n check getRepairCost()', e);
 						}
 					},
-					enterSimulationView : function () {
+					enterSimulationView: function () {
 						try {
 							var city = this._MainData.get_Cities().get_CurrentCity();
 							var ownCity = this._MainData.get_Cities().get_CurrentOwnCity();
@@ -3170,48 +3173,48 @@ window.TACS_version = GM_info.script.version;
 						}
 					},
 					//Undo / Redo
-					saveUndoState : function () {
+					saveUndoState: function () {
 						var formation = this.getFormation();
 						var ts = this.getTimestamp();
 						var stats = this.badClone(this.stats);
 						this.undoCache[0] = {
-							f : formation,
-							t : ts,
-							s : stats
+							f: formation,
+							t: ts,
+							s: stats
 						};
 						console.log(this.undoCache[0]);
 						/*
 						f.d = {
-							eb : 0,
-							de : 0,
-							bu : 0,
-							cy : 0,
-							df : 0,
-							cc : 0,
-							sl : 0,
-							ovr : this.stats.health.overall,
-							inf : this.stats.health.infantry,
-							veh : this.stats.health.vehicle,
-							air : this.stats.health.aircraft,
-							ou : 0,
-							bt : 0
+						eb : 0,
+						de : 0,
+						bu : 0,
+						cy : 0,
+						df : 0,
+						cc : 0,
+						sl : 0,
+						ovr : this.stats.health.overall,
+						inf : this.stats.health.infantry,
+						veh : this.stats.health.vehicle,
+						air : this.stats.health.aircraft,
+						ou : 0,
+						bt : 0
 						};
-						*/
-						
+						 */
+
 					},
-					wipeUndoStateAfter : function (timestamp) {
+					wipeUndoStateAfter: function (timestamp) {
 						var i;
 						for (i = 0; i < this.undoCache.length; i++) {
-							if (this.undoCache[i].t > timestamp){
-								
+							if (this.undoCache[i].t > timestamp) {
+
 								break;
 							}
 						}
-						this.undoCache = this.undoCache.slice(0,i);
+						this.undoCache = this.undoCache.slice(0, i);
 					},
-					
+
 					//Layouts
-					updateLayoutsList : function () {
+					updateLayoutsList: function () {
 						try {
 							this.layouts.list.removeAll();
 							// Load the saved layouts for this city
@@ -3228,7 +3231,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					deleteCityLayout : function () {
+					deleteCityLayout: function () {
 						try {
 							var list = this.layouts.list.getSelection();
 							if (list != null && list.length > 0) {
@@ -3243,7 +3246,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					loadCityLayout : function (lid) {
+					loadCityLayout: function (lid) {
 						try {
 							var list = this.layouts.list.getSelection();
 							if (list != null && list.length > 0) {
@@ -3259,7 +3262,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					saveCityLayout : function () {
+					saveCityLayout: function () {
 						var formation = [],
 						lid,
 						title;
@@ -3272,9 +3275,9 @@ window.TACS_version = GM_info.script.version;
 								title = this.layouts.label.getValue() + " (??:??:??)";
 							}
 							this.layouts.current[lid] = {
-								id : lid,
-								label : title,
-								layout : formation
+								id: lid,
+								label: title,
+								layout: formation
 							};
 
 							this.saveLayouts();
@@ -3285,7 +3288,7 @@ window.TACS_version = GM_info.script.version;
 						}
 						return lid; // return value at the end
 					},
-					loadCityLayouts : function () {
+					loadCityLayouts: function () {
 						try {
 							if (this._MainData.get_Cities().get_CurrentCity() == null)
 								return;
@@ -3300,7 +3303,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					loadLayouts : function () {
+					loadLayouts: function () {
 						try {
 							var temp = localStorage.ta_sim_layouts;
 							if (temp)
@@ -3311,7 +3314,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					saveLayouts : function () {
+					saveLayouts: function () {
 						try {
 							localStorage.ta_sim_layouts = JSON.stringify(this.layouts.all);
 						} catch (e) {
@@ -3319,7 +3322,7 @@ window.TACS_version = GM_info.script.version;
 						}
 					},
 					//Formations
-					loadFormation : function (formation) {
+					loadFormation: function (formation) {
 						try {
 							this.layouts.restore = true;
 							//console.log("this.view = ");
@@ -3327,7 +3330,8 @@ window.TACS_version = GM_info.script.version;
 
 							for (var i = 0; i < formation.length; i++) {
 								var unit = formation[i];
-								if (i == formation.length - 1) this.layouts.restore = false;
+								if (i == formation.length - 1)
+									this.layouts.restore = false;
 								for (var j = 0; j < this.view.lastUnitList.length; j++) {
 									if (this.view.lastUnitList[j].get_Id() === unit.id) {
 										this.view.lastUnitList[j].MoveBattleUnit(unit.x, unit.y);
@@ -3345,7 +3349,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					getFormation : function () {
+					getFormation: function () {
 						var formation = [];
 						try {
 							for (var i = 0; i < this.view.lastUnitList.length; i++) {
@@ -3362,7 +3366,7 @@ window.TACS_version = GM_info.script.version;
 						}
 						return formation; // return value at the end
 					},
-					shiftFormation : function (direction) { //left right up down
+					shiftFormation: function (direction) { //left right up down
 						var Army = [],
 						v_shift = 0,
 						h_shift = 0;
@@ -3405,7 +3409,7 @@ window.TACS_version = GM_info.script.version;
 						}
 						this.loadFormation(Army);
 					},
-					flipFormation : function (axis) {
+					flipFormation: function (axis) {
 						var Army = [];
 						try {
 							for (var i = 0; i < this.view.lastUnitList.length; i++) {
@@ -3431,7 +3435,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					activateUnits : function (type, activate) {
+					activateUnits: function (type, activate) {
 						var Army = [];
 						try {
 							for (var i = 0; i < this.view.lastUnitList.length; i++) {
@@ -3464,7 +3468,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					resetFormation : function () {
+					resetFormation: function () {
 						var Army = [];
 						try {
 							for (var i = 0; i < this.view.lastUnitList.length; i++) {
@@ -3488,33 +3492,33 @@ window.TACS_version = GM_info.script.version;
 						}
 					},
 					//Audio
-					playSound : function (str, _this) {
+					playSound: function (str, _this) {
 						var temp = _this.audio[str].cloneNode(true);
 						temp.volume = _this.getAudioSettings().ui / 100;
 						temp.play();
 					},
-					getAudioSettings : function () {
+					getAudioSettings: function () {
 						return JSON.parse(localStorage.getItem("CNC_Audio"));
 					},
 					//Repair
-					repairUnit : function () {
+					repairUnit: function () {
 						try {
 							ClientLib.Net.CommunicationManager.GetInstance().SendCommand("Repair", {
-								cityid : this.ownCityId,
-								entityId : this.unitId,
-								mode : 4
+								cityid: this.ownCityId,
+								entityId: this.unitId,
+								mode: 4
 							}, phe.cnc.Util.createEventDelegate(ClientLib.Net.CommandResult, this, window.TACS.getInstance().repairResult), this.buttonId, true);
 						} catch (e) {
 							console.log(e);
 						}
 					},
-					repairResult : function (buttonId, result) {
+					repairResult: function (buttonId, result) {
 						// result erroneously true when not enough RT, button deletes/sound plays but unit does not repair.
 						try {
 							if (result) {
 								var _this = window.TACS.getInstance();
 								if (_this.saveObj.audio.playRepairSound) {
-									if (_this.repairButtons[buttonId].unitType == "Inf"){
+									if (_this.repairButtons[buttonId].unitType == "Inf") {
 										_this.playSound("soundRepairReload", _this);
 									} else {
 										_this.playSound("soundRepairImpact", _this);
@@ -3527,22 +3531,22 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					removeAllRepairButtons : function () {
+					removeAllRepairButtons: function () {
 						for (var i in this.repairButtons) {
 							this._armyBar.remove(this.repairButtons[i]);
 						}
 						this.repairButtons = [];
 					},
-					setResizeTimer : function () {
+					setResizeTimer: function () {
 						var _this = this;
 						if (this.repairButtonsRedrawTimer) {
 							clearTimeout(_this.repairButtonsRedrawTimer);
 						}
 						this.repairButtonsRedrawTimer = setTimeout(function () {
-								_this.redrawRepairButtons(_this);
-							}, 500);
+							_this.redrawRepairButtons(_this);
+						}, 500);
 					},
-					redrawRepairButtons : function (that) {
+					redrawRepairButtons: function (that) {
 						var _this = that || this;
 						var base_city_id = _this._MainData.get_Cities().get_CurrentOwnCity().get_Id();
 						if (_this.repairButtons.length > 0) {
@@ -3591,34 +3595,34 @@ window.TACS_version = GM_info.script.version;
 
 								_this.repairButtons[i] = new qx.ui.form.Button("", "data:image/png;base64,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%3D%3D");
 								_this.repairButtons[i].set({
-									decorator : new qx.ui.decoration.Decorator().set({
-										backgroundColor : 'transparent'
+									decorator: new qx.ui.decoration.Decorator().set({
+										backgroundColor: 'transparent'
 									}),
-									width : gridWidth,
-									height : gridHeight,
-									show : "icon",
-									center : false,
-									padding : 3,
-									appearance : "button-text-small",
-									cursor : "pointer",
-									toolTipText : "Crystal: " + resourceCost + " / Time: " + repairCharge + " / Type: " + unitType
+									width: gridWidth,
+									height: gridHeight,
+									show: "icon",
+									center: false,
+									padding: 3,
+									appearance: "button-text-small",
+									cursor: "pointer",
+									toolTipText: "Crystal: " + resourceCost + " / Time: " + repairCharge + " / Type: " + unitType
 								});
 								_this.repairButtons[i].addListener("execute", _this.repairUnit, {
-									ownCityId : base_city_id,
-									unitId : unit.get_Id(),
-									buttonId : i,
-									frm : _this
+									ownCityId: base_city_id,
+									unitId: unit.get_Id(),
+									buttonId: i,
+									frm: _this
 								});
 								_this.repairButtons[i].unitType = unitType;
 								//        allowGrowY: false
 								_this._armyBar.add(_this.repairButtons[i], {
-									left : startX + gridWidth * unit.get_CoordX(),
-									top : startY + gridHeight * unit.get_CoordY()
+									left: startX + gridWidth * unit.get_CoordX(),
+									top: startY + gridHeight * unit.get_CoordY()
 								});
 							}
 						}
 					},
-					toggleRepairMode : function () {
+					toggleRepairMode: function () {
 						try {
 							var _this = this;
 							if (!this.audio.soundRepairImpact) {
@@ -3647,7 +3651,7 @@ window.TACS_version = GM_info.script.version;
 							console.log(e);
 						}
 					},
-					updateRepairTimeInfobox : function () {
+					updateRepairTimeInfobox: function () {
 						try {
 							var _this = window.TACS.getInstance();
 							var ownCity = _this._MainData.get_Cities().get_CurrentOwnCity();
@@ -3659,17 +3663,17 @@ window.TACS_version = GM_info.script.version;
 							_this.labels.repairinfos.infantry.setValue(phe.cnc.Util.getTimespanString(availableInfRT - _this.stats.repair.available));
 							_this.labels.repairinfos.vehicle.setValue(phe.cnc.Util.getTimespanString(availableVehRT - _this.stats.repair.available));
 							_this.labels.repairinfos.aircraft.setValue(phe.cnc.Util.getTimespanString(availableAirRT - _this.stats.repair.available));
-							
+
 							/*var unitGroupData = phe.cnc.gui.RepairUtil.getUnitGroupCityData(ownCity);
 							if (unitGroupData[ClientLib.Data.EUnitGroup.Infantry].lowestUnitDmgRatio == 1) console.log("No damage to Infantry");
 							if (unitGroupData[ClientLib.Data.EUnitGroup.Vehicle].lowestUnitDmgRatio == 1) console.log("No damage to Vehicles");
 							if (unitGroupData[ClientLib.Data.EUnitGroup.Aircraft].lowestUnitDmgRatio == 1) console.log("No damage to Aircraft");*/
-							
+
 						} catch (e) {
 							console.log(e);
 						}
 					},
-					resetDblClick : function () {
+					resetDblClick: function () {
 						try {
 							var _this = window.TACS.getInstance();
 							clearInterval(_this.armybarClearnClickCounter);
@@ -3679,22 +3683,22 @@ window.TACS_version = GM_info.script.version;
 						}
 					},
 					//Util
-					getDateFromMillis : function (ms) {
+					getDateFromMillis: function (ms) {
 						return new Date(ms);
 					},
-					getTimestamp : function () {
+					getTimestamp: function () {
 						return new Date().getTime();
 					},
-					timerStart : function () {
+					timerStart: function () {
 						this.ts1 = this.getTimestamp();
 					},
-					timerEnd : function (functionName) {
+					timerEnd: function (functionName) {
 						functionName = functionName || "nullName";
 						this.ts2 = this.getTimestamp();
 						var diff = this.ts2 - this.ts1;
-						console.log(diff+"ms to run "+functionName)
+						console.log(diff + "ms to run " + functionName)
 					},
-					badClone : function (obj) {
+					badClone: function (obj) {
 						// broken
 						var stringied = JSON.stringify(obj);
 						//var p = JSON.parse(stringied);
@@ -3719,13 +3723,13 @@ window.TACS_version = GM_info.script.version;
 							window.TACS.getInstance().initialize();
 
 							/*if (typeof ClientLib.API.Util.GetUnitMaxHealthByLevel == 'undefined') {
-								for (var key in ClientLib.Base.Util) {
-									var strFunction = ClientLib.Base.Util[key].toString();
-									if (typeof ClientLib.Base.Util[key] === 'function' & strFunction.indexOf("1.1") > -1 & strFunction.indexOf("*=") > -1) {
-										ClientLib.API.Util.GetUnitMaxHealthByLevel = ClientLib.Base.Util[key];
-										break;
-									}
-								}
+							for (var key in ClientLib.Base.Util) {
+							var strFunction = ClientLib.Base.Util[key].toString();
+							if (typeof ClientLib.Base.Util[key] === 'function' & strFunction.indexOf("1.1") > -1 & strFunction.indexOf("*=") > -1) {
+							ClientLib.API.Util.GetUnitMaxHealthByLevel = ClientLib.Base.Util[key];
+							break;
+							}
+							}
 							}*/
 							if (PerforceChangelist >= 392583) { //endgame patch - repair costs fix
 								var currentCity = ClientLib.Data.Cities.prototype.get_CurrentCity.toString();
@@ -3806,7 +3810,7 @@ window.TACS_version = GM_info.script.version;
 									qx.core.Init.getApplication().getArmyUnitTooltipOverlay().setVisibility_Original(a);
 								}
 							};
-						
+
 						} else {
 							TASuite_timeout++;
 							window.setTimeout(TASuite_checkIfLoaded, 1000);
@@ -3841,11 +3845,11 @@ window.TACS_version = GM_info.script.version;
 
 	//Sound sample B64LOBs
 	window.soundRepairImpact = {
-		info : "Impact Wrench Sound; Used in TACS; courtesy of: http://www.freesfx.co.uk",
-		d : "data:video/ogg;base64,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"
+		info: "Impact Wrench Sound; Used in TACS; courtesy of: http://www.freesfx.co.uk",
+		d: "data:video/ogg;base64,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"
 	};
 	window.soundRepairReload = {
-		info : "Reload sound; Used in TACS; courtesy of: http://www.freesfx.co.uk; 7806 bytes",
-		d : "data:video/ogg;base64,T2dnUwACAAAAAAAAAACpAAAAAAAAAJKfvKcBHgF2b3JiaXMAAAAAAQB9AAAAAAAAAPoAAAAAAAC4AU9nZ1MAAAAAAAAAAAAAqQAAAAEAAABQ3ZLQDlL///////////////8RA3ZvcmJpcx0AAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDA3MDYyMgEAAAAhAAAAQ09NTUVOVFM9aHR0cDovL3d3dy5mcmVlc2Z4LmNvLnVrAQV2b3JiaXMiQkNWAQBAAAAkcxgqRqVzFoQQGkJQGeMcQs5r7BlCTBGCHDJMW8slc5AhpKBCiFsogdCQVQAAQAAAh0F4FISKQQghhCU9WJKDJz0IIYSIOXgUhGlBCCGEEEIIIYQQQgghhEU5aJKDJ0EIHYTjMDgMg+U4+ByERTlYEIMnQegghA9CuJqDrDkIIYQkNUhQgwY56ByEwiwoioLEMLgWhAQ1KIyC5DDI1IMLQoiag0k1+BqEZ0F4FoRpQQghhCRBSJCDBkHIGIRGQViSgwY5uBSEy0GoGoQqOQgfhCA0ZBUAkAAAoKIoiqIoChAasgoAyAAAEEBRFMdxHMmRHMmxHAsIDVkFAAABAAgAAKBIiqRIjuRIkiRZkiVZkiVZkuaJqizLsizLsizLMhAasgoASAAAUFEMRXEUBwgNWQUAZAAACKA4iqVYiqVoiueIjgiEhqwCAIAAAAQAABA0Q1M8R5REz1RV17Zt27Zt27Zt27Zt27ZtW5ZlGQgNWQUAQAAAENJpZqkGiDADGQZCQ1YBAAgAAIARijDEgNCQVQAAQAAAgBhKDqIJrTnfnOOgWQ6aSrE5HZxItXmSm4q5Oeecc87J5pwxzjnnnKKcWQyaCa0555zEoFkKmgmtOeecJ7F50JoqrTnnnHHO6WCcEcY555wmrXmQmo21OeecBa1pjppLsTnnnEi5eVKbS7U555xzzjnnnHPOOeec6sXpHJwTzjnnnKi9uZab0MU555xPxunenBDOOeecc84555xzzjnnnCA0ZBUAAAQAQBCGjWHcKQjS52ggRhFiGjLpQffoMAkag5xC6tHoaKSUOggllXFSSicIDVkFAAACAEAIIYUUUkghhRRSSCGFFGKIIYYYcsopp6CCSiqpqKKMMssss8wyyyyzzDrsrLMOOwwxxBBDK63EUlNtNdZYa+4555qDtFZaa621UkoppZRSCkJDVgEAIAAABEIGGWSQUUghhRRiiCmnnHIKKqiA0JBVAAAgAIAAAAAAT/Ic0REd0REd0REd0REd0fEczxElURIlURIt0zI101NFVXVl15Z1Wbd9W9iFXfd93fd93fh1YViWZVmWZVmWZVmWZVmWZVmWIDRkFQAAAgAAIIQQQkghhRRSSCnGGHPMOegklBAIDVkFAAACAAgAAABwFEdxHMmRHEmyJEvSJM3SLE/zNE8TPVEURdM0VdEVXVE3bVE2ZdM1XVM2XVVWbVeWbVu2dduXZdv3fd/3fd/3fd/3fd/3fV0HQkNWAQASAAA6kiMpkiIpkuM4jiRJQGjIKgBABgBAAACK4iiO4ziSJEmSJWmSZ3mWqJma6ZmeKqpAaMgqAAAQAEAAAAAAAACKpniKqXiKqHiO6IiSaJmWqKmaK8qm7Lqu67qu67qu67qu67qu67qu67qu67qu67qu67qu67qu67quC4SGrAIAJAAAdCRHciRHUiRFUiRHcoDQkFUAgAwAgAAAHMMxJEVyLMvSNE/zNE8TPdETPdNTRVd0gdCQVQAAIACAAAAAAAAADMmwFMvRHE0SJdVSLVVTLdVSRdVTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVTdM0TRMIDVkJAAABAMAchM4tqJBJCS2YiijEJOhSQQcp6M4wgqD3EjmDnMcUOUKQxpZJhJgGQkNWBABRAACAMcgxxBxyzlHqJEXOOSodpcY5R6mj1FFKsaYYM0oltlRr45yj1FHqKKUaS4sdpRRjirEAAIAABwCAAAuh0JAVAUAUAACBEFIKKYWUYs4p55BSyjHmHFKKOaecU845KJ2UyjkmnZMSKaWcY84p55yUzknlnJPSSSgAACDAAQAgwEIoNGRFABAnAOBwHM2TNE0UJU0TRU8UXdUTRdWVNM00NVFUVU0UTdVUVVkWTdWVJU0zTU0UVVMTRVUVVVOWTVWVZc80bdlUVd0WVVW3ZVv2bVeWdd8zTdkWVdXWTVW1dVeWdd2Vbd2XNM00NVFUVU0UVddUVVs2VdW2NVF0XVFVZVlUVVl2Zde2VVfWdU0UXddTTdkVVVWWVdnVZVWWdV90VV1XXdfXVVf2fdnWfV3WdWEYVdXWTdfVdVV2dV/Wbd+XdV1YJk0zTU0UXVUTRVU1VdW2TVWVbU0UXVdUVVkWTdWVVdn1ddV1bV0TRdcVVVWWRVWVXVV2dd+VZd0WVVW3Vdn1dVN1dV22bWOYbVsXTlW1dVV2dWGVXd2XddsYbl33jc00bdt0XV03XVfXbV03hlnXfV9UVV9XZdk3Vln2fd33sXXfGEZV1XVTdoVfdWVfuHVfWW5d57y2jWz7yjHrvjP8RnRfOJbVtimvbgvDrOv4wu4su/ArPdO0ddNVdd1UXV+XbVsZbl1HVFVfV2VZ+E1X9oVb143j1n1nGV2XrsqyL6yyrAy37xvD7vvCstq2ccy2jmvryrH7SmX3lWV4bdtXZl0nzLptHLuvM35hSAAAwIADAECACWWg0JAVAUCcAACDkHOIKQiRYhBCCCmFEFKKGIOQOSclY05KKSW1UEpqEWMQKsekZM5JCaW0FEppKZTSWikltlBKi621WlNrsYZSWgultFhKaTG1VmNrrcaIMQmZc1Iy56SUUlorpbSWOUelc5BSByGlklKLJaUYK+ekZNBR6SCkVFKJqaQUYyglxpJSjCWlGluKLbcYcw6ltFhSibGkFGOLKccWY84RY1Ay56RkzkkppbRWSmqtck5KByGlzEFJJaUYS0kpZs5J6iCk1EFHqaQUY0kptlBKbCWlGktJMbYYc24pthpKabGkFGtJKcYWY84tttw6CK2FVGIMpcTYYsy5tVZrKCXGklKsJaXaYqy1txhzDaXEWFKpsaQUa6ux1xhjzSm2XFOLNbcYe64tt15zDj61VnOKKdcWY+4xtyBrzr13EFoLpcQYSomxxVZrizHnUEqMJaUaS0mxthhzba3WHkqJsaQUa0mpxhhjzrHGXlNrtbYYe04t1lxz7r3GHINqreYWY+4ptpxrrr3X3IIsAABgwAEAIMCEMlBoyEoAIAoAADCGMecgNAo555yUBinnnJOSOQchhJQy5yCEkFLnHISSWuucg1BKa6WUlFqLsZSSUmsxFgAAUOAAABBgg6bE4gCFhqwEAFIBAAyOY1meZ5qqasuOJXmeKKqmq+q2I1meJ4qqqqq2bXmeKaqqqrqurlueJ4qqqrquq+ueaaqqqrquLOu+Z5qqqqquK8u+b6qq67quLMuy8Juq6rquK8uy7Qur68qyLNu2bhvD6rqyLMu2bevKceu6rvu+sRxHtq77ujD8xnAkAAA8wQEAqMCG1RFOisYCCw1ZCQBkAAAQxiBkEFLIIIQUUkgphJRSAgAABhwAAAJMKAOFhqwEAKIAAAAirLXWWmOttdZai6y11lprraWUUkoppZRSSimllFJKKaWUUkoppZRSSimllFJKKaWUUgEAUhMOAFIPNmhKLA5QaMhKACAVAAAwhimmHIMMOsOUc9BJKCWlhjHnnIOSUkqVc1JKSam11jLnpJSSUmsxZhBSaS3GGmvNIJSUWowx9hpKaS3GWnPPPZTSWou11txzaS3GHHvPQQiTUqu15hyEDqq1WmvOOfggTGux1hp0EEIYAIDT4AAAemDD6ggnRWOBhYasBABSAQAIhJRizDHnnENKMeacc845h5RizDHnnHNOMcacc85BCKFizDHnIIQQQuacc85BCCGEzDnnnIMQQgidcw5CCCGEEDrnIIQQQgghdA5CCCGEEELoIIQQQgghhNBBCCGEEEIIoYMQQgghhBBCAQCABQ4AAAE2rI5wUjQWWGjISgAACAAAgtpyLDEzSDnmLDYEIQW5VUgpxbRmRhnluFUKIaQ0ZE4xZKTEWnOpHAAAAIIAAAEhAQAGCApmAIDBAcLnIOgECI42AABBiMwQiYaF4PCgEiAipgKAxASFXACosLhIu7iALgNc0MVdB0IIQhCCWBxAAQk4OOGGJ97whBucoFNU6iAAAAAAAA4A4AEA4LgAIiKaw8jQ2ODo8PgACQkAAAAAABwA+AAAOESAiIjmMDI0Njg6PD5AQgIAAAAAAAAAAICAgAAAAAAAQAAAAICAT2dnUwAE+h8AAAAAAACpAAAAAgAAABjIRxMcMTMyNDYzODg1M+gsLTU1Nfbo5ikzNTQzNjX017Qc0MHayNpfi94O6u2FMqBqfecfb+7z3LLmIA1w1fpZfVdl52kwPupvVY6jzALlj1m0HCkyjAXx9T1FHctGA6rWUDFnmX+WuVEV+mm+2BFvhcj59PTzNFJD6p84bV4XhRkEOwO0HliC4lTU+4HqXLpFk5QB1Zpp7ZBwd0yrP8PpgqzZsa9jxG4Cn5innikeYqqXH8XTKbwmRxQY91t7im7Yd7uhhTlBQLU8kPSlHPa4lZQLp/kQcfnols0s+flbMgQVierqZT2Fp3O8KkdX0M/WupfpGHgD89JinxI4gGr7dvuOHNc/X5sso7HsURpd7ap5qq8EE8uCm8E1OePzbgC0MMdpaCK/ijIHtNCAANXu/3NNGMn94ww9fVZ6VY3Hs/yoejoOVS3D37YdPXi94Mhbo2rUMMe91GfB1C8+bAemS4GOeEC1oF+01j3Hnb5et+6XLpRW4zGeu6lQuNLS4ru5ASWPPlSnZ5dCA8Q0C1swFsCXWl46I9ANnTECqiX2HP01t1ejvNPMt76finmyfvMOO43TNbf68GErHcT19c+nz/t39ELHGsj8nu6zrbXoAAOqmXms8+Qbfhtd+uez4yje6n/rTq5+Vsf97bo57D3OFvkRlXKjdgDsQMdoOJE1H9yduOZYooYGAKpSMz75mYm8uB4zEq2Dt5kRGV+dhWfzqt8Jswq1z1L/7QiSN8uNKr9yofhdH0LKqS0yHM85j65neuIvH42z4lqO7oTUc8wq2gdMUDtsJACo4x1f6TiemHXGm/OM9ctiveaa/6hN1wh4JKL7b97MLnYWarKvd0Zb46VOjjj0E7lfJbH3Pyp2j0bQpia+1vP+rKo57krC2sRvlGt2RRd9ocVcPY/Pcsy33BrDRPRLoe2xsseQq4dOohoHKp9VUFiE6xqm7sePH3f4zauchfVZlLw5RAIWGzvTXsU14RXHk8Vdr67hIuMa5kOEdWfod5psQb17w9Kn0zsT9kK1gpwBM5u5lW9sMf0IHYECvLLZYehl6t5H52pARNwgoIZpLG9t/VMVPN1QAstWuEhB987tOm0snSr8YZW8tO4KwDvc/nITaCFnEFBDQpP13Z2AsJqiFOKvcKnL3vyNiqvX2lD0R7uFWBPENEdtFP6B6kJAC64aTUDdQXFBP2Iab1u0w3HCl2v6sFQ1Ne50qaqrcPoZsW9V7Iiuvh3LAdTCBbfNoX94vpjNc6YBVSyyerKYWNVbeT89u/OzF8fp8fR/8X3P3+jPn/q5z64IW/x/3b8HBE/HH7ycenVdD1gpiZiAaqcfcp7dR//EpEn6/DjSdUGheq99e3x2yXFUVYitt9JbdTud2AD6yAtXlceOF56itqOXrqTIcH8wPiuf43cfTu8prh/pegIyjOw1c9oWAPRO01tZyeP6ZFRblm8f35f8y3cEr2qe/HusPwDaxKN2a8OrGcfdX57fyaVmpOuaMTLnGB+yobmf88fJyK455hg5blpDS7KaLPHLvIgMY2Q1WT01PY21hbF9nea4OT789e2aMeKffFm+98W4mJyfN2CerlS3SAOhd50AO4oGbNh+PK9qoi2gL6oOqL2tYyHno6J2JI4i3szvQuYwxXTVZ31aTku9p95FPOwaNltdXTN6Fa+dTwNgoFAX+jTUV2XdAczbuv88Ex3BvMbsTgB+p+K0IgD0TQbKyOaEg72X4UF3vtVJWrJ6O7KzJVZftig9ZIrV4UmWbpfFhrgk8z9m/f7X/b7TEz933WmMj/1buCher0tu5+PMiG0js9vOTeNy+/bNmzdv1nSlqB3TBbyyOcZXKDY3oJ9gaZb8cFovwjWF1/CWLePr6JsiACn6J1qwnStqgUxx02QflETNAsx595eTkWOMvX9+d84ATMOsg9YDp1cvrJYDUH+t18Km6TEJpYFbsqqvJuJa6L699crTZR5LELi8kk+BsxGl9WTeIrxFIX9dr4ZNuD8KH77Li9O008oswqAAVlcirxa7tDl6FYR5EFy75x8Pn37pTEdHDR3BjOeU+kpxCjyTb53jzj/81+7//3mypPL3bPrdp6qupt78/fkavUv5iTLxfDQCWqFkJvXRalkpHMNTTXIb4zqvr+KzmpfrD49znFnkn1VMeWndjtgN6ELMmPLxWPxsHg/Jmr664Xa6cHspRDn+D+fXCmg79sqZe8YcqpOnuqp8HC7HrmGedlemGBJbZqJKk1G0wL4mdlHgYdZAWF75f9dDvKrxeRzrrvo4SCbvZK5/WFwd3HZcVbAjnGmz1IRxr/YWD7N8E2TPzysmRwK0PAAzYTpHnbuiSQsgAlQt35YeEkfKzxLsyG2lXHvPazya4z4CaKCrALQuABfA2MGYe3BdS0xAta7V7/j/p2c5f/7/+rPrdv6mL/yh+THXMddeTaW8UXv/VKxeArQ22AKrz4Y+vxchLBJAtS9E+6W+/7l7/3lSfPZUYjdf8aHgG8Yz/4Mum7n//v175Li6VR4ArDx3bhgM9tMxqYUF4wHVjGqq2Sy/19x9qimpqb/OjN1Z/uvLugK91+LrJ+61V6WvdVXMAeRK2JEGhAdr7Z8xN+oMoAKgGuuY36lVr+tuJlqxCves8uOMx31xlCR94/b4MWOrqzgKbwxRx2c4a15/LUQSE1C1tP/mdvv1X9VefVy121dXLwvb+3/F+M1RfnSlqb5/88Sibdd+yWV7EwRNxxroEvdfPrgzNKWBhAZUyWmTv11RT9Qj/uclxujx/96cUwuRux/+i3F5qL0uCjy1AsYDetfbWFH4c7Fxo+is5xTz4+n68f33po4xun/39QcnPcYwYLgLAFiNtauDrNiq44bV07+i+Yftb0iy/W/y+VPPXpjkDqj2DdmxqKqmi2c5xyR22j7meFQ1vT9OdEbNRMbYsVXxZHwVvI0BbPvh/BmjZty8j+y/fjoRI+zQFx2hTklqFj8z4qG2dxMWAIAwWlQWP/mhpsfqkTByDJ0x1uOXu3dPZuT93V9OOjHN2Ok24GzI13RmtVufUUSeuVxUal8ctdlHdcEBSlAf1y65o6Luh0KqQCxBeAieHLHq4BabDL67yxPz8ybyJw5hGsfz3jjCpAVwOn7nMU3hFenCdOm7zglPvJTTA3BOcE6M4RyDHk6vom3ZVKYIA01gH/dK2j4dauqssLTs/5ce92/Wbd887sa4rtmueZzM4P12GsOAx90GHA+zvVhlrWnmnxQtNvMK9cLi1RhmjLHx4eNzTjo81iEAALZ6/V0Ed3b1xbgCYU4k50S3aXR4TSz0cjRxwNJH1pTWnMXC+mESXifvgB2RsNSCCGZJXvVI9ZOtr7IAgvxNQZorxQMEj47nW0QBcnidD8FuLqwqgYjCgttaPSy1IyiE+evidZbPgU0k"
+		info: "Reload sound; Used in TACS; courtesy of: http://www.freesfx.co.uk; 7806 bytes",
+		d: "data:video/ogg;base64,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"
 	};
 })();
