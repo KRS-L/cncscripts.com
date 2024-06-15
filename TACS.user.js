@@ -2471,7 +2471,8 @@ window.TACS_version = GM_info.script.version;
 								var damageRatio = ((unitStartHealth / 16) / unitMaxHealth);
 							}
 
-							var repairCosts = ClientLib.API.Util.GetUnitRepairCosts(unitLevel, unitMDBID, damageRatio);
+							// var repairCosts = ClientLib.API.Util.GetUnitRepairCosts(unitLevel, unitMDBID, damageRatio);
+							var repairCosts = ClientLib.API.Util.GetUnitRepairCostsForCity(ClientLib.Data.MainData.GetInstance().get_Cities().get_CurrentOwnCity(), unitLevel, unitMDBID, damageRatio);
 							// var crystal = 0;  // crystal didn't use, only RT
 							var repairTime = 0;
 							for (var j = 0; j < repairCosts.length; j++) {
@@ -3731,7 +3732,7 @@ window.TACS_version = GM_info.script.version;
 							}
 							}
 							}*/
-							if (PerforceChangelist >= 392583) { //endgame patch - repair costs fix
+							/*if (PerforceChangelist >= 392583) { //endgame patch - repair costs fix
 								var currentCity = ClientLib.Data.Cities.prototype.get_CurrentCity.toString();
 								for (var i in ClientLib.Data.Cities.prototype) {
 									if (ClientLib.Data.Cities.prototype.hasOwnProperty(i) && typeof(ClientLib.Data.Cities.prototype[i]) === 'function') {
@@ -3761,7 +3762,7 @@ window.TACS_version = GM_info.script.version;
 								var functionBody = strFunction.substring(strFunction.indexOf("{") + 1, strFunction.lastIndexOf("}"));
 								var fn = Function('a,b,c', functionBody);
 								ClientLib.API.Util.GetUnitRepairCosts = fn;
-							}
+							}*/
 
 							// Solution for OnSimulateBattleFinishedEvent issue
 							for (var key in ClientLib.API.Battleground.prototype) {
