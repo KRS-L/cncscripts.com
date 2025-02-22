@@ -471,8 +471,8 @@ window.TACS_version = GM_info.script.version;
 							for (var key in ClientLib.Data.City.prototype) {
 								if (typeof ClientLib.Data.City.prototype[key] === 'function') {
 									var strFunction = ClientLib.Data.City.prototype[key].toString();
-									if (strFunction.indexOf("Math.floor(a.adb)") > -1) {
-										ClientLib.Data.City.prototype[key] = this.fixBonusRounding(ClientLib.Data.City.prototype[key], "a");
+									if (strFunction.indexOf("Math.floor(n.adb)") > -1) {
+										ClientLib.Data.City.prototype[key] = this.fixBonusRounding(ClientLib.Data.City.prototype[key], "n");
 										break;
 									}
 								}
