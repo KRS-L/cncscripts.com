@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.53b.2026.5
+// @version        3.53b.2026.6
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -2466,9 +2466,9 @@ window.TACS_version = GM_info.script.version;
 					getRepairCost: function (unitStartHealth, unitEndHealth, unitMaxHealth, unitLevel, unitMDBID) {
 						if (unitStartHealth != unitEndHealth) {
 							if (unitEndHealth > 0) {
-								var damageRatio = ((unitStartHealth - unitEndHealth) / 16) / unitMaxHealth;
+								var damageRatio = (unitStartHealth - unitEndHealth) / unitMaxHealth;
 							} else {
-								var damageRatio = ((unitStartHealth / 16) / unitMaxHealth);
+								var damageRatio = unitStartHealth / unitMaxHealth;
 							}
 
 							// var repairCosts = ClientLib.API.Util.GetUnitRepairCosts(unitLevel, unitMDBID, damageRatio);
@@ -3056,15 +3056,10 @@ window.TACS_version = GM_info.script.version;
 								var unitLevel = unitData.l;
 								var unitStartHealth = unitData.sh;
 								var unitEndHealth = unitData.h;
-								var unitMaxHealth = ClientLib.API.Util.GetUnitMaxHealthByLevel(unitLevel, unit, false);
+								var unitMaxHealth = unitData.mh;
 
 								switch (placementType) {
 								case ClientLib.Base.EPlacementType.Defense:
-									if (this.view.playerCity) {
-										var defenseBonus = this.view.playerCityDefenseBonus;
-										var nerfBoostModifier = ClientLib.Base.Util.GetNerfAndBoostModifier(unitLevel, defenseBonus);
-										unitMaxHealth = Math.floor((unitMaxHealth * nerfBoostModifier) / 100 * 16) / 16;
-									}
 									eu_total_hp += unitMaxHealth;
 									eu_end_hp += unitEndHealth;
 									e_total_hp += unitMaxHealth;
@@ -3094,11 +3089,6 @@ window.TACS_version = GM_info.script.version;
 									}
 									break;
 								case ClientLib.Base.EPlacementType.Structure:
-									if (this.view.playerCity) {
-										var defenseBonus = this.view.playerCityDefenseBonus;
-										var nerfBoostModifier = ClientLib.Base.Util.GetNerfAndBoostModifier(unitLevel, defenseBonus);
-										unitMaxHealth = Math.floor((unitMaxHealth * nerfBoostModifier) / 100 * 16) / 16;
-									}
 									eb_total_hp += unitMaxHealth;
 									eb_end_hp += unitEndHealth;
 									e_total_hp += unitMaxHealth;
@@ -3108,7 +3098,7 @@ window.TACS_version = GM_info.script.version;
 
 								if (unitMDBID >= 200 && unitMDBID <= 205) {
 									this.stats.supportLevel = unitLevel;
-									this.stats.damage.structures.support = (unitEndHealth / 16 / unitMaxHealth) * 100;
+									this.stats.damage.structures.support = (unitEndHealth / unitMaxHealth) * 100;
 								} else {
 									switch (unitMDBID) {
 									case 131:
@@ -3117,7 +3107,7 @@ window.TACS_version = GM_info.script.version;
 										// NOD DF
 									case 195:
 										// Forgotten DF
-										this.stats.damage.structures.defense = (unitStartHealth > 0) ? (unitEndHealth / 16 / unitMaxHealth) * 100 : 0;
+										this.stats.damage.structures.defense = (unitStartHealth > 0) ? (unitEndHealth / unitMaxHealth) * 100 : 0;
 										break;
 									case 112:
 										// GDI CY
@@ -3127,26 +3117,26 @@ window.TACS_version = GM_info.script.version;
 										// Forgotten CY
 									case 251:
 										// Mutated Forgotten CY
-										this.stats.damage.structures.construction = (unitEndHealth / 16 / unitMaxHealth) * 100;
+										this.stats.damage.structures.construction = (unitEndHealth / unitMaxHealth) * 100;
 										break;
 									case 111:
 										// GDI CC
 									case 159:
 										// NOD CC
-										this.stats.damage.structures.command = (unitEndHealth / 16 / unitMaxHealth) * 100;
+										this.stats.damage.structures.command = (unitEndHealth / unitMaxHealth) * 100;
 										break;
 									}
 								}
 							}
 
 							// Calculate Percentages
-							this.stats.health.infantry = i_total_hp ? (i_end_hp / 16 / i_total_hp) * 100 : 100;
-							this.stats.health.vehicle = v_total_hp ? (v_end_hp / 16 / v_total_hp) * 100 : 100;
-							this.stats.health.aircraft = a_total_hp ? (a_end_hp / 16 / a_total_hp) * 100 : 100;
-							this.stats.damage.units.overall = eu_total_hp ? (eu_end_hp / 16 / eu_total_hp) * 100 : 0;
-							this.stats.damage.structures.overall = (eb_end_hp / 16 / eb_total_hp) * 100;
-							this.stats.damage.overall = (e_end_hp / 16 / e_total_hp) * 100;
-							this.stats.health.overall = end_hp ? (end_hp / 16 / total_hp) * 100 : 0;
+							this.stats.health.infantry = i_total_hp ? (i_end_hp / i_total_hp) * 100 : 100;
+							this.stats.health.vehicle = v_total_hp ? (v_end_hp / v_total_hp) * 100 : 100;
+							this.stats.health.aircraft = a_total_hp ? (a_end_hp / a_total_hp) * 100 : 100;
+							this.stats.damage.units.overall = eu_total_hp ? (eu_end_hp / eu_total_hp) * 100 : 0;
+							this.stats.damage.structures.overall = (eb_end_hp / eb_total_hp) * 100;
+							this.stats.damage.overall = (e_end_hp / e_total_hp) * 100;
+							this.stats.health.overall = end_hp ? (end_hp / total_hp) * 100 : 0;
 
 							// Calculate the repair time
 							var _this = this;
