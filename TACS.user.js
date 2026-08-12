@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.53b.2026.3
+// @version        3.53b.2026.4
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -2784,14 +2784,14 @@ window.TACS_version = GM_info.script.version;
 								break;
 							}
 							var cncOptURL = "http://cncopt.com/?map=2|" + playerFaction + "|" + playerFaction + "||" + this.encodeToCNCOpt(currenLayout) + "....................................|newEconomy";
-							var html = '<table border="2" cellspacing="0" cellpadding="0">';
+							var html = '<table cellspacing="0" cellpadding="0" style="border-collapse: collapse; border:2px solid rgb(67,74,84)">';
 
 							for (var i = 0; i < 72; i++) {
 								var row = Math.floor(i / 9);
 								var column = i - Math.floor(i / 9) * 9;
 								if (column == 0)
 									html += '<tr>';
-								html += '<td><img width="14" height="14" src="' + images[currenLayout.charAt(i)] + '"></td>';
+								html += '<td style="border:1px solid rgb(67,74,84)"><img width="14" height="14" src="' + images[currenLayout.charAt(i)] + '"></td>';
 								if (column == 8)
 									html += '</tr>';
 							}
