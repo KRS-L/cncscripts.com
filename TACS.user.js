@@ -497,7 +497,7 @@ window.TACS_version = GM_info.script.version;
 							// Skip to end Button
 							this.buttons.simulate.skip = new qx.ui.form.Button();
 							this.buttons.simulate.skip.set({
-								width: 35,
+								width: 40,
 								height: 24,
 								appearance: "button-addpoints",
 								icon: "FactionUI/icons/icon_replay_skip.png",
@@ -513,7 +513,7 @@ window.TACS_version = GM_info.script.version;
 							if (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled) {
 								replayBar.add(this.buttons.simulate.skip, {
 									top: 21,
-									left: 435
+									left: 575
 								});
 							}
 
