@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.53b.2026.7
+// @version        3.53b.2026.8
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -510,12 +510,10 @@ window.TACS_version = GM_info.script.version;
 								top: 21,
 								left: 185
 							});
-							if (typeof(CCTAWrapper_IsInstalled) != 'undefined' && CCTAWrapper_IsInstalled) {
-								replayBar.add(this.buttons.simulate.skip, {
-									top: 21,
-									left: 575
-								});
-							}
+							replayBar.add(this.buttons.simulate.skip, {
+								top: 21,
+								left: 575
+							});
 
 							// Unlock Button
 							this.buttons.attack.unlock = new qx.ui.form.Button(lang("Unlock"));
@@ -2950,8 +2948,12 @@ window.TACS_version = GM_info.script.version;
 					},
 					skipSimulation: function () {
 						try {
-							while (this._VisMain.get_Battleground().get_Simulation().DoStep(false)) {}
-							this._VisMain.get_Battleground().set_ReplaySpeed(1);
+							if (this._VisMain.get_Battleground().get_Simulation !== undefined && this._VisMain.get_Battleground().get_Simulation().DoStep !== undefined){
+                                while (this._VisMain.get_Battleground().get_Simulation().DoStep(false)) {}
+                                this._VisMain.get_Battleground().set_ReplaySpeed(1);
+                            } else {
+                                this._VisMain.get_Battleground().SkipToEnd();
+                            }
 						} catch (e) {
 							console.log(e);
 						}
