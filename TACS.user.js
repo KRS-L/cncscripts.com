@@ -3,7 +3,7 @@
 // @description    Allows you to simulate combat before actually attacking.
 // @namespace      https://*.alliances.commandandconquer.com/*/index.aspx*
 // @include        https://*.alliances.commandandconquer.com/*/index.aspx*
-// @version        3.53b.2026.9
+// @version        3.53b.2026.10
 // @author         KRS_L | Contributions/Updates by WildKatana, CodeEcho, PythEch, Matthias Fuchs, Enceladus, TheLuminary, Panavia2, Da Xue, MrHIDEn, TheStriker, JDuarteDJ, null, g3gg0.de
 // @translator     TR: PythEch | DE: Matthias Fuchs, Leafy & sebb912 | PT: JDuarteDJ & Contosbarbudos | IT: Hellcco | NL: SkeeterPan | HU: Mancika | FR: Pyroa & NgXAlex | FI: jipx | RO: MoshicVargur
 // @grant none
@@ -3330,11 +3330,11 @@ window.TACS_version = GM_info.script.version;
 									this.layouts.restore = false;
 								for (var j = 0; j < this.view.lastUnitList.length; j++) {
 									if (this.view.lastUnitList[j].get_Id() === unit.id) {
-										this.view.lastUnitList[j].MoveBattleUnit(unit.x, unit.y);
 										if (unit.e === undefined)
 											this.view.lastUnitList[j].set_Enabled(true);
 										else
 											this.view.lastUnitList[j].set_Enabled(unit.e);
+										this.view.lastUnitList[j].MoveBattleUnit(unit.x, unit.y);
 									}
 								}
 							}
